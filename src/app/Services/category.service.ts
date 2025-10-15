@@ -30,6 +30,7 @@ export class CategoryService {
 
   getAllCategories(): Observable<getAllCategories[]> {
     var restaurantId = this.franchiseService.getRestaurantId();
+    
     return this.http
       .get<getAllCategories[]>(
         `${this.apiUrl}/restaurants/` + restaurantId + `/categories`
