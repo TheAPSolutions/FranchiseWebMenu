@@ -20,6 +20,7 @@ import { SubCategoryService } from '../../Services/subcategory.service';
 import { getSubCategory } from '../../models/SubCategoriesDTO/getSubCategoryDTO.model';
 import { OrderModel } from '../../models/Customer Order model/order-model.model';
 import { MenuItemCardComponent } from '../../components/menu-item-card/menu-item-card.component';
+import { FranchiseService } from '../../Services/franchise.service';
 
 @Component({
   selector: 'app-page-menu-items',
@@ -35,6 +36,9 @@ export class PageMenuItemsComponent {
   categoryService = inject(CategoryService);
 
   menuSevice = inject(MenuItemsServiceService);
+  private franchiseService = inject(FranchiseService);
+
+  restaurant_choosen = '';
 
   categories?: getAllCategories[];
   menuItems?: MenuItem[];
@@ -150,6 +154,33 @@ export class PageMenuItemsComponent {
           },
         });
       }
+
+      const restaurant = this.franchiseService.getRestaurant()?.toLowerCase();
+
+      if (restaurant === 'lounge') {
+        this.menuItems?.forEach((item) => {
+          // Increase by 30% => multiply by 1.3 (NOT 0.3)
+          item.priceEn *= 1.3;
+          item.priceAr *= 1.3;
+          item.priceTr *= 1.3;
+          item.discountedPriceEn *= 1.3;
+          item.discountedPriceAr *= 1.3;
+          item.discountedPriceTr *= 1.3;
+        });
+      } else if (restaurant === 'fried') {
+        const shawarmaItems = [
+          'mini shavurma',
+          'shawarma box',
+          'chicken shawerma',
+          'chicken shawerma menu',
+        ];
+
+        this.menuItems?.forEach((item) => {
+          if (shawarmaItems.includes(item.nameEn.toLowerCase())) {
+            item.isVisible = false;
+          }
+        });
+      }
     });
   }
 
@@ -199,14 +230,20 @@ export class PageMenuItemsComponent {
 
   showWarningMessage() {
     if (this.language == 'En') {
-      this.notificationservice.showMessage('Please Remove the item from the cart directly', 'warning');
+      this.notificationservice.showMessage(
+        'Please Remove the item from the cart directly',
+        'warning'
+      );
     } else if (this.language == 'Tr') {
       this.notificationservice.showMessage(
         'Lütfen ürünü doğrudan sepetten kaldırın',
         'warning'
       );
     } else if (this.language == 'Ar') {
-      this.notificationservice.showMessage('يرجى إزالة العنصر من سلة التسوق مباشرة', 'warning');
+      this.notificationservice.showMessage(
+        'يرجى إزالة العنصر من سلة التسوق مباشرة',
+        'warning'
+      );
     }
   }
 
@@ -239,26 +276,27 @@ export class PageMenuItemsComponent {
       }
     );
   }
-  orderOptionsVisible:boolean = false;
-  openOverlayParentID:number = 0;
-  overlayOrder!:OrderModel ;  
+  orderOptionsVisible: boolean = false;
+  openOverlayParentID: number = 0;
+  overlayOrder!: OrderModel;
 
-  @ViewChildren('menuItemCard') menuItemCards!: QueryList<MenuItemCardComponent>;
-  
+  @ViewChildren('menuItemCard')
+  menuItemCards!: QueryList<MenuItemCardComponent>;
+
   // Function to find a specific card by ID
-  getMenuItemCard(id: number): MenuItemCardComponent | undefined {    
-    return this.menuItemCards.toArray().find(card => {
+  getMenuItemCard(id: number): MenuItemCardComponent | undefined {
+    return this.menuItemCards.toArray().find((card) => {
       return card.id() === id;
     });
   }
 
-  handleOrderOptionsOverlay(event:[boolean, number, OrderModel]){
+  handleOrderOptionsOverlay(event: [boolean, number, OrderModel]) {
     this.orderOptionsVisible = event[0];
     this.openOverlayParentID = event[1];
     this.overlayOrder = event[2];
   }
 
-  handleOverlayClosed(event:[boolean, number, OrderModel]) {
+  handleOverlayClosed(event: [boolean, number, OrderModel]) {
     this.orderOptionsVisible = event[0];
     if (event[1]) {
       const card = this.getMenuItemCard(event[1]);

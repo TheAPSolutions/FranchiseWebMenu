@@ -81,9 +81,7 @@ export class MenuItemsServiceService {
   ): Observable<PagedResponse> {
     var resId = this.franchiseService.getRestaurantId();
     return this.http.get<PagedResponse>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/menuitems?pageNumber=${pageNumber}&pageSize=${pageSize}`
+      `${this.apiUrl}MenuItems?pageNumber=${pageNumber}&pageSize=${pageSize}`
     );
   }
 
@@ -102,27 +100,21 @@ export class MenuItemsServiceService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<MenuItem[]>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/menuitems/Category?id=${categoryId}`
+      `${this.apiUrl}MenuItems/Category?id=${categoryId}`
     );
   }
 
   getMenuItem(id: number): Observable<SingleMenuItem> {
     var resId = this.franchiseService.getRestaurantId();
 
-    return this.http.get<SingleMenuItem>(
-      `${this.apiUrl}/restaurants/` + resId + `/menuitems/${id}`
-    );
+    return this.http.get<SingleMenuItem>(`${this.apiUrl}/MenuItems/${id}`);
   }
 
   getMenuItemOrder(): Observable<OrderMenuItem[]> {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http
-      .get<OrderMenuItem[]>(
-        `${this.apiUrl}/restaurants/` + resId + `/menuitems/order`
-      )
+      .get<OrderMenuItem[]>(`${this.apiUrl}/MenuItems/order`)
       .pipe(catchError(this.handleError));
   }
   updateMenuItemOrder(menuItems: OrderMenuItem[]): Observable<any> {
@@ -135,9 +127,7 @@ export class MenuItemsServiceService {
   updateRating(id: number, newRating: number): Observable<any> {
     var resId = this.franchiseService.getRestaurantId();
     return this.http.put<any>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/menuitems/Rating?id=${id}&newRating=${newRating}`,
+      `${this.apiUrl}MenuItems/Rating?id=${id}&newRating=${newRating}`,
       true
     );
   }

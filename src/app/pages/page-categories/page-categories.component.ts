@@ -11,6 +11,7 @@ import { getAllCategories } from '../../models/Categories Requests DTO/get-categ
 import { SubCategoryService } from '../../Services/subcategory.service';
 import { Router } from '@angular/router';
 import { getSubCategory } from '../../models/SubCategoriesDTO/getSubCategoryDTO.model';
+import { FranchiseService } from '../../Services/franchise.service';
 
 @Component({
   selector: 'app-page-categories',
@@ -21,6 +22,18 @@ export class PageCategoriesComponent implements OnInit {
   languageService = inject(LanguageService);
   private categoryService = inject(CategoryService);
   private subCategoryService = inject(SubCategoryService);
+  private franchiseService = inject(FranchiseService);
+
+  restaurant_choosen = '';
+  visibilityMap: Record<string, Record<string, boolean>> = {
+    lounge: {
+      'students menu': false,
+      hookah: true,
+    },
+    fried: {
+      pizza: false,
+    },
+  };
 
   MenuTitle: WritableSignal<string> = signal('');
 
@@ -42,6 +55,12 @@ export class PageCategoriesComponent implements OnInit {
     });
     this.language = this.languageService.getLanguage();
 
+    //subsricbe to restaurant service
+    this.franchiseService.restaurant$.subscribe(() => {
+      this.updateRestaurant();
+    });
+    this.restaurant_choosen = this.franchiseService.getRestaurant();
+
     this.categoryService.getAllCategories().subscribe({
       next: (response) => {
         this.categories = response;
@@ -50,6 +69,17 @@ export class PageCategoriesComponent implements OnInit {
 
         // Sort the categories based on 'ordernumber' from smallest to largest
         this.categories?.sort((a, b) => a.ordernumber - b.ordernumber);
+        const currentMap =
+          this.visibilityMap[this.restaurant_choosen?.toLowerCase()];
+        if (currentMap && this.categories) {
+          this.categories.forEach((cat) => {
+            const visibility = currentMap[cat.nameEn.toLowerCase()];
+            if (visibility !== undefined) {
+              cat.visible = visibility;
+            }
+          });
+        }
+
         this.isLoading = false;
       },
       error: (err) => {
@@ -67,6 +97,10 @@ export class PageCategoriesComponent implements OnInit {
     this.NavLeft = this.languageService.Home;
     this.NavRight = this.languageService.Cart;
     this.language = this.languageService.getLanguage();
+  }
+
+  private updateRestaurant() {
+    this.restaurant_choosen = this.franchiseService.getRestaurant();
   }
 
   checkSubcategories(parentId: number, item: any): void {

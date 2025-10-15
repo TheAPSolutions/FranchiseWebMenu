@@ -30,11 +30,9 @@ export class CategoryService {
 
   getAllCategories(): Observable<getAllCategories[]> {
     var restaurantId = this.franchiseService.getRestaurantId();
-    
+
     return this.http
-      .get<getAllCategories[]>(
-        `${this.apiUrl}/restaurants/` + restaurantId + `/categories`
-      )
+      .get<getAllCategories[]>(`${this.apiUrl}/Category`)
       .pipe(catchError(this.handleError));
   }
 
@@ -45,20 +43,14 @@ export class CategoryService {
     var restaurantId = this.franchiseService.getRestaurantId();
 
     return this.http.get<PagedCategories>(
-      `${this.apiUrl}/restaurants/` +
-        restaurantId +
-        `/categories/paged?page=${pageNumber}&pageSize=${pageSize}`
+      `${this.apiUrl}/Category/paged?page=${pageNumber}&pageSize=${pageSize}`
     );
   }
   getcategory(categoryId: number): Observable<any> {
     var restaurantId = this.franchiseService.getRestaurantId();
 
     return this.http
-      .get<any>(
-        `${this.apiUrl}/restaurants/` +
-          restaurantId +
-          `/categories/${categoryId}`
-      )
+      .get<any>(`${this.apiUrl}/Category/${categoryId}`)
       .pipe(catchError(this.handleError));
   }
 
