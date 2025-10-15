@@ -34,7 +34,7 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
     return this.http
       .get<getAllCategories[]>(
-        `${this.apiUrl}/restaurants/` + resId + `/subcategories`
+        `${this.apiUrl}/SubCategory`
       )
       .pipe(catchError(this.handleError));
   }
@@ -43,7 +43,7 @@ export class SubCategoryService {
 
     return this.http
       .get<getAllCategories[]>(
-        `${this.apiUrl}/restaurants/` + resId + `/subcategories/noParent`
+        `${this.apiUrl}/SubCategory/noParent`
       )
       .pipe(catchError(this.handleError));
   }
@@ -52,7 +52,7 @@ export class SubCategoryService {
 
     return this.http
       .get<getAllCategories[]>(
-        `${this.apiUrl}/restaurants/` + resId + `/subcategories/withParent`
+        `${this.apiUrl}/SubCategory/withParent`
       )
       .pipe(catchError(this.handleError));
   }
@@ -61,9 +61,7 @@ export class SubCategoryService {
 
     return this.http
       .get<getAllCategories[]>(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories/get-by-parent/${categoryId}`
+        `${this.apiUrl}/SubCategory/get-by-parent/${categoryId}`
       )
       .pipe(catchError(this.handleError));
   }
@@ -76,7 +74,7 @@ export class SubCategoryService {
 
     return this.http
       .put(
-        `${this.apiUrl}/restaurants/` + resId + `/subcategories/assign-parent`,
+        `${this.apiUrl}/SubCategory/assign-parent`,
         {
           subCategoryIds,
           parentCategoryId,
@@ -92,9 +90,7 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<PagedCategories>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/subcategories/paged?page=${pageNumber}&pageSize=${pageSize}`
+      `${this.apiUrl}/SubCategory/paged?page=${pageNumber}&pageSize=${pageSize}`
     );
   }
   getcategory(categoryId: number): Observable<any> {
@@ -102,7 +98,7 @@ export class SubCategoryService {
 
     return this.http
       .get<any>(
-        `${this.apiUrl}/restaurants/` + resId + `/subcategories/${categoryId}`
+        `${this.apiUrl}/SubCategory/${categoryId}`
       )
       .pipe(catchError(this.handleError));
   }
@@ -111,7 +107,7 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.put(
-      `${this.apiUrl}/restaurants/` + resId + `/subcategories/remove-parent`,
+      `${this.apiUrl}/SubCategory/remove-parent`,
       {
         subCategoryIds,
       }
@@ -124,9 +120,7 @@ export class SubCategoryService {
 
     return this.http
       .put(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories/update?addAuth=true`,
+        `${this.apiUrl}/SubCategory/update?addAuth=true`,
         model
       )
       .pipe(catchError(this.handleError));
@@ -142,9 +136,7 @@ export class SubCategoryService {
     }
     return this.http
       .put(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories/image?addAuth=true`,
+        `${this.apiUrl}/SubCategory/image?addAuth=true`,
         formData
       )
       .pipe(catchError(this.handleError));
@@ -156,9 +148,7 @@ export class SubCategoryService {
     //console.log('https://localhost:7142/api/Category?id='+ id);
     return this.http
       .delete(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories?id=${id}&?addAuth=true`
+        `${this.apiUrl}/SubCategory?id=${id}&?addAuth=true`
       )
       .pipe(catchError(this.handleError));
   }
@@ -167,9 +157,7 @@ export class SubCategoryService {
 
     return this.http
       .put(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories/hide?id=${id}&?addAuth=true`,
+        `${this.apiUrl}/SubCategory/hide?id=${id}&?addAuth=true`,
         null
       )
       .pipe(catchError(this.handleError));
@@ -199,7 +187,7 @@ export class SubCategoryService {
     // Send the form data
     return this.http
       .post(
-        `${this.apiUrl}/restaurants/` + resId + `/subcategories?addAuth=true`,
+        `${this.apiUrl}/SubCategory?addAuth=true`,
         formData
       )
       .pipe(catchError(this.handleError));
@@ -222,9 +210,7 @@ export class SubCategoryService {
     //console.log('to submit api request', this.request);
     return this.http
       .post(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories/percentage?addAuth=true`,
+        `${this.apiUrl}/SubCategory/percentage?addAuth=true`,
         this.request
       )
       .pipe(
@@ -243,9 +229,7 @@ export class SubCategoryService {
 
     return this.http
       .get<OrderCategoryDTO[]>(
-        `${this.apiUrl}/restaurants/` +
-          resId +
-          `/subcategories/order?addAuth=true`
+        `${this.apiUrl}/SubCategory/order?addAuth=true`
       )
       .pipe(catchError(this.handleError));
   }
@@ -253,9 +237,7 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.post(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/subcategories/order?addAuth=true`,
+      `${this.apiUrl}/SubCategory/order?addAuth=true`,
       categories
     );
   }
@@ -264,9 +246,7 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<getAllCategories[]>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/subcategories/search?query=${query}&?addAuth=true`
+      `${this.apiUrl}/SubCategory/search?query=${query}&?addAuth=true`
     );
   }
 
@@ -274,18 +254,14 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<getAllCategories>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/subcategories/${categoryId}?addAuth=true`
+      `${this.apiUrl}/SubCategory/${categoryId}?addAuth=true`
     );
   }
   getMenuItemsBySubCategoryId(SubCategoryId: number): Observable<MenuItem[]> {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<MenuItem[]>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/subcategories/get-by-subcategory/${SubCategoryId}`
+      `${this.apiUrl}/SubCategory/get-by-subcategory/${SubCategoryId}`
     );
   }
 
@@ -293,9 +269,7 @@ export class SubCategoryService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<boolean | getSubCategory[]>(
-      `${this.apiUrl}/restaurants/` +
-        resId +
-        `/subcategories/has-subcategories/${parentId}`
+      `${this.apiUrl}/SubCategory/has-subcategories/${parentId}`
     );
   }
 

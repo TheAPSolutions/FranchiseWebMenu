@@ -18,7 +18,7 @@ export class menuItemOptionsService {
   getMenuItemOptionsByID(parentId: number): Observable<CombinedOptionsDTO> {
     var resID = this.frachiseService.getRestaurantId();
     return this.http
-      .get<CombinedOptionsDTO>(`${this.apiUrl}//MenuItemsOptions/${parentId}`)
+      .get<CombinedOptionsDTO>(`${this.apiUrl}/MenuItemsOptions/${parentId}`)
       .pipe(catchError(this.handleError));
   }
 
