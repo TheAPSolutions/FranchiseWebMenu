@@ -81,7 +81,7 @@ export class MenuItemsServiceService {
   ): Observable<PagedResponse> {
     var resId = this.franchiseService.getRestaurantId();
     return this.http.get<PagedResponse>(
-      `${this.apiUrl}MenuItems?pageNumber=${pageNumber}&pageSize=${pageSize}`
+      `${this.apiUrl}/MenuItems?pageNumber=${pageNumber}&pageSize=${pageSize}`
     );
   }
 
@@ -100,7 +100,7 @@ export class MenuItemsServiceService {
     var resId = this.franchiseService.getRestaurantId();
 
     return this.http.get<MenuItem[]>(
-      `${this.apiUrl}MenuItems/Category?id=${categoryId}`
+      `${this.apiUrl}/MenuItems/Category?id=${categoryId}`
     );
   }
 
@@ -127,7 +127,7 @@ export class MenuItemsServiceService {
   updateRating(id: number, newRating: number): Observable<any> {
     var resId = this.franchiseService.getRestaurantId();
     return this.http.put<any>(
-      `${this.apiUrl}MenuItems/Rating?id=${id}&newRating=${newRating}`,
+      `${this.apiUrl}/MenuItems/Rating?id=${id}&newRating=${newRating}`,
       true
     );
   }
