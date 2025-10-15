@@ -1,0 +1,88 @@
+<div class="row_item">
+  <div class="imageSide">
+    <picture>
+      <img
+        class="imageSide__img"
+        [src]="imageUrl()"
+        role="presentation"
+        loading="lazy"
+      />
+    </picture>
+
+    <div class="imageSide__Uploadbutton">
+      <app-category-upload-image (image)="onSelectedImage($event)">
+      </app-category-upload-image>
+    </div>
+    <svg class="imageSide__Maxbutton" (click)="Maximize()">
+      <use xlink:href="images/sprites5.svg#icon-eye"></use>
+    </svg>
+  </div>
+
+  <div class="row_item__description">
+    <div class="description">
+      <div class="input_title">{{Description()}}:</div>
+    </div>
+    <div class="descriptions">
+      <div class="input_description">
+        <textarea
+          class="custom-textarea"
+          rows="4"
+          cols="50"
+          wrap="hard"
+          placeholder="Offer Description TR"
+          (keydown)="onInputChange($event, Id())"
+          [(ngModel)]="newDescriptionTr"
+        ></textarea>
+      </div>
+
+      <div class="input_description">
+        <textarea
+          class="custom-textarea"
+          rows="4"
+          cols="50"
+          wrap="hard"
+          placeholder="Offer Description EN"
+          (keydown)="onInputChange($event, Id())"
+          [(ngModel)]="newDescriptionEn"
+        ></textarea>
+      </div>
+
+      <div class="input_description">
+        <textarea
+          class="custom-textarea"
+          rows="4"
+          cols="50"
+          wrap="hard"
+          placeholder="Offer Description AR"
+          (keydown)="onInputChange($event, Id())"
+          [(ngModel)]="newDescriptionAr"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="row_item__sidecontroll">
+    <div (click)="onDelete(Id())">
+      <svg class="icon icon__delete">
+        <use xlink:href="images/sprites5.svg#icon-bin2"></use>
+      </svg>
+    </div>
+
+    @if(isVisible()){
+    <div (click)="onIconClick(Id())">
+      <svg class="icon icon__hide">
+        <use xlink:href="images/sprites5.svg#icon-eye"></use>
+      </svg>
+    </div>
+
+    } @else{
+    <div (click)="onIconClick(Id())">
+      <svg class="icon icon__hide">
+        <use xlink:href="images/sprites5.svg#icon-eye-blocked"></use>
+      </svg>
+    </div>
+
+    }
+    <div></div>
+  </div>
+</div>

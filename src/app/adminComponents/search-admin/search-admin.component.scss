@@ -1,0 +1,31 @@
+@import "../../../sass/abstracts/variables";
+
+.search{
+    background-color: $color-light-yellow2;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+    height: 3.80rem;
+    &__icon{
+        width: 2rem;
+        height: 2rem;
+        fill: $color-yellow;
+        margin-left: 1rem;
+        width: 6rem;
+    }
+
+    &__input{
+        all: unset; /* Resets most default browser styles */
+        box-sizing: border-box; /* Makes width and height calculations more predictable */
+        color: $color-brown; 
+        width: 15rem;
+    }
+
+}
+
+input::placeholder{
+    color: $color-yellow;
+    opacity: 1;
+}

@@ -1,0 +1,163 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+
+.allbranches-website {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  width: 100vw;
+  height: fit-content;
+  padding: 3rem 0rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.allbranchesBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.branchestitle {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xlarge;
+  text-align: center;
+  line-height: 1.5;
+  z-index: 10;
+  text-shadow: $shadow;
+
+
+  @include respond(tab-port2) {
+    font-size: $large;
+  }
+  @include respond(tab-port3) {
+    font-size: $medium2;
+  }
+  @include respond(phone) {
+    font-size: $medium;
+  }
+
+  @include respond(midphone2) {
+    font-size: $small;
+  }
+  @include respond(phone2) {
+    font-size: $xsmall;
+  }
+}
+
+.branchcountries {
+  display: flex;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+  z-index: 10;
+
+}
+
+.imagebranchearth {
+  width: 28rem;
+  height: 32rem;
+  position: relative;
+
+  @include respond(phone) {
+    width: 28rem;
+    height: 32rem;
+  }
+  @include respond(phone5) {
+    width: 25rem;
+    height: 28rem;
+  }
+  @include respond(midphone2) {
+    width: 21rem;
+    height: 24rem;
+  }
+  @include respond(phone2) {
+    width: 18rem;
+    height: 20rem;
+  }
+  @include respond(phoneSmall) {
+    width: 16rem;
+    height: 18rem;
+  }
+}
+
+.earthbranchimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.branchnamewebsite {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $small;
+  cursor: pointer;
+
+  @include respond(midphone2) {
+    font-size: $xsmall;
+  }
+  @include respond(phoneMid) {
+    font-size: $xxsmall;
+  }
+}
+
+.midbranchnamewebsite {
+  left: 10%;
+  line-height: 1;
+
+  @include respond(phone2) {
+    margin-left: -3rem;
+  }
+
+  @include respond(phoneMid) {
+    margin-left: 0rem;
+  }
+}
+
+.branchnameviewallbutton {
+  position: absolute;
+  bottom: 20%;
+  left: 0%;
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xsmall;
+  cursor: pointer;
+  width: fit-content;
+  -webkit-text-stroke: 1px $color-website-brown;
+
+  @include respond(phone) {
+    width: 10rem;
+    line-height: 1.3;
+    text-align: center;
+    bottom: 10%;
+    left: 11%;
+  }
+
+  @include respond(midphone2) {
+    left: 7%;
+    font-size: $xxsmall;
+    width: 8rem;
+  }
+}
+
+.midbranchnameviewallbutton {
+  left: 45%;
+  text-wrap: nowrap;
+
+  @include respond(phone) {
+    text-wrap: wrap;
+    left: 53%;
+  }
+}

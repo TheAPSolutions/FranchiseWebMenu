@@ -1,0 +1,26 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+
+.category_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &__image {
+    width: 15rem;
+    height: 13rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    border: solid 7px $color-light-yellow;
+  }
+
+  &__title {
+    margin-top: 1rem;
+  }
+}
+
+.title_border2--ar {
+  font-family: $font-family-arabic;
+}

@@ -1,0 +1,47 @@
+<div class="payment_methods">
+  @if(language == 'Ar'){
+  <div class="payment_title payment_title--ar">
+    {{ PaymentMethod() }}
+  </div>
+  } @else {
+  <div class="payment_title">
+    {{ PaymentMethod() }}
+  </div>
+  }
+
+  <div class="method">
+    <svg class="icon">
+      <use xlink:href="images/sprites9.svg#icon-banknote"></use>
+    </svg>
+    @if(language == 'Ar'){
+    <div class="text text--ar" (click)="onPayCashier()">{{ PayCashier() }}</div>
+    } @else {
+    <div class="text" (click)="onPayCashier()">{{ PayCashier() }}</div>
+    }
+  </div>
+
+  @if(cashierPay){
+  <div class="phoneVerification">
+    @if(loading){
+    <div class="codeIsBeingSent">
+      {{ SendingCode() }}
+    </div>
+    <div class="loading">
+      <app-loading />
+    </div>
+    } @else {
+    <app-phone-input
+      (phoneNumberEmitted)="handlePhoneNumber($event)"
+      [generatedOtp]="generatedOtp"
+    />
+    }
+  </div>
+  }
+
+  <!--   <div class="method">
+    <svg class="icon">
+      <use xlink:href="images/sprites9.svg#icon-credit-card"></use>
+    </svg>
+    <div class="text" (click)="onPayCard()">{{PayCard()}}</div>
+  </div> -->
+</div>

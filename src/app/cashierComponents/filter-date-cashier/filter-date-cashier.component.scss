@@ -1,0 +1,58 @@
+@import "../../../sass/abstracts/variables";
+
+.date-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 2rem;
+  color: $color-brown;
+  font-family: $font-family-teko;
+}
+
+input[type="date"] {
+  padding: 1rem;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  color: $color-brown;
+  background-color: $color-yellow;
+  font-family: $font-family-teko;
+  min-height: fit-content;
+  line-height: 1.5;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: $color-yellow;
+  box-shadow: 0 0 5px rgba($color-yellow, 0.5);
+  line-height: 1.5;
+  
+}
+
+.date-selector label,
+.date-selector input {
+  text-align: center;
+}
+
+
+.filter_icon{
+    width: 3rem;
+    height: 3rem;
+    fill: $color-yellow;
+}
+
+.filter_container{
+    background-color: $color-light-yellow2;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    box-shadow: $shadow;
+}

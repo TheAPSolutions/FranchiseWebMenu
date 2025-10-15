@@ -1,0 +1,283 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+
+.contactform-website {
+  display: flex;
+  row-gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem 0rem;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+
+  @include respond(tab-land2) {
+    flex-direction: column;
+    height: fit-content;
+  }
+}
+
+.contactformBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 20%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.contactform-website::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.contactformLeft {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xlarge;
+  line-height: 1.5;
+  z-index: 10;
+
+  @include respond(bigdesktop2) {
+    font-size: $large;
+  }
+
+  @include respond(tab-port3) {
+    font-size: $medium2;
+  }
+
+  @include respond(phone) {
+    font-size: $medium;
+  }
+  @include respond(midphone) {
+    font-size: $small;
+  }
+  @include respond(phoneSmall) {
+    font-size: $xsmall;
+  }
+}
+
+.contactformright {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+
+  @include respond(tab-port3) {
+    align-items: center;
+  }
+}
+
+.contactformInput {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contactformInputtitle {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xsmall;
+  text-align: left;
+
+  @include respond(phone) {
+    font-size: $xxsmall;
+  }
+}
+
+.contactformInputfield {
+  all: unset;
+  border: 3px solid $color-white;
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xxsmall;
+
+  @include respond(tab-port) {
+    width: 17.75rem;
+  }
+  @include respond(tab-port2) {
+    width: 16.75rem;
+  }
+
+  @include respond(tab-port3) {
+    width: 80vw;
+  }
+
+  @include respond(phone) {
+    font-size: $xxsmall;
+  }
+
+  @include respond(phone2) {
+    width: 70vw;
+  }
+}
+
+.contactformrow1 {
+  display: flex;
+  gap: 3.5rem;
+
+  @include respond(tab-port3) {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+
+.emailformwebsite {
+  width: 46rem;
+
+  @include respond(tab-port) {
+    width: 41.25rem;
+  }
+
+  @include respond(tab-port2) {
+    width: 39.25rem;
+  }
+
+  @include respond(tab-port3) {
+    width: 80vw;
+  }
+
+  @include respond(phone2) {
+    width: 70vw;
+  }
+}
+
+.contactformrow3 {
+  display: flex;
+  gap: 1rem;
+
+  @include respond(tab-port) {
+    gap: 1.5rem;
+  }
+
+  @include respond(midphone) {
+    gap: 1rem;
+  }
+}
+
+.phonecodeformwebsite {
+  width: 10rem;
+  font-size: $xxsmall;
+
+  @include respond(phone5) {
+    width: 6rem;
+    font-size: $mini;
+  }
+  @include respond(midphone) {
+    width: 4rem;
+  }
+}
+
+.phonecodeformwebsite::placeholder {
+  opacity: 0.5;
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $mini;
+
+  @include respond(midphone) {
+    font-size: $mini;
+  }
+}
+
+.contactformphonenumber {
+  width: 32.5rem;
+
+  @include respond(tab-port) {
+    width: 27.5rem;
+  }
+
+  @include respond(tab-port2) {
+    width: 25.5rem;
+  }
+
+  @include respond(tab-port3) {
+    width: calc(80vw - 13.5rem);
+  }
+
+  @include respond(phone5) {
+    width: calc(80vw - 9.5rem);
+  }
+
+  @include respond(midphone) {
+    width: calc(80vw - 7.5rem);
+  }
+
+  @include respond(phone2) {
+    width: calc(70vw - 7.5rem);
+  }
+}
+.contactformsend {
+  align-self: flex-end;
+}
+.sendcontactform {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xsmall;
+  padding: 1rem 1rem;
+  border: 3px solid $color-white;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include respond(phone) {
+    font-size: $xxsmall;
+  }
+}
+
+.formcontactuswebsite {
+  z-index: 10;
+}
+
+.phonecodeformwebsite option {
+  /* Option styling */
+  padding: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: $mini;
+}
+.phonecodeformwebsite option:hover {
+  background-color: $color-website-bej;
+}
+
+// Add these additional styles for better cross-browser compatibility
+.phonecodeformwebsite {
+  color: #333; // Ensure text is visible
+  background-color: #fff;
+
+  &:focus {
+    border-color: $color-website-bej;
+  }
+
+  option {
+    color: #333;
+    background-color: #fff;
+
+    &:checked,
+    &:focus {
+      background-color: $color-website-bej;
+    }
+  }
+}
+
+.invalid-border {
+  border-color: red !important;
+}

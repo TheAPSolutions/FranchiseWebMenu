@@ -1,0 +1,128 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+.row_container {
+  display: flex;
+  gap: 4rem;
+  margin-left: 4rem;
+}
+
+.imageSide {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  gap: 1rem;
+  &__img {
+    width: 20rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  &__Uploadbutton {
+    scale: 1;
+  }
+
+  &__Maxbutton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    fill: white;
+    width: 3rem;
+    height: 3rem;
+    background-color: $color-yellow;
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
+
+.nameSide {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  &__title {
+    font-size: 2.2rem;
+  }
+
+  &__CatName {
+    width: 10vw;
+    background-color: $color-yellow;
+    color: white;
+    font-family: $font-family-teko;
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+
+  &__CatName::placeholder {
+    color: white;
+  }
+  &__label {
+    margin-bottom: -20px;
+    font-family: $font-family-teko;
+    font-size: 1.75rem;
+    margin-top: -20px;
+  }
+}
+
+.percentageSide {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+
+  gap: 2rem;
+  &__container {
+    display: flex;
+  }
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  fill: $color-yellow;
+  cursor: pointer;
+
+  &__delete {
+    fill: $color-red;
+  }
+}
+
+.iconsSide {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.dark-bg {
+  background-color: rgba($color: lightgrey, $alpha: 0.5);
+}
+
+.light-bg {
+  background-color: white;
+  color: black;
+}
+
+.addSubCategoryButton {
+  background-color: $color-red;
+  width: fit-content;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: $font-family-teko;
+  color: $color-white;
+  font-size: 2rem;
+  height: fit-content;
+  text-wrap: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.side_controller{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+  justify-content: center;}

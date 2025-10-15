@@ -1,0 +1,81 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{ NewOrderPageTitle() }}</div>
+    </div>
+
+    <div class="page_content__container">
+      <div class="page_content__controller">
+        <div class="controller_second">
+          <app-search-admin (SQuery)="catchQuery($event)" />
+          <!-- <button
+            *ngIf="!soundEnabled"
+            (click)="enableSound()"
+            class="enableSoundNotification"
+          >
+            Enable Sound Notifications
+          </button> -->
+        </div>
+
+        <div class="page_nav">
+          <svg
+            class="page_nav__icon"
+            (click)="prevPage()"
+            [class.disabled]="currentPage === 1"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+          </svg>
+          <svg
+            class="page_nav__icon"
+            (click)="nextPage()"
+            [class.disabled]="currentPage === totalPages"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+          </svg>
+          <div class="pageNumber">{{ currentPage }}</div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr class="header">
+            <th>{{ OrderNumber() }}</th>
+            <th>{{ TableNumber() }}</th>
+            <th>{{ Total() }}</th>
+            <th>{{ Time() }}</th>
+            <th>{{ OrderDetails() }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(order of orders; track order.id){
+          <tr>
+            <td>{{ order.id }}</td>
+            @if (order.tableNumber === 1000) {
+            <td>Take Away</td>
+            }@else {
+            <td>{{ order.tableNumber }}</td>
+            }
+            <td>{{ order.totalPrice }}</td>
+            <td>{{ order.createdAt | date : "HH:mm" }}</td>
+            <td>
+              <div class="buttonview">
+                <app-button-cashier-view-details
+                [routerLink]="[
+                  '/cashier/singleOrder',
+                  order.id,
+                  order.tableNumber,
+                  order.createdAt
+                ]"
+              />
+              </div>
+
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+
+      <div class="page_navigation"></div>
+    </div>
+  </div>
+</div>

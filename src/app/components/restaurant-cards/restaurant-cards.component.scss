@@ -1,0 +1,42 @@
+@import "../../../sass/abstracts/variables";
+.page_layout {
+  display: flex;
+  flex-direction: column;
+}
+.page__title {
+  font-size: 2rem;
+  font-family: $font-family-teko;
+  font-weight: 500;
+  color: $color-red;
+}
+
+.language__cards {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.language__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  height: 8rem;
+  background-color: $color-light-yellow2;
+  width: 8rem;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}

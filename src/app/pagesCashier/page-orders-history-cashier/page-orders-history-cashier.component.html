@@ -1,0 +1,75 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{ OrdersHistory() }}</div>
+    </div>
+
+    <div class="page_content__container">
+      <div class="page_content__controller">
+        <app-search-admin (SQuery)="catchQuery($event)" />
+        <div class="page_nav">
+          <svg
+            class="page_nav__icon"
+            (click)="prevPage()"
+            [class.disabled]="currentPage === 1"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+          </svg>
+          <svg
+            class="page_nav__icon"
+            (click)="nextPage()"
+            [class.disabled]="currentPage === totalPages"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+          </svg>
+          <div class="pageNumber">{{ currentPage }}</div>
+        </div>
+        <div class="page_nav">
+          <app-filter-date-cashier (SQuery)="catchQueryDate($event)" />
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr class="header">
+            <th>{{ OrderNumber() }}</th>
+            <th>{{ TableNumber() }}</th>
+            <th>{{ Total() }}</th>
+            <th>{{ Date() }}</th>
+            <th>{{ Time() }}</th>
+            <th>{{ OrderDetails() }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(order of orders; track order.id){
+          <tr>
+            <td>{{ order.id }}</td>
+            @if (order.tableNumber === 1000) {
+            <td>Take Away</td>
+            }@else {
+            <td>{{ order.tableNumber }}</td>
+            }
+            <td>{{ order.totalPrice }}</td>
+            <td>{{ order.createdAt | date : "dd/MM/yyyy" }}</td>
+            <td>{{ order.createdAt | date : "HH:mm" : "UTC+6" }}</td>
+            <td>
+              <app-button-cashier-view-details
+                [routerLink]="[
+                  '/cashier/singleOrderSaved',
+                  order.id,
+                  order.tableNumber,
+                  order.createdAt
+                ]"
+              />
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+
+      <div class="page_navigation"></div>
+    </div>
+  </div>
+</div>
+
+<app-admin-success-message />

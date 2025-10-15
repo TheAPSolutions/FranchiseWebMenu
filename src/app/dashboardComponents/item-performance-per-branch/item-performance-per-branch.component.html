@@ -1,0 +1,79 @@
+<div class="title">{{itemPerformancePerBranch()}}</div>
+<div class="main">
+  <div class="selection_contoller">
+    <!-- Category Selection -->
+    <label for="category" class="dropdown_title">{{selectCategory()}}</label>
+    <select
+      class="dropdown"
+      id="category"
+      [(ngModel)]="selectedCategory"
+      (change)="onCategoryChange()"
+    >
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.nameEn }}
+      </option>
+    </select>
+
+    <!-- Menu Item Selection -->
+    <label for="menuItem" class="dropdown_title">{{selectMenuItem()}}</label>
+    <select
+      class="dropdown"
+      id="menuItem"
+      [(ngModel)]="selectedMenuItem"
+      (change)="fetchSalesData()"
+    >
+      <option *ngFor="let item of menuItems" [value]="item.id">
+        {{ item.nameEn }}
+      </option>
+    </select>
+  </div>
+
+  <div class="selection_contoller">
+    <!-- Month Selection -->
+    <label for="month" class="dropdown_title">{{selectMonth()}}</label>
+    <select
+      class="dropdown"
+      id="month"
+      [(ngModel)]="selectedMonth"
+      (change)="fetchSalesData()"
+    >
+      <option *ngFor="let month of months" [value]="month.id">
+        {{ month.name }}
+      </option>
+    </select>
+
+    <!-- Year Selection -->
+    <label for="year" class="dropdown_title">{{selectYear()}}</label>
+    <select
+      class="dropdown"
+      id="year"
+      [(ngModel)]="selectedYear"
+      (change)="fetchSalesData()"
+    >
+      <option *ngFor="let year of years" [value]="year">
+        {{ year }}
+      </option>
+    </select>
+  </div>
+
+  @if(chartData.length > 0){
+  <div class="chart-container">
+    <ngx-charts-bar-vertical
+      [view]="[700, 400]"
+      [scheme]="colorScheme"
+      [results]="chartData"
+      [gradient]="gradient"
+      [xAxis]="xAxisLabel"
+      [yAxis]="yAxisLabel"
+      [legend]="true"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [showGridLines]="false"
+      xAxisLabel="Branch"
+      yAxisLabel="Quantity Sold Per Branch"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  } @else {
+  <p class="nodata">{{noSalesDataAvailable()}}</p>}
+</div>

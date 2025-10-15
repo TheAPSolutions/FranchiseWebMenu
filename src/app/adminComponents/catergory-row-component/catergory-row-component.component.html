@@ -1,0 +1,120 @@
+<div
+  class="row_container"
+  [ngClass]="{ 'dark-bg': !visible(), 'light-bg': visible() }"
+>
+  <div class="imageSide">
+    <img class="imageSide__img" [src]="catImage()" />
+    <div class="imageSide__Uploadbutton">
+      <app-category-upload-image (image)="onSelectedImage($event)">
+      </app-category-upload-image>
+    </div>
+    <svg class="imageSide__Maxbutton" (click)="Maximize()">
+      <use xlink:href="images/sprites5.svg#icon-eye"></use>
+    </svg>
+  </div>
+  <div class="nameSide">
+    <div class="input_title">{{ CategoryNameAdmin() }}</div>
+    <label class="nameSide__label">En</label>
+    <input
+      class="nameSide__CatName"
+      placeholder="{{ NameEn() }}"
+      [(ngModel)]="newNameEn"
+      (keydown.enter)="onEnter('NameEn', newNameEn)"
+    />
+    <label class="nameSide__label">Tr</label>
+    <input
+      class="nameSide__CatName"
+      placeholder="{{ NameTr() }}"
+      [(ngModel)]="newNameTr"
+      (keydown.enter)="onEnter('NameTr', newNameTr)"
+    />
+    <label class="nameSide__label">Ar</label>
+    <input
+      class="nameSide__CatName"
+      placeholder="{{ NameAr() }}"
+      [(ngModel)]="newNameAr"
+      (keydown.enter)="onEnter('NameAr', newNameAr)"
+    />
+  </div>
+
+  <div class="percentageSide">
+    <div class="percentageSide__header">
+      <div class="input_title">{{ PercentagePrice() }}</div>
+    </div>
+    <div class="percentageSide__container">
+      <div class="percentageSide__increase">
+        <app-percentage-box
+          [type]="'increase'"
+          [id]="id()"
+          [entity]="'item'"
+          (errorMessage)="handleError($event)"
+          (addedPercentage)="handlepercentageApplied()"
+        />
+      </div>
+
+      <div class="percentageSide__decrease">
+        <app-percentage-box
+          [type]="'decrease'"
+          [id]="id()"
+          [entity]="'item'"
+          (errorMessage)="handleError($event)"
+          (addedPercentage)="handlepercentageApplied()"
+        />
+      </div>
+    </div>
+    <div class="percentageSide__header">
+      <div class="input_title">{{ PercentageDiscountPrice() }}</div>
+    </div>
+    <div class="percentageSide__container">
+      <div class="percentageSide__increase">
+        <app-percentage-box
+          [type]="'increase'"
+          [id]="id()"
+          [entity]="'indirim'"
+          (errorMessage)="handleError($event)"
+          (addedPercentage)="handlepercentageApplied()"
+        />
+      </div>
+      <div class="percentageSide__decrease">
+        <app-percentage-box
+          [type]="'decrease'"
+          [id]="id()"
+          [entity]="'indirim'"
+          (errorMessage)="handleError($event)"
+          (addedPercentage)="handlepercentageApplied()"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="side_controller">
+    <div class="iconsSide">
+      <svg class="icon icon__delete" (click)="Delete()">
+        <use xlink:href="images/sprites5.svg#icon-bin2"></use>
+      </svg>
+
+      <svg class="icon icon__hide" (click)="toggleVisibility()">
+        @if(visible()){
+        <use xlink:href="images/sprites5.svg#icon-eye"></use>
+        }@else {
+        <use xlink:href="images/sprites5.svg#icon-eye-blocked"></use>
+        }
+      </svg>
+
+      <svg class="icon icon__list" [routerLink]="'/admin/orderCategories'">
+        <use xlink:href="images/sprites5.svg#icon-list-ul"></use>
+      </svg>
+    </div>
+
+    <button class="addSubCategoryButton" (click)="addSubCategory()">
+      {{addSubCategoryLanguage()}}
+    </button>
+  </div>
+
+  @if(ToggleSubCategory && id() !== undefined) {
+  <app-add-sub-category-popup
+    (isVisible)="addSubCategory()"
+    [parentId]="id()"
+  />
+  }
+</div>
+<hr />

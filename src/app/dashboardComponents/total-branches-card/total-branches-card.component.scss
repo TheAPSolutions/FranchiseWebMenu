@@ -1,0 +1,108 @@
+@import "../../../sass/abstracts/variables";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 3rem;
+  border: none;
+  width: 25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: none;
+  width: 25rem;
+}
+
+.card_title {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 2.75rem;
+  margin-top: 2rem;
+  text-wrap: nowrap;
+}
+
+.main {
+  width: 25rem;
+  height: 15rem;
+  background-color: $color-white;
+  box-shadow: $shadow;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: $font-family-teko;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  color: $color-dark-gray;
+  border-top-left-radius: 8%; /* Adjust the value as needed */
+  border-top-right-radius: 8%; /* Adjust the value as needed */
+
+  &__value {
+    font-size: 5rem;
+    font-weight: 700;
+  }
+
+  &__month {
+    font-size: 2.5rem;
+  }
+
+  &__label {
+    height: 1.5rem;
+    background-color: $color-dark-gray;
+    width: 25rem;
+    justify-self: flex-end;
+    margin-top: -2rem;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+  margin-top: -1rem;
+}
+
+.section {
+  background-color: $color-white;
+  color: $color-dark-gray;
+  box-shadow: $shadow;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: $font-family-teko;
+  width: 7.5rem;
+  height: 5rem;
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__branch {
+    font-size: 1rem;
+  }
+}
+
+.unit{
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.mini_unit{
+  font-size: .75rem;
+  font-weight: 500;
+}

@@ -1,0 +1,55 @@
+<div class="outerbox">
+  <section
+    class="carousel"
+    [style.aspect-ratio]="aspectRatio"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="Image Carousel"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+    (touchstart)="onTouchStart($event)"
+    (touchend)="onTouchEnd($event)"
+  >
+    <div class="track">
+      @for (img of images; track $index; let i = $index) {
+      <div
+        class="slide"
+        [class.active]="i === index()"
+        [style.transform]="'translateX(' + (i - index()) * 100 + '%)'"
+        [attr.aria-hidden]="i === index() ? 'false' : 'true'"
+      >
+        <img
+          [src]="img.src"
+          [alt]="img.alt || 'Slide ' + (i + 1)"
+          class="media"
+          decoding="async"
+          loading="lazy"
+        />
+        @if (img.caption) {
+        <div class="caption">{{ img.caption }}</div>
+        }
+      </div>
+      }
+    </div>
+
+    @if (showArrows && images.length > 1) {
+    <button class="nav prev" (click)="prev()" aria-label="Previous slide">
+      ‹
+    </button>
+    <button class="nav next" (click)="next()" aria-label="Next slide">›</button>
+    } @if (showIndicators && images.length > 1) {
+    <div class="dots" role="tablist">
+      @for (_ of images; track $index; let i = $index) {
+      <button
+        class="dot"
+        [class.active]="i === index()"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+        role="tab"
+        [attr.aria-selected]="i === index()"
+      ></button>
+      }
+    </div>
+    }
+  </section>
+</div>

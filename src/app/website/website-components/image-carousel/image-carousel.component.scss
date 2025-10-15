@@ -1,0 +1,93 @@
+@import "../../../../sass/abstracts/variables";
+.outerbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 40rem;
+  /* aspect-ratio controlled by [style.aspect-ratio] */
+}
+.track {
+  position: relative;
+  height: 40rem;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  transition: transform 480ms ease;
+  display: grid;
+  place-items: center;
+  height: 40rem;
+}
+img.media {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover; /* This is the fix. */
+  object-position: center 70%; /* This centers the cropped image */
+}
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+}
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+.nav.prev {
+  left: 10px;
+}
+.nav.next {
+  right: 10px;
+}
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.dot.active,
+.dot:hover {
+  background: rgba(255, 255, 255, 0.95);
+}

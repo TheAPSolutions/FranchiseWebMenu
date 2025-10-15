@@ -1,0 +1,272 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+
+.row_item {
+  padding: 1rem;
+  padding-right: 0;
+  display: flex;
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    align-items: flex-start;
+    margin-left: 2rem;
+  }
+
+  &__prices {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    row-gap: .9rem;
+    align-items: flex-start;
+    margin-left: 1.5rem;
+    margin-top: -1.5rem;
+  }
+
+  &__sidecontroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+.icons{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.menuOptionsButton{
+  border: none;
+  background-color: $color-red;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 1.75rem;
+
+}
+.menuOptionsButton--ar{
+  border: none;
+  background-color: $color-red;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 1.75rem;
+  font-family: $font-family-arabic;
+
+}
+
+.drop_down_mid {
+  transform: scaleX(0.85);
+  margin-left: -1.4rem;
+  z-index: 12;
+}
+
+.item_input {
+  all: unset; /* Resets most default browser styles */
+  box-sizing: border-box; /* Makes width and height calculations more predictable */
+  font-size: 2rem;
+  background-color: $color-yellow;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: $font-family-teko;
+  color: $color-brown;
+  padding-left: 1rem;
+
+  &--small {
+    width: 8rem;
+    background-color: $color-light-yellow2;
+  }
+  &--mid {
+    width: 17rem;
+  }
+  &--price{
+    width: 15rem;
+    background-color: $color-light-yellow2;
+  }
+}
+.studentPrice{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.name_input {
+  all: unset; /* Resets most default browser styles */
+  box-sizing: border-box; /* Makes width and height calculations more predictable */
+  font-size: 2rem;
+  background-color: $color-yellow;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: $font-family-teko;
+  color: $color-brown;
+  padding-left: 1rem;
+
+  &--small {
+    width: 8rem;
+    background-color: $color-light-yellow2;
+  }
+  &--mid {
+    width: 16rem;
+  }
+}
+
+.imageuploading {
+  margin-right: 1.5rem;
+}
+
+.input_description {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.textarea-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Custom Textarea Styles */
+.custom-textarea {
+  width: 24vw;
+  height: 20rem;
+  padding: 1rem;
+  border: none;
+
+  /* Fonts and Colors */
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  color: $color-brown;
+  background-color: $color-light-yellow2;
+  line-height: 1.5;
+
+  /* Border and Shadow */
+  outline: none; /* Removes the blue outline on focus */
+
+  /* Placeholder Styling */
+  ::placeholder {
+    color: $color-brown;
+    font-style: italic;
+  }
+
+  /* Smooth Scrolling for Long Text */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-yellow #f9f9f9;
+
+  /* Resizing Option */
+  resize: none;
+}
+.custom-textarea::placeholder {
+  color: $color-brown;
+}
+/* Hover Effects */
+.custom-textarea:hover {
+  border-color: $color-brown;
+}
+
+.name_input::placeholder {
+  color: $color-white;
+  opacity: 1;
+}
+
+.item_input::placeholder {
+  color: $color-brown;
+  opacity: 1;
+}
+
+.price_language {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.product_name {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  z-index: 1;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  fill: $color-yellow;
+
+  &__delete {
+    fill: $color-red;
+  }
+}
+
+.line {
+  border: none;            /* Remove default border */
+  height: 2px;            /* Set the height */
+  background-color: #000; /* Set color */
+  margin: 20px 0;         /* Set spacing above and below */
+}
+
+.imageSide{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  gap: 1rem;
+  &__img{
+      width: 20rem;
+      height: 15rem;
+      object-fit: cover;
+      border-radius: 20px;
+  }
+
+  &__Uploadbutton{
+      scale: 1;
+  }
+
+  &__Maxbutton{
+      position: absolute;
+      top: 0;
+      right: 0;
+      fill: white;
+      width: 3rem;
+      height: 3rem;
+      background-color: $color-yellow;
+      padding: 5px;
+      border-radius: 10px;
+  }
+}
+
+.input_title--2{
+  margin-top: 1rem;
+}
+
+.numberOfOrdering{
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+  text-wrap: nowrap;
+}
+
+.order_number{
+  font-family: $font-family-teko;
+  color: $color-brown;
+  font-size: 2rem;
+  margin-top: 1rem;
+
+}
+
+
+

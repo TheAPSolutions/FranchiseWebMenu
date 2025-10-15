@@ -1,0 +1,45 @@
+<div class="sidebar">
+  <ul class="side-nav">
+    <li
+      class="side-nav__item"
+      (click)="setActive('NewOrders')"
+      [class.side-nav__item--active]="activeLink === 'NewOrders'"
+    >
+      <a [routerLink]="'/cashier/newOrders'" class="side-nav__link">
+        <span class="side-nav__text">{{ NewOrders() }}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('readyOrders')"
+      [class.side-nav__item--active]="activeLink === 'readyOrders'"
+    >
+      <a [routerLink]="'/cashier/readyOrders'" class="side-nav__link">
+        <span class="side-nav__text">{{ ReadyOrders() }}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('TodaysOrders')"
+      [class.side-nav__item--active]="activeLink === 'TodaysOrders'"
+    >
+      <a [routerLink]="'/cashier/todaysOrders'" class="side-nav__link">
+        <span class="side-nav__text">{{ TodaysOrder() }}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('OrdersHistory')"
+      [class.side-nav__item--active]="activeLink === 'OrdersHistory'"
+    >
+      <a [routerLink]="'/cashier/ordersHistory'" class="side-nav__link">
+        <span class="side-nav__text">{{ OrdersHistory() }}</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="legal">Hungry Birds</div>
+</div>

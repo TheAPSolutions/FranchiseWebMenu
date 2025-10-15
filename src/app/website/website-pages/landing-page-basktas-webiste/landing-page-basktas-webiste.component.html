@@ -1,0 +1,192 @@
+<!-- Meta ve Title için head kısmı -->
+<head>
+  <title>Beşiktaş Hamburger ve Fast Food</title>
+  <meta
+    name="description"
+    content="Beşiktaş hamburger ve fastfood deneyimini Hungry Birds’te yaşayın. Taze burgerler, çıtır fried chicken ve vejetaryen seçeneklerle hızlı servis"
+  />
+</head>
+<div class="besktaslandingpage">
+  <!--Desktop Version Hero-->
+  <div class="hero_desktop">
+    <div class="hero_desktop__brand_name_container">
+      <h1 class="hero_desktop__brand_name_container__brandname">
+        Hungry <br />
+        Birds
+      </h1>
+
+      <h3 class="hero_desktop__brand_name_container__slogan">
+        Beşiktaş’ın <br />
+        En İyi Burgeri
+      </h3>
+    </div>
+
+    <div class="hero_desktop__hero-burger_container">
+      <div class="hero_desktop__hero-burger_container__hero-burger">
+        <img loading="lazy" src="images/website-images/landingpageBurger.png" />
+      </div>
+
+      <div class="hero_desktop__hero-burger_container__action_buttons">
+        <button
+          class="hero_desktop__hero-burger_container__action_buttons__hero_button"
+          (click)="odernow()"
+        >
+          {{ "landing-page.order-now" | translate }} &#8594;
+        </button>
+        <button
+          class="hero_desktop__hero-burger_container__action_buttons__hero_button hero_desktop__hero-burger_container__action_buttons__hero_button--secondary"
+          (click)="menu()"
+        >
+          Menu &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--Mobile Version Hero-->
+  <h1 class="brandname">
+    Hungry <br />
+    Birds
+  </h1>
+
+  <h3 class="slogan">
+    Beşiktaş’ın <br />
+    En İyi Burgeri
+  </h3>
+
+  <div class="hero-burger">
+    <img loading="lazy" src="images/website-images/landingpageBurger.png" />
+  </div>
+
+  <div class="action_buttons">
+    <button class="action_buttons__hero_button" (click)="odernow()">
+      {{ "landing-page.order-now" | translate }} &#8594;
+    </button>
+    <button
+      class="action_buttons__hero_button action_buttons__hero_button--secondary"
+      (click)="menu()"
+    >
+      Menu &#8594;
+    </button>
+  </div>
+
+<!--   <div class="h1sectiondesktop">
+    <h1 class="h1sectiondesktop__h1">
+      Beşiktaş Gece Burgercisi <br />
+      Gece Açık Hamburger ve Fast Food Keyfi
+    </h1>
+    <p class="h1sectiondesktop__p">
+      Beşiktaş, gündüzleri olduğu kadar geceleri de hareketli bir semt.
+      Özellikle geç saatlerde karnı acıkanların ilk tercihi
+      <strong> Beşiktaş Gece Burgercisi Hungry Birds</strong> oluyor.
+      <br /><br />
+      Eğlence sonrası hızlı bir atıştırmalık, gece çalışırken doyurucu bir yemek
+      ya da arkadaşlarla uzun sohbetlerin arasında lezzetli bir mola
+      arıyorsanız, Hungry Birds’ün <strong>gece hamburgercisi</strong> konsepti
+      tam size göre.
+    </p>
+  </div> -->
+
+  <!--Google Reviews-->
+  <div class="embedsocial-widget" data-ref="5303c1f4e00c35548e54a6f9f2e5a73d">
+    <a
+      href="https://embedsocial.com/google-reviews-widget/"
+      title="Add Google reviews on a website"
+      target="_blank"
+      class="powered-by-es es-summary-slider"
+    >
+      <img
+        src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp"
+        alt="EmbedSocial"
+      />
+      <span> Google reviews widget </span>
+    </a>
+  </div>
+
+<!--   <div class="h1sectiondesktop">
+    <h2 class="h1sectiondesktop__h1 h1sectiondesktop__h1--v2">
+      Hungry Birds’te Fast Food <br />
+      Yeniden Yorumlanıyor
+    </h2>
+    <p class="h1sectiondesktop__p">
+      Hungry Birds, <strong>İstanbul’da doğmuş</strong> bir marka olarak
+      <strong>Fransız mutfağının zarafetinden ilham</strong> alıyor. Burada
+      hızlı servis, sofistike lezzetlerle birleşiyor. Sıradan fast food
+      anlayışının ötesine geçerek, her lokmada rafine bir deneyim sunuyoruz.
+    </p>
+  </div> -->
+
+  <div class="hero-sale">
+    <div class="hero-sale__image_container">
+      <img loading="lazy" src="images/website-images/landingpageSale.png" />
+    </div>
+  </div>
+
+<!--   <div class="centeredSection">
+    <div class="centeredSection__text">
+      Taze, Temiz ve Kaliteli Malzeme Taahhüdümüz
+    </div>
+  </div> -->
+
+  <!-- some-feature.component.html -->
+  <image-carousel
+    [images]="images"
+    [autoPlay]="true"
+    [intervalMs]="3000"
+    [loop]="true"
+    [showArrows]="true"
+    [showIndicators]="true"
+    aspectRatio="16/9"
+  />
+
+<!--   <div class="centeredSection centeredSection--v2">
+    <div class="centeredSection__text">
+      Hungry Birds’te her ürün üç temel ilkeye dayanıyor:
+    </div>
+  </div> -->
+
+  <app-boxes-layout [headers]="headers"></app-boxes-layout>
+
+  <div class="text2">
+    No One <br />
+    Leaves <br />
+    Hungry
+  </div>
+
+<!--   <div class="paragraph">
+    <p>
+      Kıtır, canlı sebzelerden özenle seçilmiş etlere ve el yapımı ekmeklere
+      kadar her unsur; <strong>saflık, hijyen ve lezzet</strong> için seçiliyor.
+      Bu bağlılık sayesinde her burger hem <strong>besleyici</strong> hem de
+      unutulmaz bir tat deneyimi sunuyor. <br /><br />
+
+      • <strong>Taze:</strong> Günlük ve doğal malzemeler <br />
+      • <strong>Temiz:</strong> Hijyen standartlarına uygun hazırlık <br />
+      • <strong>Kaliteli:</strong> El yapımı ekmekler ve özenle seçilmiş etler
+    </p>
+  </div>
+
+  <div class="h1sectiondesktop">
+    <h3 class="h1sectiondesktop__h1 h1sectiondesktop__h1--v2">
+      Beşiktaş Gece Hamburgercisi ile Lezzet Dolu Bir Deneyim
+    </h3>
+    <p class="h1sectiondesktop__p">
+      Gece boyunca sıcak ve taze yemek bulmak çoğu zaman zor olabilir. İşte bu
+      noktada devreye Beşiktaş gece hamburgercisi Hungry Birds olarak biz
+      giriyoruz. Menüdeki her burger, özenle seçilen malzemelerle ve özel
+      tariflerle hazırlanıyor. Sadece açlığınızı gidermekle kalmıyor, aynı
+      zamanda size unutulmaz bir gece hamburger deneyimi sunuyoruz.
+    </p>
+  </div> -->
+  <!--   <div class="header_action_button">
+    <button
+      class="action_buttons__hero_button action_buttons__hero_button--header hero_desktop__hero-burger_container__action_buttons__hero_button hero_desktop__hero-burger_container__action_buttons__hero_button--header"
+      (click)="orderNow()"
+    >
+      {{ "landing-page.order-now" | translate }}
+    </button>
+  </div> -->
+
+  <app-footer-website />
+  <app-cta-button-website Branch="" />
+</div>

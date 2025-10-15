@@ -1,0 +1,75 @@
+<div class="overlay">
+  @if(language.toLowerCase() ==="ar"){
+  <div class="title title--ar">{{ selectOptionsTitle() }}</div>
+  }@else {
+  <div class="title">{{ selectOptionsTitle() }}</div>
+  } @if (hasDrinks) {
+  <div class="header">
+    @if(language.toLowerCase() ==="ar"){
+    <div class="ar">{{ DrinksTitle() }}:</div>
+    }@else {
+    {{ DrinksTitle() }}: }
+
+    <div class="selectedOption">{{ selectedDrink.name }}</div>
+  </div>
+  @if (options.drinkOptions.length <= 0 || !options.drinkOptions) {
+  <app-loading />
+  }@else {
+  <div class="wrapper">
+    @for (drink of options.drinkOptions; track $index) {
+    <div class="cards" (click)="onDrinksClicked(drink)">
+      <img loading="lazy" [src]="drink.image" />
+      @switch (language.toLowerCase()) { @case ('en') {
+      <div class="cards__title">{{ drink.nameEn }}</div>
+      } @case ('tr') {
+      <div class="cards__title">{{ drink.nameTr }}</div>
+
+      } @case ('ar') {
+      <div class="cards__title cards__title--ar">{{ drink.nameAr }}</div>
+
+      } }
+    </div>
+
+    }
+  </div>
+  } } @if (hasFood) {
+  <div class="header">
+    @if(language.toLowerCase() ==="ar"){
+    <div class="ar">{{ FoodTitle() }}:</div>
+    }@else {
+    {{ FoodTitle() }}: }
+
+    <div class="selectedOption">{{ selectedFood.name }}</div>
+  </div>
+  @if (options.foodOptions.length <= 0 || !options.foodOptions) {
+  <app-loading />
+  }@else {
+  <div class="wrapper">
+    @for (food of options.foodOptions; track $index) {
+    <div class="cards" (click)="onFoodClicked(food)">
+      <img loading="lazy" [src]="food.image" />
+      @switch (language.toLowerCase()) { @case ('en') {
+      <div class="cards__title">{{ food.nameEn }}</div>
+      } @case ('tr') {
+      <div class="cards__title">{{ food.nameTr }}</div>
+
+      } @case ('ar') {
+      <div class="cards__title cards__title--ar">{{ food.nameAr }}</div>
+
+      } }
+    </div>
+    }
+  </div>
+  } }
+  <div class="button" (click)="onSave()">
+    <button>{{ saveChoiceTitle() }}</button>
+  </div>
+
+  @if (language.toLowerCase() === "ar") {
+  <div class="close--ar" (click)="onClose()">X</div>
+
+  }@else {
+  <div class="close" (click)="onClose()">X</div>
+  }
+</div>
+<app-success-message />

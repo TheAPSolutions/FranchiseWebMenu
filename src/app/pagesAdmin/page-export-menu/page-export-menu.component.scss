@@ -1,0 +1,92 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+.page_layout{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__container{
+        background-color: rgba($color: #f7d383, $alpha: 0.24);
+        height: 80vh;
+        &__header{
+            font-size: 3.5rem;
+            color: $color-brown;
+            margin-bottom: 2rem;
+            margin-left: 2rem;
+            font-family: $font-family-teko;
+            margin-top: 2rem;
+        }
+        &__body{
+            background-color: white;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            height: 50vh;
+
+            &__ListContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 2rem;
+                &__item-box{
+                    width: 25vw;
+                    padding-top: 0.75rem;
+                    padding-bottom: 0.75rem;
+                    background-color: #f7d383;
+                    font-family: $font-family-teko;
+                    font-size: 2rem;
+                    cursor: move;
+                    text-align: center;
+                }
+
+            }
+            &__drop{
+                padding-top: 1rem;
+                margin-left: 1rem;
+                margin-bottom: 2rem;
+            }
+            &__CategoryName{
+                background-color: $color-red;
+                color: white;
+                font-family: $font-family-teko;
+                font-size: 2.5rem;
+                height: 5vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+            }
+        }
+  
+    }
+}
+
+.navigation__icon{
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: white;
+}
+.exportButton{
+    width: 30rem;
+    background-color: $color-brown;
+    color: white;
+    border: none;
+    margin-top: 2rem;
+    font-family: $font-family-teko;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &--green{
+        background-color: green;
+    }
+}
+
+.export{
+    display: flex;
+    gap: 2rem;
+    justify-self: center;
+
+}

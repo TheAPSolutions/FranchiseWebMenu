@@ -1,0 +1,240 @@
+<div class="row_item">
+  <div class="imageSide">
+    <img class="imageSide__img" [src]="imageUrl()" />
+    <div class="imageSide__Uploadbutton">
+      <app-category-upload-image (image)="onSelectedImage($event)">
+      </app-category-upload-image>
+    </div>
+    <svg class="imageSide__Maxbutton" (click)="Maximize()">
+      <use xlink:href="images/sprites5.svg#icon-eye"></use>
+    </svg>
+    <div class="numberOfOrdering">
+      <div class="input_title input_title--2">{{ NumberOrder() }}:</div>
+      <div class="order_number">{{ newNumberOfTimesOrdered() }}</div>
+    </div>
+  </div>
+
+  <div class="row_item__name">
+    <div class="input_title">{{ Category() }}:</div>
+    <div class="drop_down_mid">
+      <app-dropdown-admin-categories
+        [input_dropdown_title]="categoryTitle()"
+        [input_dropdown_options]="categories"
+        (selectedItem)="onCategorySelect($event)"
+        (keydown)="onInputChange($event, Id())"
+      />
+    </div>
+
+    <div class="product_name">
+      <div class="input_title">{{ ProductName() }}:</div>
+      <div>
+        <app-dropdown-mini-admin
+          [input_dropdown_title]="'TR'"
+          [input_dropdown_options]="['TR', 'EN', 'AR']"
+          (select)="onNameLanguageSelect($event)"
+        />
+      </div>
+    </div>
+    @if(selectedLanguageName === 'TR'){
+    <input
+      type="text"
+      class="name_input item_input--mid"
+      placeholder="product name"
+      (keydown)="onInputChange($event, Id())"
+      [(ngModel)]="newNameTr"
+    />
+    } @else if (selectedLanguageName === 'EN'){
+    <input
+      type="text"
+      class="name_input item_input--mid"
+      placeholder="product name"
+      (keydown)="onInputChange($event, Id())"
+      [(ngModel)]="newNameEn"
+    />
+    } @else if(selectedLanguageName === 'AR'){
+    <input
+      type="text"
+      class="name_input item_input--mid"
+      placeholder="product name"
+      (keydown)="onInputChange($event, Id())"
+      [(ngModel)]="newNameAr"
+    />
+    }
+  </div>
+
+  <div class="row_item__prices">
+    <div class="input_title">{{ Prices() }}:</div>
+    <div class="price_language">
+      <input
+        type="text"
+        class="item_input item_input--small"
+        placeholder="TR"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newPriceTr"
+      />
+      <input
+        type="text"
+        class="item_input item_input--small"
+        placeholder="Indirim"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newDiscountedPriceTr"
+      />
+    </div>
+
+    <div class="price_language">
+      <input
+        type="text"
+        class="item_input item_input--small"
+        placeholder="EN"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newPriceEn"
+      />
+      <input
+        type="text"
+        class="item_input item_input--small"
+        placeholder="Indirim"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newDiscountedPriceEn"
+      />
+    </div>
+
+    <div class="price_language">
+      <input
+        type="text"
+        class="item_input item_input--small"
+        placeholder="AR"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newPriceAr"
+      />
+      <input
+        type="text"
+        class="item_input item_input--small"
+        placeholder="Indirim"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newDiscountedPriceAr"
+      />
+    </div>
+
+    <div class="studentPrice">
+      <div class="input_title">{{ StudentPriceLanguage() }}:</div>
+      <input
+        type="text"
+        class="item_input item_input--price"
+        placeholder="Student Price"
+        name="StudentPrice"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newStudentPrice"
+      />
+    </div>
+  </div>
+
+  <div class="row_item__description">
+    <div class="description">
+      <div class="input_title">{{ Description() }}:</div>
+      <app-dropdown-mini-admin
+        [input_dropdown_title]="'TR'"
+        [input_dropdown_options]="['TR', 'EN', 'AR']"
+        (select)="onDescriptionLanguageSelect($event)"
+      />
+    </div>
+    @if(selectedLanguageDescription === 'TR'){
+    <div class="input_description">
+      <textarea
+        class="custom-textarea"
+        rows="4"
+        cols="50"
+        wrap="hard"
+        placeholder="Ürün Açıklaması"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newDescriptionTr"
+      ></textarea>
+    </div>
+    } @else if(selectedLanguageDescription === 'EN'){
+    <div class="input_description">
+      <textarea
+        class="custom-textarea"
+        rows="4"
+        cols="50"
+        wrap="hard"
+        placeholder="Item Description"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newDescriptionEn"
+      ></textarea>
+    </div>
+    } @else if(selectedLanguageDescription === 'AR'){
+    <div class="input_description">
+      <textarea
+        class="custom-textarea"
+        rows="4"
+        cols="50"
+        wrap="hard"
+        placeholder="وصف المادة"
+        (keydown)="onInputChange($event, Id())"
+        [(ngModel)]="newDescriptionAr"
+      ></textarea>
+    </div>
+    }
+  </div>
+
+  <div class="row_item__sidecontroll">
+    <div class="icons">
+      <div (click)="onDelete(Id())">
+        <svg class="icon icon__delete">
+          <use xlink:href="images/sprites5.svg#icon-bin2"></use>
+        </svg>
+      </div>
+
+      @if(newisVisible()){
+      <div (click)="onIconClick(Id())">
+        <svg class="icon icon__hide">
+          <use xlink:href="images/sprites5.svg#icon-eye"></use>
+        </svg>
+      </div>
+
+      } @else{
+      <div (click)="onIconClick(Id())">
+        <svg class="icon icon__hide">
+          <use xlink:href="images/sprites5.svg#icon-eye-blocked"></use>
+        </svg>
+      </div>
+
+      }
+      <div>
+        <svg
+          class="icon icon__list"
+          [routerLink]="['/admin/orderItems/', newcategoryId()]"
+        >
+          <use xlink:href="images/sprites5.svg#icon-list-ul"></use>
+        </svg>
+      </div>
+    </div>
+    @if (menuHasOptions) { @if (language.toLowerCase() ==="ar") {
+    <button
+      title="'manage menu Options'"
+      class="menuOptionsButton--ar"
+      (click)="onManageOptionsClicked()"
+    >
+      {{ manageOptionsTitle }}
+    </button>
+    }@else {
+    <button
+      title="'manage menu Options'"
+      class="menuOptionsButton"
+      (click)="onManageOptionsClicked()"
+    >
+      {{ manageOptionsTitle }}
+    </button>
+    }
+    <app-check-box
+      [input_checkbox_title]="hasOptionsTitle"
+      (checkboxChange)="toggleHasOptions($event)"
+      [checked]="true"
+    />
+    } @else {
+    <app-check-box
+      [input_checkbox_title]="hasOptionsTitle"
+      (checkboxChange)="toggleHasOptions($event)"
+    />
+    }
+  </div>
+</div>

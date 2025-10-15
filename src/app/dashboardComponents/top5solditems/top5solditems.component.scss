@@ -1,0 +1,23 @@
+@import "../../../sass/abstracts/variables";
+
+.chart_vertical {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+::ng-deep .chart_vertical .chart text {
+  fill: white !important; /* Set text color to white */
+  font-size: 16px !important; /* Increase font size */
+  font-weight: bold; /* Make it bold (optional) */
+}
+
+.title {
+  font-family: $font-family-teko;
+  color: $color-white;
+  font-size: 2.75rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  z-index: 100;
+}

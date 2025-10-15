@@ -1,0 +1,48 @@
+<div class="header">
+  <div class="left">
+    <div class="brand_name">Hungry Birds</div>
+    <div class="line"></div>
+    <ul class="navigation">
+      <li
+        class="nav_item"
+        (click)="setActive('dashboard')"
+        [class.nav_item--active]="activeLink === 'dashboard'"
+      >
+        <a [routerLink]="'/dashboard'"
+          ><span class="nav_item">{{Dashboard()}}</span></a
+        >
+      </li>
+      <li
+        class="nav_item"
+        (click)="setActive('MenuList')"
+        [class.nav_item--active]="activeLink === 'MenuList'"
+      >
+        <a [routerLink]="'/admin/menuList'"
+          ><span class="nav_item">{{Home()}}</span></a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="controller">
+    @if(languageOpened){
+    <div class="language_options">
+      <div class="option" (click)="onChange('En')">En</div>
+      <div class="option" (click)="onChange('Tr')">Tr</div>
+      <div class="option" (click)="onChange('Ar')">Ar</div>
+    </div>
+    }
+
+    <div class="langage" (click)="languageToggle()">
+      <svg class="controller__icon">
+        <use xlink:href="images/sprites10.svg#icon-world"></use>
+      </svg>
+    </div>
+
+    <div class="logout" (click)="onLogout()">
+      <svg class="controller__icon">
+        <use xlink:href="images/sprites10.svg#icon-exit"></use>
+      </svg>
+    </div>
+  </div>
+</div>

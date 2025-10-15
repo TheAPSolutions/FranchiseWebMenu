@@ -1,0 +1,38 @@
+@if(language == 'Ar'){
+<div class="phoneverification phoneverification--ar">
+  <!-- Step 2: Input OTP -->
+  <div class="phone">
+    <p class="enter">
+      {{ VerificationSent() }}
+    </p>
+    <input
+      class="phoneNumberInput"
+      type="text"
+      [(ngModel)]="userInputOtp"
+      placeholder="{{ VerificationCode() }}"
+    />
+    <button class="sendOrder sendOrder--ar" (click)="verifyOtp()">
+      {{ SendOrder() }}
+    </button>
+  </div>
+</div>
+
+}@else {
+<div class="phoneverification">
+  <!-- Step 2: Input OTP -->
+  <div class="phone">
+    <p class="enter">
+      {{ VerificationSent() }}
+    </p>
+    <input
+      class="phoneNumberInput"
+      type="text"
+      [(ngModel)]="userInputOtp"
+      placeholder="{{ VerificationCode() }}"
+    />
+    <button class="sendOrder" (click)="verifyOtp()">{{ SendOrder() }}</button>
+  </div>
+</div>
+
+}
+<app-success-message />

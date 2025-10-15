@@ -1,0 +1,36 @@
+@import "../../../sass/abstracts/variables";
+
+.main{
+    background-color: $color-dark-gray;
+    width: 35rem;
+    padding: 1rem;
+    border-radius: 5%;
+}
+
+.footer{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    scale: 0.85;
+    justify-content: flex-start;
+    margin-left: -4.2rem;
+    margin-top: -1rem;
+}
+
+.title{
+    font-family: $font-family-teko;
+    color: $color-white;
+    font-size: 2.75rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    z-index: 100;
+    margin-bottom: -2.5rem;
+}
+
+.card{
+    background-color: $color-dark-gray;
+    border: none;
+    height: fit-content;
+    z-index: 10;
+
+}

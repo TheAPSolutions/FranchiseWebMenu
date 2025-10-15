@@ -1,0 +1,43 @@
+<div class="dropdown_container">
+  @if(language == 'Ar'){
+  <div class="dropdown_header dropdown_header--ar" (click)="onClick()">
+    @if(option() !== ''){
+    {{ option() }}
+    } @else {
+    {{ DropDownTitle() }}
+    } @if(opened){
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-up"></use>
+    </svg>
+    }@else {
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-down"></use>
+    </svg>
+    }
+  </div>
+  } @else {
+  <div class="dropdown_header" (click)="onClick()">
+    @if(option() !== ''){
+    {{ option() }}
+    } @else {
+    {{ DropDownTitle() }}
+    } @if(opened){
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-up"></use>
+    </svg>
+    }@else {
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-down"></use>
+    </svg>
+    }
+  </div>
+  } @if (opened) {
+  <div class="dropdown_body">
+    <div class="content">
+      @for (item of locations; track item) {
+      <span (click)="onChange(item)">{{ item.name }}</span>
+      }
+    </div>
+  </div>
+  }
+</div>

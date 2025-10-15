@@ -1,0 +1,186 @@
+@import "../../../sass/abstracts/variables";
+
+.page {
+    //sizings
+    width: 50vw;
+    height: 80vh;
+
+    //colors
+    background-color: white;
+
+    //positions
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    //spacings 
+    padding: 60px 30px;
+
+    //Fonts
+    font-family: $font-family-teko;
+    font-size: 2rem;
+
+    border: rgba($color: #000000, $alpha: 0.5) solid 1px;
+}
+
+.container {
+
+    position: relative;
+
+    &__title {
+        color: $color-brown;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 3rem;
+        text-transform: capitalize;
+
+        &__percentage{
+            color: rgba($color: #000000, $alpha: 0.75);
+            font-size: 2rem;
+            margin-left: 2px;
+        }
+
+        &__CategoryName {
+            position: absolute;
+            right: 45%;
+            top: 5%;
+        }
+    }
+
+    &__table{
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        height: 600px;
+        overflow-y: scroll;
+    }
+
+    &__buttons{
+
+        display: flex;
+        gap: 20px;
+        justify-content: end;
+        margin-top: 2rem;
+
+        &__cancel button{
+            background-color: red;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+        }
+        &__accept button{
+            background-color: green;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+        }
+    }
+}
+table {
+    width: 90vw;
+}
+thead{
+    background-color: $color-red;
+    color: white;
+    font-family: $font-family-teko;
+    height: 50px;
+    text-align: center;
+
+}
+
+th {
+    font-weight: normal;
+}
+
+tr{
+    border: black solid 1px;
+
+}
+
+td {
+    border-left: black solid 1px;
+    height: max-content; 
+    width: fit-content;
+
+}
+
+
+.close_button{
+    //sizings
+    width: 50px;
+    height: 50px;
+
+    //design
+    border-radius: 50%;
+
+    //color
+    background-color: red;
+    color: white;
+
+    //position
+    position: absolute;
+    top: -15px;
+    right: 0px;
+
+    //display
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__X{
+        color: white;
+        transform: translate(1px, 1px);
+    }
+}
+
+.rowContentBefore{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin: 20px 0px 20px 20px;
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 20px;
+        margin-top: 60px;
+        padding-bottom: 10px;
+    }
+    &__inputs input{
+        width: 125px;
+        height: 45px;
+    }
+
+    &__labels{
+        display: flex;
+        gap: 20px;
+
+        &__pricesCon{
+            color: rgba($color: #000000, $alpha: 0.6);
+            font-size: 1.5rem;
+        }
+
+        &__prices {
+            width: 125px;
+            height: 45px;
+            border: black solid 1px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba($color: #000000, $alpha: 0.8);
+            font-size: 2rem;
+
+        }
+    }
+}
+
+.inputsDirection{
+    display: flex;
+}
+
+

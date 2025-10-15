@@ -1,0 +1,31 @@
+<div class="slogan-website">
+  <img
+    src="images/website-images/sloganbg.webp"
+    class="sloganbackground"
+    loading="lazy"
+    alt="brown background"
+  />
+
+  <div class="slogan-content">
+    <div
+      class="sloganwebsitetext"
+      [@fadeInFromLeft]="getAnimationState('sloganwebsitetext')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('sloganwebsitetext', $event)"
+    >
+      No One <br />
+      Leaves <br />
+      Hungry
+    </div>
+
+    <img
+      src="images/website-images/sloganImage2.webp"
+      class="sloganImage"
+      loading="lazy"
+      alt="crispy image"
+      [@fadeInFromRight]="getAnimationState('sloganImage')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('sloganImage', $event)"
+    />
+  </div>
+</div>

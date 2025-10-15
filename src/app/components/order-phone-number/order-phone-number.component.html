@@ -1,0 +1,102 @@
+@if(language == 'Ar'){
+<div class="phoneverification phoneverification--ar">
+  <!-- Step 1: Input phone number -->
+  <div class="phone">
+    <div class="phoneTitle phoneTitle--ar">{{ phoneTitle }}</div>
+    <input
+      class="phoneNumberInput"
+      type="text"
+      [(ngModel)]="phoneNumber"
+      placeholder="5XX XXX XX XX"
+    />
+    <div>
+      <div class="checkbox">
+        <div class="checkbox-wrapper-37">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="terms-checkbox-37"
+            [(ngModel)]="acceptCampaigns"
+          />
+          <label for="terms-checkbox-37" class="terms-label">
+            <svg
+              class="checkbox-svg"
+              viewBox="0 0 200 200"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask id="path-1-inside-1_476_5-37" fill="white">
+                <rect width="200" height="200" />
+              </mask>
+              <rect
+                width="200"
+                height="200"
+                class="checkbox-box"
+                stroke-width="40"
+                mask="url(#path-1-inside-1_476_5-37)"
+              />
+              <path
+                class="checkbox-tick"
+                d="M52 111.018L76.9867 136L149 64"
+                stroke-width="15"
+              />
+            </svg>
+            <span class="accept">{{ Accept() }}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+}@else {
+<div class="phoneverification">
+  <!-- Step 1: Input phone number -->
+  <div class="phone">
+    <div class="phoneTitle">{{ phoneTitle }}</div>
+    <input
+      class="phoneNumberInput"
+      type="text"
+      [(ngModel)]="phoneNumber"
+      placeholder="5XX XXX XX XX"
+    />
+    <div>
+      <div class="checkbox">
+        <div class="checkbox-wrapper-37">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="terms-checkbox-37"
+            [(ngModel)]="acceptCampaigns"
+          />
+          <label for="terms-checkbox-37" class="terms-label">
+            <svg
+              class="checkbox-svg"
+              viewBox="0 0 200 200"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask id="path-1-inside-1_476_5-37" fill="white">
+                <rect width="200" height="200" />
+              </mask>
+              <rect
+                width="200"
+                height="200"
+                class="checkbox-box"
+                stroke-width="40"
+                mask="url(#path-1-inside-1_476_5-37)"
+              />
+              <path
+                class="checkbox-tick"
+                d="M52 111.018L76.9867 136L149 64"
+                stroke-width="15"
+              />
+            </svg>
+            <span class="accept">{{ Accept() }}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

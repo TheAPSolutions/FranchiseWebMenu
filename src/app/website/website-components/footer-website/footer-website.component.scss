@@ -1,0 +1,133 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+
+.footer-website {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; // Important if something bleeds outside
+
+  @include respond(phoneMid2) {
+    height: 50vh;
+  }
+}
+
+.footerbackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.contenfooterwebsite {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+  min-width: 80vw;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+
+  @include respond(tab-port2) {
+    width: 70vw;
+    gap: 5rem;
+  }
+}
+
+.leftfooterwebsite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  @include respond(tab-port) {
+   width: 80vw;
+  }
+  @include respond(phone) {
+    gap: 2rem;
+  }
+}
+
+.footertitle {
+  font-family: $font-family-website-body;
+  color: $color-website-brown;
+  font-size: $xlarge;
+  line-height: 1;
+  z-index: 10;
+
+  @include respond(phone4) {
+    font-size: $large;
+  }
+  @include respond(phoneMid2) {
+    font-size: $medium2;
+  }
+}
+
+.footerSocialLogos {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.socialMediaIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.branchesfooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  z-index: 10;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.branchesfootertitle {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xsmall;
+  text-align: left;
+  width: 24rem;
+  text-align: left;
+}
+
+.footerbrancheslist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: .5rem;
+}
+
+.branchItem {
+  font-family: $font-family-website-body;
+  color: $color-website-brown;
+  font-size: $xxsmall;
+}
+
+.branchItem::after {
+  content: "";
+  display: block;
+  width: 24rem;
+  height: 1px;
+  background-color: $color-white;
+  margin: 1rem 0;
+}

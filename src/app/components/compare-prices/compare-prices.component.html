@@ -1,0 +1,106 @@
+@if (IscompareOpened) {
+<div class="page">
+  <div class="container">
+    <div class="container__title">
+      {{ title }}
+      @if (priceService.model.entity === "indirim") {
+      {{ typeTitle }}
+      } {{ priceTitle }}
+      <div class="container__title__percentage">
+        Percentage Rate = {{ percentageValue }}%
+      </div>
+
+      <div class="container__title__CategoryName">{{ categoryName }}</div>
+    </div>
+
+    <div class="container__table">
+      <table>
+        <thead>
+          <tr>
+            <th>Old Price</th>
+            <th>New Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let menuItem of menuItems; let i = index">
+            <td>
+              <div class="rowContentBefore">
+                @switch (langauge.toLowerCase()) { @case ('en') {
+                <div class="rowContentBefore__title">{{ menuItem.nameEn }}</div>
+                } @case ('tr') {
+                <div class="rowContentBefore__title">{{ menuItem.nameTr }}</div>
+                } @case ('ar') {
+                <div class="rowContentBefore__title">{{ menuItem.nameAr }}</div>
+                } }
+                <div class="rowContentBefore__labels">
+                  <div class="rowContentBefore__labels__pricesCon">
+                    Tr
+                    <div class="rowContentBefore__labels__prices">
+                      {{
+                        priceService.model.entity === "indirim"
+                          ? menuItem.discountedPriceTr
+                          : menuItem.priceTr
+                      }}
+                      TL
+                    </div>
+                  </div>
+                  <div class="rowContentBefore__labels__pricesCon">
+                    Ar
+                    <div class="rowContentBefore__labels__prices">
+                      {{
+                        priceService.model.entity === "indirim"
+                          ? menuItem.discountedPriceAr
+                          : menuItem.priceAr
+                      }}
+                      TL
+                    </div>
+                  </div>
+                  <div class="rowContentBefore__labels__pricesCon">
+                    En
+                    <div class="rowContentBefore__labels__prices">
+                      {{
+                        priceService.model.entity === "indirim"
+                          ? menuItem.discountedPriceEn
+                          : menuItem.priceEn
+                      }}
+                      TL
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+
+            <td class="inputsDirection">
+              <div class="rowContentBefore__inputs">
+                Tr
+                <input [(ngModel)]="newMenuItems[i].priceTr" type="number" />
+              </div>
+              <div class="rowContentBefore__inputs">
+                Ar
+                <input [(ngModel)]="newMenuItems[i].priceAr" type="number" />
+              </div>
+              <div class="rowContentBefore__inputs">
+                En
+                <input [(ngModel)]="newMenuItems[i].priceEn" type="number" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container__buttons">
+      <div class="container__buttons__cancel" (click)="closeClicked()">
+        <button>Cancel</button>
+      </div>
+      <div class="container__buttons__accept" (click)="submitChanged()">
+        <button>Accept</button>
+      </div>
+    </div>
+
+    <div class="close_button" (click)="closeClicked()">
+      <div class="close_button__X">X</div>
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,14 @@
+<div class="filter" (click)="OnToggle()">
+  <svg class="filter_icon">
+    <use xlink:href="images/sprites7.svg#icon-filter"></use>
+  </svg>
+</div>
+
+@if(isOpen()){
+<div class="filter_container">
+  <div class="date-selector">
+    <label for="date">Select a Date:</label>
+    <input type="date" id="date" name="date" (change)="onDateChange($event)"/>
+  </div>
+</div>
+}

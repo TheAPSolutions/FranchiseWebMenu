@@ -1,0 +1,43 @@
+@import "../../../sass/abstracts/variables";
+
+::ng-deep .chart-container .chart text {
+  fill: $color-dark-gray !important; /* Set text color to white */
+  font-size: 16px !important; /* Increase font size */
+  font-weight: bold; /* Make it bold (optional) */
+}
+
+.chart {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+}
+
+.chart_controller {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dropdown_title {
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  color: $color-dark-gray;
+}
+
+.dropdown {
+  background-color: $color-dark-gray;
+  color: $color-white;
+  font-family: $font-family-teko;
+  font-size: 1.5rem;
+  padding: 0.25rem 1rem;
+}
+
+.title {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 2.75rem;
+  margin-top: 3rem;
+  z-index: 100;
+}

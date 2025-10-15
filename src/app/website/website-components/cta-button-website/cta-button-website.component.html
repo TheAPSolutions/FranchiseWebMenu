@@ -1,0 +1,43 @@
+<div class="button_list_container">
+  <div
+    class="button_list_container__button button_list_container__button--primary"
+    (click)="OrderPressed = !OrderPressed"
+  >
+    {{ "landing-page.order-now" | translate }}
+  </div>
+  @if (OrderPressed) {
+  <div
+    class="button_list_container__button button_list_container__button--yemek"
+    (click)="goToYemek()"
+  >
+    <img loading="lazy" src="images/website-images/yemek.png" />
+  </div>
+  <div
+    class="button_list_container__button button_list_container__button--getir"
+    (click)="goToGetir()"
+  >
+    <img loading="lazy" src="images/website-images/getir.webp" />
+  </div>
+  <div
+    class="button_list_container__button button_list_container__button--trendyol"
+    (click)="goToTrendyol()"
+  >
+    <img loading="lazy" src="images/website-images/trendyol.png" />
+  </div>
+  }
+
+  <div
+    class="button_list_container__button button_list_container__button--whats"
+    (click)="contactOnWhatsApp()"
+  >
+    <img loading="lazy" src="images/website-images/whats.png" />
+    {{ "components.whatsapp" | translate }}
+  </div>
+  <div
+    class="button_list_container__button button_list_container__button--maps"
+    (click)="goToMaps()"
+  >
+    <img loading="lazy" src="images/website-images/maps.png" />
+    {{ "components.maps" | translate }}
+  </div>
+</div>

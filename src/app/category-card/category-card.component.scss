@@ -1,0 +1,47 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass/abstracts/mixins";
+
+@import "../../sass/base/typography";
+
+.category_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+
+  &__image {
+    width: 20rem;
+    height: 13rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    z-index: 1000;
+    @include respond(phoneMid) {
+      width: 17rem;
+      height: 11rem;
+    }
+    @include respond(phoneSmall) {
+      width: 16rem;
+      height: 10rem;
+    }
+  }
+}
+
+.title {
+  background-color: rgba($color-white, 0.7);
+  height: 8rem;
+  width: 25rem;
+  margin-top: -3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_border {
+  margin-top: 2rem;
+
+  &--ar {
+    font-family: $font-family-arabic;
+  }
+}

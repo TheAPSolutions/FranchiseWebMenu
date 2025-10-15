@@ -1,0 +1,23 @@
+@import "../../../sass/abstracts/variables";
+
+.page{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding-bottom: 10rem;
+
+}
+
+.fixed-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Keeps it above other elements */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    display: flex;
+    justify-content: space-around; /* Distributes items evenly */
+    height: fit-content;
+}

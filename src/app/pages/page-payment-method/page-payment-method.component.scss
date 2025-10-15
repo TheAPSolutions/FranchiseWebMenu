@@ -1,0 +1,125 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.payment_methods {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  background-color: $color-light-yellow;
+  width: 25rem;
+  padding: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include respond(phoneMid2) {
+    width: 20rem;
+  }
+}
+.payment_title {
+  align-self: flex-start;
+  font-family: $font-family-teko;
+  color: $color-brown;
+  font-size: 2rem;
+  margin-left: 2.3rem;
+
+  &--ar {
+    font-family: $font-family-arabic;
+    font-weight: 700;
+  }
+
+  @include respond(phoneMid2) {
+    font-size: 1.7rem;
+    margin-left: 1.3rem;
+  }
+}
+
+.method {
+  background-color: $color-yellow;
+  width: 80%;
+  height: 5rem;
+  box-shadow: $shadow;
+  font-family: $font-family-teko;
+  color: $color-black;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 3%;
+
+  @include respond(phoneMid2) {
+    font-size: 1.4rem;
+  }
+}
+
+.text {
+  &--ar {
+    font-family: $font-family-arabic;
+    font-weight: 700;
+  }
+}
+
+.icon {
+  fill: $color-black;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1.5rem;
+}
+
+body {
+  margin: 20px;
+}
+input {
+  width: 250px;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+}
+input::placeholder {
+  color: #bbb;
+}
+
+#phone {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.intl-tel-input {
+  display: block;
+}
+
+.intl-tel-input .country-list {
+  z-index: 1000; /* Ensure dropdown is not hidden */
+}
+
+.verificationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.verificationSection label {
+  color: white;
+}
+
+.verificationSection input {
+  width: 250px;
+}
+
+
+.codeIsBeingSent{
+  font-family: $font-family-teko;
+  color: $color-brown;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.loading {
+  padding-top: 2rem !important;
+
+  transform: translate(0, 70%);
+
+}

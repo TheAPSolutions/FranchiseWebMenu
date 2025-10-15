@@ -1,0 +1,58 @@
+<div class="page">
+    <div class="page_content">
+      <div class="page_content__header">
+        <div class="page_content__title">{{AddOffer()}}</div>
+      </div>
+      <form #form="ngForm">
+        <div class="page_content__container">
+          <div class="header"></div>
+          <div class="row1">
+            <app-upload-image [input_size]="'large'" (imageUploaded)="onSelectedImage($event)"/>
+  
+            <div class="row_item__prices">
+              <div class="input_title">{{Description()}}: <span class="required">*</span></div>
+              <div class="price_language">
+                <input
+                  type="text"
+                  class="item_input item_input--mid"
+                  placeholder="TR"
+                  name="nameTr"
+                  id="nameTr"
+                  [(ngModel)]="model.descriptionTr"
+                />
+              </div>
+  
+              <div class="price_language">
+                <input
+                  type="text"
+                  class="item_input item_input--mid"
+                  placeholder="EN"
+                  name="nameEn"
+                  id="nameEn"
+                  [(ngModel)]="model.descriptionEn"
+                />
+              </div>
+  
+              <div class="price_language">
+                <input
+                  type="text"
+                  class="item_input item_input--mid"
+                  placeholder="AR"
+                  name="nameAr"
+                  id="nameAr"
+                  [(ngModel)]="model.descriptionAr"
+                />
+              </div>
+            </div>
+          </div>
+  
+          <div class="save_button" (click)="onFormSubmit()">
+            <app-save-button />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <app-admin-success-message> </app-admin-success-message>
+  

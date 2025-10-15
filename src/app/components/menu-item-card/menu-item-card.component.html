@@ -1,0 +1,311 @@
+@if(input_order_type == 'dine in'){ @if(input_item_new_price() ==
+input_item_old_price()){@if(language === 'Ar'){
+<div class="menu_item_card">
+  <div class="item_price">
+    <div class="item_price__new item_price__new--ar">
+      {{ input_item_old_price() + "TL" }}
+    </div>
+  </div>
+  <div
+    class="menu_item_card__image"
+    [style.background-image]="getBackgroundImage(input_item_image())"
+    [routerLink]="'/menu/singleItem'"
+    [queryParams]="{ id: id() }"
+  ></div>
+  <div class="info">
+    <div
+      class="menu_item_card__title menu_item_card__title--ar"
+      [routerLink]="'/menu/singleItem'"
+      [queryParams]="{ id: id() }"
+    >
+      {{ input_item_title() }}
+    </div>
+    <div class="footer footer--ar">
+      <div
+        class="item_description__content item_description__content--ar"
+        [routerLink]="'/menu/singleItem'"
+        [queryParams]="{ id: id() }"
+      >
+        {{ description() }}
+      </div>
+
+      <div class="counter counter--ar">
+        <app-order-counter
+          [input_color]="'yellow'"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          (warning)="handleWarning()"
+          [id]="id()"
+          [price]="
+            input_item_new_price() > 0
+              ? input_item_new_price()
+              : input_item_old_price()
+          "
+          [studentPrice]="input_item_studentPrice()"
+          [takeawayprice]="input_item_old_price()"
+          [ishasOptions]="input_hasOptions()"
+          (openOverlay)="handleOpenOverlayClick($event)"
+          #counter
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="menu_item_card">
+  <div class="item_price">
+    <div class="item_price__new">{{ input_item_old_price() + "TL" }}</div>
+  </div>
+  <div
+    class="menu_item_card__image"
+    [style.background-image]="getBackgroundImage(input_item_image())"
+    [routerLink]="'/menu/singleItem'"
+    [queryParams]="{ id: id() }"
+  ></div>
+  <div class="info">
+    <div
+      class="menu_item_card__title"
+      [routerLink]="'/menu/singleItem'"
+      [queryParams]="{ id: id() }"
+    >
+      {{ input_item_title() }}
+    </div>
+    <div class="footer">
+      <div
+        class="item_description__content"
+        [routerLink]="'/menu/singleItem'"
+        [queryParams]="{ id: id() }"
+      >
+        {{ description() }}
+      </div>
+
+      <div class="counter">
+        <app-order-counter
+          [input_color]="'yellow'"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          (warning)="handleWarning()"
+          [id]="id()"
+          [price]="
+            input_item_new_price() > 0
+              ? input_item_new_price()
+              : input_item_old_price()
+          "
+          [studentPrice]="input_item_studentPrice()"
+          [takeawayprice]="input_item_old_price()"
+          [ishasOptions]="input_hasOptions()"
+          (openOverlay)="handleOpenOverlayClick($event)"
+          #counter
+        />
+      </div>
+    </div>
+  </div>
+</div>
+} } @else {@if(language === 'Ar'){
+<div class="menu_item_card">
+  <div class="item_price">
+    <div class="item_price__old">{{ input_item_old_price() + "TL" }}</div>
+    <div class="item_price__new">{{ input_item_new_price() + "TL" }}</div>
+  </div>
+  <div
+    class="menu_item_card__image"
+    [style.background-image]="getBackgroundImage(input_item_image())"
+    [routerLink]="'/menu/singleItem'"
+    [queryParams]="{ id: id() }"
+  ></div>
+  <div class="info">
+    <div
+      class="menu_item_card__title menu_item_card__title--ar"
+      [routerLink]="'/menu/singleItem'"
+      [queryParams]="{ id: id() }"
+    >
+      {{ input_item_title() }}
+    </div>
+    <div class="footer footer--ar">
+      <div
+        class="item_description__content item_description__content--ar"
+        [routerLink]="'/menu/singleItem'"
+        [queryParams]="{ id: id() }"
+      >
+        {{ description() }}
+      </div>
+
+      <div class="counter counter--ar">
+        <app-order-counter
+          [input_color]="'yellow'"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          (warning)="handleWarning()"
+          [id]="id()"
+          [price]="
+            input_item_new_price() > 0
+              ? input_item_new_price()
+              : input_item_old_price()
+          "
+          [studentPrice]="input_item_studentPrice()"
+          [takeawayprice]="input_item_old_price()"
+          [ishasOptions]="input_hasOptions()"
+          (openOverlay)="handleOpenOverlayClick($event)"
+          #counter
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="menu_item_card">
+  <div class="item_price">
+    <div class="item_price__old">{{ input_item_old_price() + "TL" }}</div>
+    <div class="item_price__new">{{ input_item_new_price() + "TL" }}</div>
+  </div>
+  <div
+    class="menu_item_card__image"
+    [style.background-image]="getBackgroundImage(input_item_image())"
+    [routerLink]="'/menu/singleItem'"
+    [queryParams]="{ id: id() }"
+  ></div>
+  <div class="info">
+    <div
+      class="menu_item_card__title"
+      [routerLink]="'/menu/singleItem'"
+      [queryParams]="{ id: id() }"
+    >
+      {{ input_item_title() }}
+    </div>
+    <div class="footer">
+      <div
+        class="item_description__content"
+        [routerLink]="'/menu/singleItem'"
+        [queryParams]="{ id: id() }"
+      >
+        {{ description() }}
+      </div>
+
+      <div class="counter">
+        <app-order-counter
+          [input_color]="'yellow'"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          (warning)="handleWarning()"
+          [id]="id()"
+          [price]="
+            input_item_new_price() > 0
+              ? input_item_new_price()
+              : input_item_old_price()
+          "
+          [studentPrice]="input_item_studentPrice()"
+          [takeawayprice]="input_item_old_price()"
+          [ishasOptions]="input_hasOptions()"
+          (openOverlay)="handleOpenOverlayClick($event)"
+          #counter
+        />
+      </div>
+    </div>
+  </div>
+</div>
+}} } @else { @if(language === 'Ar'){
+<div class="menu_item_card">
+  <div class="item_price">
+    <div class="item_price__new item_price__new--ar">
+      {{ input_item_old_price() + "TL" }}
+    </div>
+  </div>
+  <div
+    class="menu_item_card__image"
+    [style.background-image]="getBackgroundImage(input_item_image())"
+    [routerLink]="'/menu/singleItem'"
+    [queryParams]="{ id: id() }"
+  ></div>
+  <div class="info">
+    <div
+      class="menu_item_card__title menu_item_card__title--ar"
+      [routerLink]="'/menu/singleItem'"
+      [queryParams]="{ id: id() }"
+    >
+      {{ input_item_title() }}
+    </div>
+    <div class="footer footer--ar">
+      <div
+        class="item_description__content item_description__content--ar"
+        [routerLink]="'/menu/singleItem'"
+        [queryParams]="{ id: id() }"
+      >
+        {{ description() }}
+      </div>
+
+      <div class="counter counter--ar">
+        <app-order-counter
+          [input_color]="'yellow'"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          (warning)="handleWarning()"
+          [id]="id()"
+          [price]="
+            input_item_new_price() > 0
+              ? input_item_new_price()
+              : input_item_old_price()
+          "
+          [studentPrice]="input_item_studentPrice()"
+          [takeawayprice]="input_item_old_price()"
+          [ishasOptions]="input_hasOptions()"
+          (openOverlay)="handleOpenOverlayClick($event)"
+          #counter
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="menu_item_card">
+  <div class="item_price">
+    <div class="item_price__new">{{ input_item_old_price() + "TL" }}</div>
+  </div>
+  <div
+    class="menu_item_card__image"
+    [style.background-image]="getBackgroundImage(input_item_image())"
+    [routerLink]="'/menu/singleItem'"
+    [queryParams]="{ id: id() }"
+  ></div>
+  <div class="info">
+    <div
+      class="menu_item_card__title"
+      [routerLink]="'/menu/singleItem'"
+      [queryParams]="{ id: id() }"
+    >
+      {{ input_item_title() }}
+    </div>
+    <div class="footer">
+      <div
+        class="item_description__content"
+        [routerLink]="'/menu/singleItem'"
+        [queryParams]="{ id: id() }"
+      >
+        {{ description() }}
+      </div>
+
+      <div class="counter">
+        <app-order-counter
+          [input_color]="'yellow'"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          (warning)="handleWarning()"
+          [id]="id()"
+          [price]="
+            input_item_new_price() > 0
+              ? input_item_new_price()
+              : input_item_old_price()
+          "
+          [studentPrice]="input_item_studentPrice()"
+          [takeawayprice]="input_item_old_price()"
+          [ishasOptions]="input_hasOptions()"
+          (openOverlay)="handleOpenOverlayClick($event)"
+          #counter
+        />
+      </div>
+    </div>
+  </div>
+</div>
+} }

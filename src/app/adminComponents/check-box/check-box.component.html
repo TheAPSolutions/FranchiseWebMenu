@@ -1,0 +1,38 @@
+<div class="checkbox-wrapper-37">
+  <input
+    type="checkbox"
+    [id]="checkboxId"
+    (change)="onCheckboxChange($event)"
+    [checked]="checked"
+    [disabled]="disabled"
+  />
+  <label [for]="checkboxId" class="terms-label">
+    <svg
+      class="checkbox-svg"
+      viewBox="0 0 200 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <mask id="path-1-inside-1_476_5-37" fill="white">
+        <rect width="200" height="200" />
+      </mask>
+      <rect
+        width="200"
+        height="200"
+        class="checkbox-box"
+        stroke-width="40"
+        mask="url(#path-1-inside-1_476_5-37)"
+      />
+      <path
+        class="checkbox-tick"
+        d="M52 111.018L76.9867 136L149 64"
+        stroke-width="15"
+      />
+    </svg>
+    @if (langauge.toLowerCase() ==="ar") {
+    <span class="label-text--ar">{{ input_checkbox_title() }}</span>
+    }@else {
+    <span class="label-text">{{ input_checkbox_title() }}</span>
+    }
+  </label>
+</div>

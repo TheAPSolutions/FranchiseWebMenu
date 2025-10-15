@@ -1,0 +1,43 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.headnewtitle {
+  font-weight: 700;
+  color: $color-white;
+  font-family: $font-family-teko;
+  z-index: 10;
+  text-align: center;
+  font-size: $medium2;
+  line-height: 1.5;
+
+  @include respond(bigdesktop) {
+    font-size: $small;
+  }
+}
+
+.sectionnew {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65vw;
+  height: fit-content;
+  z-index: 10;
+  min-height: 50vh;
+}
+
+.headnewparagraph {
+  text-align: center;
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xxsmall;
+  line-height: 1.5;
+  width: 60vw;
+  margin-bottom: 2rem;
+
+  @include respond(bigdesktop) {
+    font-size: $mini;
+  }
+
+  
+}

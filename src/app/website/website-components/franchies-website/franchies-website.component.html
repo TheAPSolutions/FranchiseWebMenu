@@ -1,0 +1,211 @@
+<div class="franchieswebsite">
+  <img
+    src="images/website-images/heroSandwichesBackground.webp"
+    class="franchiesBackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div class="franchise1">
+    <div
+      class="franchise1left"
+      [@fadeInFromLeft]="getAnimationState('franchise1left')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('franchise1left', $event)"
+    >
+      <div class="franchies1video1contanier">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="franchies1video1 franchiseVideo"
+        >
+          <source
+            src="images/website-videos/franchiesvideoopen1.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="franchies1Right">
+      <div
+        class="franchies1RightTitle"
+        [@fadeInDown]="getAnimationState('franchies1RightTitle')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('franchies1RightTitle', $event)
+        "
+      >
+        {{ "franchise.title1_line1" | translate }} <br />
+        {{ "franchise.title1_line2" | translate }} <br />
+        {{ "franchise.title1_line3" | translate }} <br />
+        {{ "franchise.title1_line4" | translate }}
+      </div>
+
+      <div
+        class="franchies1text"
+        [@fadeInDown]="getAnimationState('franchies1text')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('franchies1text', $event, 200)
+        "
+      >
+        {{ "franchise.text1" | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="franchies2">
+    <img
+      src="images/website-images/franchiesbackground.webp"
+      class="franchiesBackground"
+      loading="lazy"
+      alt="brown background"
+    />
+
+    <div class="franchiesreasonslist">
+      <div
+        class="franchies2title"
+        [@fadeInDown]="getAnimationState('franchies2title')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('franchies2title', $event)"
+      >
+        {{ "franchise.title2_line1" | translate }} <br />
+        {{ "franchise.title2_line2" | translate }}
+      </div>
+
+      <div
+        class="franchiesreasonitem franchiesreasonitem1"
+        [@fadeInDown]="getAnimationState('franchiesreasonitem1')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('franchiesreasonitem1', $event, 300)
+        "
+      >
+        {{ "franchise.reason1" | translate }}
+      </div>
+      <div
+        class="franchiesreasonitem franchiesreasonitem2"
+        [@fadeInDown]="getAnimationState('franchiesreasonitem2')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('franchiesreasonitem2', $event, 600)
+        "
+      >
+        {{ "franchise.reason2" | translate }}
+      </div>
+      <div
+        class="franchiesreasonitem franchiesreasonitem3"
+        [@fadeInDown]="getAnimationState('franchiesreasonitem3')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('franchiesreasonitem3', $event, 900)
+        "
+      >
+        {{ "franchise.reason3" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="franchiestextbox"
+      [@fadeIn]="getAnimationState('franchiestextbox')"
+      appAnimateOnScroll
+      (animationStateChange)="
+        setAnimationState('franchiestextbox', $event, 900)
+      "
+    >
+      {{ "franchise.text2" | translate }}
+    </div>
+  </div>
+
+  <div
+    class="sectionnew"
+    [@fadeInDown]="getAnimationState('sectionnew')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('sectionnew', $event)"
+  >
+    <h1 class="headnewtitle">
+      {{ "franchise.title_5" | translate }}
+    </h1>
+    <p class="headnewparagraph">
+      {{ "franchise.text_5" | translate }}
+    </p>
+  </div>
+
+  <div class="franchies3">
+    <div class="franchies3left">
+      <div
+        class="franchies3header"
+        [@fadeInFromLeft]="getAnimationState('franchies3header')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('franchies3header', $event)"
+      >
+        <div class="franchies3title">
+          {{ "franchise.title3_line1" | translate }} <br />
+          {{ "franchise.title3_line2" | translate }} <br />
+          {{ "franchise.title3_line3" | translate }}
+        </div>
+
+        <img
+          src="images/website-images/linkfranchies.webp"
+          class="linkfranchiesimage"
+          loading="lazy"
+          alt="shackle image linking "
+        />
+      </div>
+
+      <div
+        class="franchies3body"
+        [@fadeInFromLeft]="getAnimationState('franchies3body')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('franchies3body', $event, 200)
+        "
+      >
+        {{ "franchise.text3" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="franchies3right"
+      [@fadeInFromRight]="getAnimationState('franchies3right')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('franchies3right', $event)"
+    >
+      <div class="franchies3videocontanier">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="franchies1video1 franchiseVideo"
+        >
+          <source src="images/website-videos/fv2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="franchies3VideoTitle">
+          {{ "franchise.title4_line1" | translate }} <br />
+          {{ "franchise.title4_line2" | translate }} <br />
+          {{ "franchise.title4_line3" | translate }} <br />
+          {{ "franchise.title4_line4" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="sectionnew"
+    [@fadeInDown]="getAnimationState('sectionnew')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('sectionnew', $event)"
+  >
+    <h2 class="headnewtitle">
+      {{ "franchise.title_6" | translate }}
+    </h2>
+    <p class="headnewparagraph">
+      {{ "franchise.text_6" | translate }}
+    </p>
+  </div>
+</div>

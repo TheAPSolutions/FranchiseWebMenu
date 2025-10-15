@@ -1,0 +1,80 @@
+<div class="sandwiches">
+  <img
+    src="images/website-images/heroSandwichesBackground.webp"
+    class="sandwichesBackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div class="row">
+    <div
+      class="row__title"
+      [@fadeInFromLeft]="getAnimationState('row__title')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('row__title', $event)"
+    >
+      {{ "sandwiches.title1_line1" | translate }} <br />
+      {{ "sandwiches.title1_line2" | translate }}
+    </div>
+    <div
+      class="row__image"
+      [@fadeInFromRight]="getAnimationState('cherryburger')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('cherryburger', $event)"
+    >
+      <img
+        src="images/website-images/cherryburger.webp"
+        class="sandwichImage"
+        loading="lazy"
+        alt="cherry burger"
+      />
+    </div>
+  </div>
+  <div class="row rowmid">
+    <div
+      class="row__title midtitle"
+      [@fadeInFromRight]="getAnimationState('midtitle')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('midtitle', $event)"
+    >
+      {{ "sandwiches.title2_line1" | translate }} <br />
+      {{ "sandwiches.title2_line2" | translate }}
+    </div>
+    <div
+      class="row__image midimage"
+      [@fadeInFromLeft]="getAnimationState('midimage')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('midimage', $event)"
+    >
+      <img
+        src="images/website-images/krispy.webp"
+        class="sandwichImage sandwichImagekrispy"
+        loading="lazy"
+        alt="çıtır tavuk"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="row__title lasttitle"
+      [@fadeInFromLeft]="getAnimationState('lasttitle')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('lasttitle', $event)"
+    >
+      {{ "sandwiches.title3_line1" | translate }} <br />
+      {{ "sandwiches.title3_line2" | translate }}
+    </div>
+    <div
+      class="row__image"
+      [@fadeInFromRight]="getAnimationState('honeyburger')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('honeyburger', $event)"
+    >
+      <img
+        src="images/website-images/honeybutterburger.webp"
+        class="sandwichImage honeysandwich"
+        loading="lazy"
+        alt="honey butter burger"
+      />
+    </div>
+  </div>
+</div>

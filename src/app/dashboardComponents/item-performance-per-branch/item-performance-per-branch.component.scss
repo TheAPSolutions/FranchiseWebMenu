@@ -1,0 +1,60 @@
+@import "../../../sass/abstracts/variables";
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-baby-blue;
+  width: 70rem;
+  padding: 4rem;
+  border-radius: 3%;
+  row-gap: 2rem;
+  height: 50rem;
+  box-shadow: $shadow;
+}
+
+.dropdown_title {
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  color: $color-dark-gray;
+  text-wrap: nowrap;
+  width: 10rem;
+}
+
+.dropdown {
+  background-color: $color-dark-gray;
+  color: $color-white;
+  font-family: $font-family-teko;
+  font-size: 1.5rem;
+  padding: 0.25rem 1rem;
+  width: 18rem;
+  margin-left: 1rem;
+
+}
+
+.selection_contoller {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 2.75rem;
+  z-index: 100;
+  margin-bottom: 2rem;
+}
+
+.nodata{
+    font-family: $font-family-teko;
+    color: $color-dark-gray;
+    font-size: 2.75rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+    align-self: center;
+    text-align: center;
+    margin-top: 8rem;
+    width: 30rem;
+}

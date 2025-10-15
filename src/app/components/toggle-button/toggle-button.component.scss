@@ -1,0 +1,29 @@
+@import "../../../sass/abstracts/variables";
+.navigation__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: white;
+}
+.button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7291e;
+  box-shadow: #c7291e;
+  border: none;
+  box-shadow: $shadow;
+  padding: 0 1 0 1;
+  cursor: pointer;
+}
+
+.button_container span {
+  font-family: $font-family-teko;
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+span.edit.edit--ar {
+  font-family: $font-family-arabic;
+  font-weight: 500;
+}

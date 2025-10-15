@@ -1,0 +1,155 @@
+<div class="turkeybrancheswebsite">
+  <img
+    src="images/website-images/heroSandwichesBackground.webp"
+    class="allbranchesBackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div
+    class="branchestitle"
+    [@fadeInDown]="getAnimationState('branchestitle')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('branchestitle', $event)"
+  >
+    {{ "allbranches.title_line1" | translate }} <br />
+    {{ "allbranches.title_line2" | translate }} <br />
+    {{ "allbranches.title_line3" | translate }}
+  </div>
+
+  <div
+    class="imagebranchearth"
+    [@fadeIn]="getAnimationState('imagebranchearth')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('imagebranchearth', $event)"
+  >
+    <img
+      src="images/website-images/earthbranches1.webp"
+      class="earthbranchimage"
+      loading="lazy"
+      alt="earth with location pin"
+    />
+
+    <div class="branchnamewebsite">
+      {{ "allbranches.country1" | translate }}
+    </div>
+  </div>
+
+  <div class="branchesturkeylist">
+    <div
+      class="branchitemwebsite branchitemwebsite1"
+      [@fadeInDown]="getAnimationState('branchitemwebsite1')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('branchitemwebsite1', $event)"
+    >
+      <div class="branchnamewebsiteitem">
+        {{ "turkeybranches.branch1" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="
+          openExternalLink(
+            'https://www.google.com/maps/search/?api=1&query=Cihann%C3%BCma%2C%20Barbaros%20Blv.%2014%2FC%2C%2034353%20Be%C5%9Fikta%C5%9F%2F%C4%B0stanbul'
+          )
+        "
+      >
+        {{ "allbranches.location" | translate }}
+      </div>
+      <div class="branchdetailswebsite" (click)="onCall('05441700040')">
+        {{ "allbranches.call" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="
+          openExternalLink(
+            'https://www.yemeksepeti.com/restaurant/gzzm/hungry-birds-gzzm'
+          )
+        "
+      >
+        {{ "allbranches.order" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="branchitemwebsite branchitemwebsite2"
+      [@fadeInDown]="getAnimationState('branchitemwebsite2')"
+      appAnimateOnScroll
+      (animationStateChange)="
+        setAnimationState('branchitemwebsite2', $event, 400)
+      "
+    >
+      <div class="branchnamewebsiteitem">
+        {{ "turkeybranches.branch2" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="
+          openExternalLink(
+            'https://www.google.com/maps/search/?api=1&query=Maslak%2C%20Maslak%20mah.%20Ta%C5%9Fyoncas%C4%B1%20sk.%20Maslak%201453%201AB%20B3%2C%201453%20Cd%20NO%201%20AB%20%C4%B0%C3%A7%20kap%C4%B1%20No%3A%20Z5%2C%2034398%20Sar%C4%B1yer%2F%C4%B0stanbul'
+          )
+        "
+      >
+        {{ "allbranches.location" | translate }}
+      </div>
+      <div class="branchdetailswebsite" (click)="onCall('05060328432')">
+        {{ "allbranches.call" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="
+          openExternalLink(
+            'https://www.yemeksepeti.com/restaurant/z5t9/hungry-birds-z5t9'
+          )
+        "
+      >
+        {{ "allbranches.order" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="branchitemwebsite branchitemwebsite3"
+      [@fadeInDown]="getAnimationState('branchitemwebsite3')"
+      appAnimateOnScroll
+      (animationStateChange)="
+        setAnimationState('branchitemwebsite3', $event, 800)
+      "
+    >
+      <div class="branchnamewebsiteitem">
+        {{ "turkeybranches.branch3" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="openExternalLink('https://maps.app.goo.gl/jNHDtM52aU1sseg29')"
+      >
+        {{ "allbranches.location" | translate }}
+      </div>
+      <div class="branchdetailswebsite" (click)="onCall('05011326024')">
+        {{ "allbranches.call" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="
+          openExternalLink(
+            'https://www.yemeksepeti.com/restaurant/yksy/hungry-birds-yksy'
+          )
+        "
+      >
+        {{ "allbranches.order" | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="menubuttonwebsite"
+    [routerLink]="['/menu']"
+    [@fadeIn]="getAnimationState('menubuttonwebsite')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('menubuttonwebsite', $event)"
+  >
+    <img
+      src="images/website-images/menuword.webp"
+      class="menubuttonimage"
+      loading="lazy"
+      alt="menu word"
+    />
+  </div>
+</div>

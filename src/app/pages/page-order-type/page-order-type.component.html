@@ -1,0 +1,33 @@
+<div class="page_layout">
+  <h1 class="page__title">{{ TypeOfOrder() }}</h1>
+  <div class="language__cards">
+    <div class="row">
+      @if(language === 'Ar'){
+      <div class="language__card language__card--ar">
+        <div class="language__title" (click)="onSelectDineIn()">
+          {{ DineIn() }}
+          
+        </div>
+      </div>
+
+      <div class="language__card language__card--ar">
+        <div class="language__title" (click)="onSelectTakeAway()">
+          {{ TakeAway() }}
+        </div>
+      </div>
+      } @else {
+      <div class="language__card">
+        <div class="language__title" (click)="onSelectDineIn()">
+          {{ DineIn() }}
+        </div>
+      </div>
+
+      <div class="language__card">
+        <div class="language__title" (click)="onSelectTakeAway()">
+          {{ TakeAway() }}
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

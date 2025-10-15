@@ -1,0 +1,26 @@
+<div class="dropdown_container">
+  <div class="dropdown_header" (click)="onClick()">
+    @if(opened){ 
+        @if(dropdown_title()){
+            {{ dropdown_title() + "        ▲" }}
+        } @else {
+            {{ input_dropdown_title() + "        ▲" }}
+        } 
+    } @else {
+        @if(dropdown_title()){
+            {{ dropdown_title() + "        ▼" }}
+        } @else {
+            {{ input_dropdown_title() + "        ▼" }}
+        } 
+    }
+  </div>
+  @if (opened) {
+  <div class="dropdown_body">
+    <div class="content">
+      @for (item of input_dropdown_options(); track item) {
+      <span (click)="onChange(item)">{{ item }}</span>
+      }
+    </div>
+  </div>
+  }
+</div>

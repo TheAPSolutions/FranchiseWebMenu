@@ -1,0 +1,123 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+.container {
+  height: 8vh;
+  background: $color-red;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3); /* Inset shadow at the top */
+  display: flex;
+  justify-content: space-between;
+  z-index: 10000;
+  max-width: 100vw;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    gap: 0.1rem;
+    position: relative;
+    &--right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 3rem;
+      gap: 0.1rem;
+    }
+    &__title {
+      color: $color-yellow;
+      font-family: $font-family-teko;
+      font-size: 1.4rem;
+    }
+  }
+}
+.container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 6rem;
+  height: 3rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(13, 13, 15, 1) 36%,
+    rgba(45, 45, 45, 1) 100%
+  );
+  border-bottom: black solid 1px;
+  border-radius: 5rem 5rem 0 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Inset shadow at the top */
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5); /* Inset shadow at the top */
+  transform: rotate(180deg) translateX(50%);
+}
+
+.navigation__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: $color-yellow;
+  &--white {
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+  }
+
+  @include respond(phoneMid) {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
+
+.circle {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  background: $color-red;
+  border-radius: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  top: -40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartcounter {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  position: absolute;
+
+  text-align: center;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  top: -15px;
+  right: 2.5rem;
+}
+
+@keyframes rotate45 {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.rotate {
+  animation: rotate45 0.5s ease;
+  transform-origin: bottom left; /* Set rotation pivot point */
+}

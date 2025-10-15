@@ -1,0 +1,27 @@
+<div class="container">
+  <ng-container *ngIf="title && desc">
+    <div class="image_container">
+      <img [src]="imagePath" alt="" />
+      <div class="image_content">
+        <span class="image_content__title">{{ title }}</span>
+        <span class="image_content__desc">{{ desc }}</span>
+      </div>
+    </div>
+    <div class="buttons_container">
+      <app-button-primary-arabic
+        [input_button_image]="'call'"
+        [number]="number"
+      ></app-button-primary-arabic>
+      <app-button-primary-arabic
+        [input_button_image]="'location'"
+        [address]="desc"
+      ></app-button-primary-arabic>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!title || !desc">
+    <div class="image_container--show">
+      <img [src]="imagePath" alt="" />
+    </div>
+  </ng-container>
+</div>

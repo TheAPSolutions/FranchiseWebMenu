@@ -1,0 +1,194 @@
+{
+  "hero": {
+    "brand_line1": "Hungry",
+    "brand_line2": "Birds",
+    "slogan_line1": "The City's Best",
+    "slogan_line2": "Burger",
+    "button_line1": "Learn How",
+    "button_line2": "It All Started"
+  },
+
+  "sandwiches": {
+    "title1_line1": "Cherry",
+    "title1_line2": "Burger",
+    "title2_line1": "Crispy",
+    "title2_line2": "Chicken",
+    "title3_line1": "Honey Crispy",
+    "title3_line2": "Burger"
+  },
+  "footer": {
+    "title_line1": "Follow",
+    "title_line2": "Us",
+    "title_line3": "",
+    "branches_title": "Our Branches",
+    "branch1": "Beşiktaş / Istanbul",
+    "branch2": "Maslak1453 / Istanbul",
+    "branch3": "Batışehir / Istanbul",
+    "branch4": "Riyadh / Saudi Arabia",
+    "branch5": "Basra / Iraq"
+  },
+  "catering": {
+    "title1_span": "P",
+    "title1_rest": "rofessional",
+    "title2_span": "",
+    "title2_rest": "Catering",
+    "title3_span": "S",
+    "title3_rest": "ervices",
+    "body1": "Our catering menus for private and corporate events are prepared by experienced chefs using fresh and high-quality ingredients. We offer your guests unforgettable flavors.",
+    "body2": "Our service provides flexible solutions from small gatherings to large organizations, always prioritizing customer satisfaction.",
+    "body3": "To learn more about our catering services and make a reservation, feel free to contact us.",
+    "catering3_title": "High-Quality and Affordable Catering Services",
+    "catering3_paragraph": "If you are looking for high-quality and affordable catering services in Istanbul, our professional team and wide menu selection will make your events unforgettable. Our fresh and delicious food options are ideal for special occasions, corporate meetings, and celebrations. We aim to provide high-quality catering at affordable prices while keeping customer satisfaction a top priority. Whether for small gatherings or large events, our flexible and personalized catering packages are here to serve your needs."
+  },
+  "aboutus": {
+    "title1_line1": "From Istanbul",
+    "title1_line2": "A Turkish x Arabic",
+    "title1_line3": "Inspired Fast",
+    "title1_line4": "Food",
+    "title1_line5": "Revolution",
+
+    "text1": "At Hungry Birds, fast food is reimagined. Born in Istanbul and inspired by the diversity of Arabic cuisine, enriched with Western flavors and enhanced by Turkish touches..",
+
+    "title2_line1": "At Hungry",
+    "title2_line2": "Birds, every",
+    "title2_line3": "product",
+
+    "product1": "freshest",
+    "product2": "locally sourced",
+    "product3": "carefully handled",
+
+    "body2": "We carefully select every element—from crispy, vibrant vegetables to premium meats and handmade breads—for purity and flavor. This commitment to freshness and clean quality makes every bite both nourishing and delicious.",
+
+    "title3_line1": "Fresh",
+    "title3_line2": "Clean",
+    "title3_line3": "Quality",
+    "title3_line4": "Innovative",
+    "title3_line5": "with the addition of Artificial Intelligence to our recipes and restaurant experience.",
+
+    "title3": "The Burger Place That Takes Fast Food in Istanbul to the Next Level",
+    "body3": "As the burger place that takes fast food in Istanbul to the next level, we combine speedy service with fresh and high-quality ingredients. Each burger on our menu is made with carefully selected meats and homemade buns, setting us apart from other fast food spots in Istanbul. With a customerfirst approach, we aim to be the top choice for fast food lovers in Istanbul by offering both great taste and quick service."
+  },
+  "allbranches": {
+    "title_line1": "WORLDWIDE",
+    "title_line2": "INTERNATIONAL",
+    "title_line3": "BRANCHES",
+
+    "country1": "Turkey",
+    "country2_line1": "Saudi",
+    "country2_line2": "Arabia",
+    "country3": "Iraq",
+
+    "viewall": "View Branches",
+    "location": "Location",
+    "call": "Call",
+    "order": "Order Online"
+  },
+  "turkeybranches": {
+    "branch1": "Beşiktaş",
+    "branch2": "Maslak 1453",
+    "branch3": "Batışehir"
+  },
+  "saudiarabiabranches": {
+    "branch1": "Riyadh"
+  },
+  "iraqbranches": {
+    "branch1": "Basrah"
+  },
+  "franchise": {
+    "title1_line1": "Hungry",
+    "title1_line2": "Birds",
+    "title1_line3": "Join the",
+    "title1_line4": "Family",
+
+    "text1": "At Hungry Birds, we redefine fast food with quality, flavor, and innovation. As our brand grows stronger every day, we invite passionate entrepreneurs to become part of our expanding franchise network.",
+
+    "title2_line1": "Why Join",
+    "title2_line2": "Hungry Birds",
+    "title2_line3": "Franchise?",
+
+    "reason1": "Proven Success",
+    "reason2": "Comprehensive Support",
+    "reason3": "Commitment to Quality",
+
+    "text2": "Achieve success by combining the practicality of fast food with gourmet Turkish and Arabic flair through our established brand and innovative menu.",
+
+    "title3_line1": "Stay",
+    "title3_line2": "Connected &",
+    "title3_line3": "Collaborate",
+
+    "text3": "We believe success is built with community. That’s why we’ve created a private Franchise Forum where current owners and new entrepreneurs can connect, share insights, ask questions, and learn best practices. Join the conversation and become a vital part of the Hungry Birds family.",
+
+    "title4_line1": "Are you",
+    "title4_line2": "ready to rise",
+    "title4_line3": "with us?",
+    "title4_line4": "",
+
+    "title_5": "Grow Your Business with Our Delicious Burger Franchise System",
+    "text_5": "Seizing the opportunity to invest in an innovative and unique project that stands apart from the traditional approaches in the food market, we ensure high quality and the continuity of that quality despite the challenges of the industry. Our foundation is built on over 25 years of experience in the food manufacturing sector and more than 12 years of expertise in the restaurant business, enriched by deep knowledge of market dynamics, marketing strategies, and evolving customer needs. We aspire to grow hand in hand with our partners, reaching global recognition while maintaining a strong commitment to safe investment, premium quality, credibility, transparency, and sustainable profitability in every partnership.",
+
+    "title_6": "Profitable and Easy Burger Franchise Model",
+    "text_6": "Designed for entrepreneurs aiming for success in the business world, our profitable and easy burger franchise model offers low risk and high return potential. With our experience, we have created a standardized process and comprehensive training program that gives strong support to our franchise owners."
+  },
+  "contactform": {
+    "title_line1": "Contact",
+    "title_line2": "Form",
+    "name": "First Name",
+    "surname": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "phone_placeholder": "+(code)",
+    "message": "Message",
+    "send": "Send"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "branches": "Branches",
+    "franchise": "Franchise",
+    "catering": "Catering",
+    "blogs": "blogs",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "emailstatus": {
+    "success": "Email Successfully Sent"
+  },
+  "delivery": {
+    "title": "We Come To Your Door"
+  },
+  "seo": {
+    "panels": [
+      {
+        "title": "Best Burger in Istanbul – Fresh, Delicious, and Unique Recipes",
+        "description": "Looking for the best burger in Istanbul? Your search ends here! Our burgers are crafted with fresh ingredients, homemade buns, and special sauces, making us the favorite spot for Beşiktaş burger lovers. We combine taste and quality to take your burger experience to the next level."
+      },
+      {
+        "title": "A Flavor That Stands Out Among Istanbul Burger Places",
+        "description": "What makes us stand out among burger places in Istanbul is our dedication to taste and quality. All our burgers are prepared with fresh, daily ingredients, complemented by homemade buns and our signature spice blends. Every recipe on our menu is carefully designed to please both your palate and your eyes."
+      },
+      {
+        "title": "An Exceptional Burger Experience in Istanbul",
+        "description": "Being the first choice for burgers in Istanbul comes from our commitment to quality. Prepared with fresh ingredients, homemade buns, and special sauces, each burger offers a unique flavor in every bite. Every item on our menu is carefully selected and expertly cooked to delight your taste buds."
+      },
+      {
+        "title": "The Best Burger and Burger Place in Istanbul",
+        "description": "As the best burger place in BeIstanbulşiktaş, we bring together fresh ingredients and unique recipes. With our homemade buns, special sauces, and carefully selected meats, we offer a different taste experience in every bite. From classic to gourmet and vegetarian options, our menu has something for every taste."
+      },
+      {
+        "title": "Istanbul Fast Food Hotspot for Burger Lovers",
+        "description": "Among fast food spots in Istanbul, we stand out with quick and delicious options, especially for burger lovers. Thanks to our fresh ingredients and fast service, enjoying a tasty fast food experience in Beşiktaş has never been easier."
+      }
+    ]
+  },
+  "landing-page" : {
+    "order-now": "Order Now!"
+  },
+  "blog": {
+    "readMore": "Read More"
+  },
+  "components" : {
+    "whatsapp" : "whatsapp",
+    "maps": "Go To Restaurant"
+
+  }
+}

@@ -1,0 +1,119 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+.page{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.table_number_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: $color-brown;
+  font-family: $font-family-teko;
+  font-size: 1.5rem;
+  align-self: flex-start;
+  word-spacing: 1px;
+}
+
+/* rating.component.scss */
+.rating {
+  display: inline-flex;
+}
+
+.star {
+  font-size: 35px;
+  cursor: pointer;
+  color: #d3d3d3; /* Default color for empty star */
+  transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+  color: #ffcc00; /* Color for filled star */
+}
+
+.star:hover {
+  color: #ffcc00; /* Color on hover */
+}
+
+
+.item{
+  background-color: $color-light-yellow2;
+  width: 20rem;
+  display: flex;
+  font-size: 1.75rem;
+  font-family: $font-family-teko;
+  color: $color-brown;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
+
+  @include respond(phoneMid2){
+      width: 18rem;
+  }
+
+  &_name{
+    line-height: 1;
+
+    &--ar{
+      font-family: $font-family-arabic;
+      font-size: 1.5;
+      direction: rtl;
+      line-height: 1;
+    }
+  }
+
+  &--ar{
+    flex-direction: row-reverse;
+  }
+
+
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.submit{
+    background-color: $color-yellow;
+    width: 10rem;
+    font-size: 1.5rem;
+    font-family: $font-family-teko;
+    color: $color-white;
+    padding: 1rem;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.thanks{
+    font-family: $font-family-teko;
+    font-size: 2rem;
+    color: $color-white;
+    width: 25rem;
+    text-wrap: wrap;
+    line-height: 1;
+    margin-top: 1.5rem;
+
+    @include respond(phone){
+        width: 22rem;
+
+    }
+
+    @include respond(phone3){
+        width: 19rem;
+
+    }
+
+    &--ar{
+        direction: rtl;
+    }
+}

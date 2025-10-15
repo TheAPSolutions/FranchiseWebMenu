@@ -1,0 +1,84 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 10rem;
+}
+
+.navigation__icon {
+  fill: white;
+  width: 3rem;
+  margin-top: -40px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  width: 25vh;
+  height: fit-content;
+}
+
+.icons img {
+  width: 4rem;
+}
+
+.reminder {
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  color: $color-brown;
+  width: 25rem;
+  text-wrap: wrap;
+  line-height: 1;
+
+  @include respond(phone) {
+    width: 22rem;
+  }
+
+  @include respond(phone3) {
+    width: 19rem;
+  }
+
+  &--ar {
+    direction: rtl;
+    font-family: $font-family-arabic;
+  }
+}
+
+.rateus {
+  background-color: $color-red;
+  font-family: $font-family-teko;
+  font-size: 1.5rem;
+  color: $color-white;
+  width: 25rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1rem;
+  cursor: pointer;
+
+  &--ar {
+    font-family: $font-family-arabic;
+    font-size: 2rem;
+    font-weight: 800;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  @include respond(phone) {
+    width: 22rem;
+  }
+
+  @include respond(phone3) {
+    width: 19rem;
+  }
+}
+
+.arabictitle {
+  font-family: $font-family-arabic;
+}

@@ -1,0 +1,51 @@
+<div class="window">
+  <div class="close" (click)="exitWindow()">X</div>
+  <div class="title">{{ addSubCategory() }}</div>
+  <ul class="checklist">
+    @for(subCategory of ChildrenCategories; track subCategory.id){
+    <li>
+      @if(language() == 'En'){
+      <app-check-box
+        input_checkbox_title="{{ subCategory.nameEn }}"
+        (change)="toggleSelection(subCategory.id, $event)"
+        [checked]="true"
+      ></app-check-box>
+      } @else if(language() == 'Tr'){
+      <app-check-box
+        input_checkbox_title="{{ subCategory.nameTr }}"
+        (change)="toggleSelection(subCategory.id, $event)"
+        [checked]="true"
+      ></app-check-box>
+      }@else if(language() == 'Ar'){
+      <app-check-box
+        input_checkbox_title="{{ subCategory.nameAr }}"
+        (change)="toggleSelection(subCategory.id, $event)"
+        [checked]="true"
+      ></app-check-box>
+      }
+    </li>
+    } @for(subCategory of subCategories; track subCategory.id){
+    <li>
+      @if(language() == 'En'){
+      <app-check-box
+        input_checkbox_title="{{ subCategory.nameEn }}"
+        (change)="toggleSelection(subCategory.id, $event)"
+      ></app-check-box>
+      } @else if(language() == 'Tr'){
+      <app-check-box
+        input_checkbox_title="{{ subCategory.nameTr }}"
+        (change)="toggleSelection(subCategory.id, $event)"
+      ></app-check-box>
+      }@else if(language() == 'Ar'){
+      <app-check-box
+        input_checkbox_title="{{ subCategory.nameAr }}"
+        (change)="toggleSelection(subCategory.id, $event)"
+      ></app-check-box>
+      }
+    </li>
+    }
+  </ul>
+  <button class="save" (click)="emitSelectedSubCategories()">
+    {{ Save() }}
+  </button>
+</div>

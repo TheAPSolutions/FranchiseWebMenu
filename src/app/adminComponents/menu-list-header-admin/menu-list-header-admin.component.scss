@@ -1,0 +1,19 @@
+@import "../../../sass/abstracts/variables";
+
+.layout {
+  display: grid;
+  grid-template-columns: [image-start]18rem [image-end name-start] 17rem [name-end prices-start]16rem [prices-end description-start]24vw[description-end icon-start] 3rem[icon-end];
+  background-color: $color-red;
+  font-size: 2rem;
+  color: $color-white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  justify-content: space-around;
+  width: 75vw;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+}
+
+.image {
+  grid-column: image-start/ image-end;
+}

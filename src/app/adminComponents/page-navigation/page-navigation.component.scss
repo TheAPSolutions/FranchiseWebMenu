@@ -1,0 +1,31 @@
+@import "../../../sass/abstracts/variables";
+
+.page_nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-self: flex-end;
+  margin-top: 0.5rem;
+  align-items: center;
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-yellow;
+  }
+}
+
+.page_number{
+    font-size: 1.5rem;
+    color: $color-brown;
+    background-color: $color-light-yellow2;
+    padding: 1rem;
+
+    &--active{
+        background-color: $color-yellow;
+    }
+
+}
+
+.white_space{
+    height: 5rem;
+}

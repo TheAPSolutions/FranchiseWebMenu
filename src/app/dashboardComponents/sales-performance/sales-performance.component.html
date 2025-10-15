@@ -1,0 +1,26 @@
+<div class="title">
+    {{salesPerformanceBetweenPreviousTwoMonths()}}
+</div>
+<div class="card">
+  <div class="performance-container" *ngIf="percentageChange !== null">
+    <div
+      class="arrow"
+      [ngClass]="{ increase: isIncrease, decrease: !isIncrease }"
+    >
+      <span *ngIf="isIncrease"
+        >⬆ +{{ getAbsolutePercentage(percentageChange) }}%</span
+      >
+      <span *ngIf="!isIncrease"
+        >⬇ -{{ getAbsolutePercentage(percentageChange) }}%</span
+      >
+    </div>
+  </div>
+  <div class="summary">
+    <p>{{ lastMonthName }} {{ lastMonthYear }} Sales: {{ lastMonthSales | number }}</p>
+    <p>{{ prevMonthName }} {{ prevMonthYear }} Sales: {{ prevMonthSales | number }}</p>
+  </div>
+
+  <div *ngIf="percentageChange === null" class="no-data">
+    <p>Not enough data to compare performance.</p>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+@import "../../../sass/abstracts/variables";
+
+.header {
+  width: 100vw;
+  height: 5vh;
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 5rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.brand_name {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 2.75rem;
+}
+
+.line {
+  width: 0.5rem;
+  height: 3rem;
+  background-color: $color-dark-gray;
+}
+
+.nav_item a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-family: $font-family-teko;
+  color: rgba($color: $color-dark-gray, $alpha: 0.5);
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.nav_item {
+  list-style: none;
+  color: $color-dark-gray;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-dark-gray;
+  }
+
+  &.nav_item--active {
+    color: $color-dark-gray;
+  }
+}
+
+.nav_item--active {
+  color: $color-dark-gray;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  align-self: flex-end;
+  margin-right: 8rem;
+  &__icon {
+    cursor: pointer;
+    fill: $color-dark-gray;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.language_options{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  color: $color-dark-gray;
+}

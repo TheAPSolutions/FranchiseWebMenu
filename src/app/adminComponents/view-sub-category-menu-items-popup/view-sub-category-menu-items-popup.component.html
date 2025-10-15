@@ -1,0 +1,32 @@
+<div class="window">
+  <div class="close" (click)="exitWindow()">X</div>
+  <div class="title">{{ viewMenuItems() }}</div>
+  <ul class="checklist">
+    @for(menuItem of MenuItems; track menuItem.id){
+    <li>
+      @if(language() == 'En'){
+      <app-check-box
+        input_checkbox_title="{{ menuItem.nameEn }}"
+        (change)="toggleSelection(menuItem.id, $event)"
+        [checked]="true"
+        [disabled]="true"
+      ></app-check-box>
+      } @else if(language() == 'Tr'){
+      <app-check-box
+        input_checkbox_title="{{ menuItem.nameTr }}"
+        (change)="toggleSelection(menuItem.id, $event)"
+        [checked]="true"
+        [disabled]="true"
+      ></app-check-box>
+      }@else if(language() == 'Ar'){
+      <app-check-box
+        input_checkbox_title="{{ menuItem.nameAr }}"
+        (change)="toggleSelection(menuItem.id, $event)"
+        [checked]="true"
+        [disabled]="true"
+      ></app-check-box>
+      }
+    </li>
+    }
+  </ul>
+</div>

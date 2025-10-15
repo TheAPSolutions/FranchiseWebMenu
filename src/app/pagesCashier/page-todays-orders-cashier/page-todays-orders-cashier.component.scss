@@ -1,0 +1,102 @@
+@import "../../../sass/abstracts/variables";
+
+table {
+  width: 100%;
+}
+
+th {
+  padding: 12px;
+  border: none;
+  text-align: center;
+  font-size: 3rem;
+  color: $color-white;
+  background-color: $color-red;
+  font-family: $font-family-teko;
+  font-weight: 300;
+  padding: 2rem;
+}
+
+td {
+  padding: 12px;
+  border: none;
+  text-align: center;
+  background-color: $color-white;
+  color: $color-brown;
+  font-family: $font-family-teko;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+td {
+  border-bottom: 3px solid $color-brown;
+}
+
+.page {
+  background-color: $color-light-yellow2;
+  padding-top: 2rem;
+
+  height: 100%;
+}
+.page_content {
+  font-family: $font-family-teko;
+  padding-top: -5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    color: $color-brown;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+  }
+
+  &__date{
+    font-size: 3.5rem;
+    color: $color-brown;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  &__container {
+    background-color: $color-white;
+    height: fit-content;
+    margin-top: -2rem;
+  }
+
+  &__controller {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.page_nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-self: flex-end;
+  margin-top: 0.5rem;
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-yellow;
+  }
+}
+
+.page_navigation{
+    margin-top: 2rem;
+}
+
+.pageNumber {
+  color: $color-yellow;
+  font-family: $font-family-teko;
+  font-size: 4rem;
+  justify-self: center;
+  align-self: center;
+  margin-left: 2rem;
+}

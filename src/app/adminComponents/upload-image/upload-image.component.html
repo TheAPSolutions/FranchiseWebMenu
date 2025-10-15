@@ -1,0 +1,52 @@
+<div class="upload_image">
+  <!-- Custom button to upload image -->
+  <!-- Image preview -->
+
+  @if(previewUrl == null){ @if(input_size() === 'large'){
+  <div class="image_not_uploaded image_not_uploaded--large">
+    <svg class="icon_image">
+      <use xlink:href="images/sprites5.svg#icon-images"></use>
+    </svg>
+  </div>
+  } @else {
+  <div class="image_not_uploaded">
+    <svg class="icon_image">
+      <use xlink:href="images/sprites5.svg#icon-images"></use>
+    </svg>
+  </div>
+  } } @else if (previewUrl != null){
+  <div>
+    <img
+      [src]="previewUrl"
+      alt="Image preview"
+      class="preview_upload_Image"
+      (click)="openModal()"
+    />
+  </div>
+  }
+
+  <button (click)="triggerFileInput()" class="upload_Image_button" type="none">
+    {{UploadImage()}}
+  </button>
+
+  <!-- Hidden file input to open file dialog -->
+  <input
+    type="file"
+    #fileInput
+    (change)="onFileSelected($event)"
+    accept="image/*"
+    style="display: none"
+  />
+  <div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+    <div class="close">X</div>
+    <div class="modal-content">
+      <img [src]="previewUrl" alt="Full-size Image" class="full-size-image" />
+    </div>
+    <button
+      (click)="triggerFileInput()"
+      class="upload_Image_button upload_Image_button--large"
+    >
+      {{UploadImage()}}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="title">{{cashierPaymentManager()}}</div>
+<div class="main">
+  <div class="filter-container">
+    <label class="dropdown_title" for="branch">{{selectBranchLanguage()}}</label>
+    <div class="branches">
+      @for(branch of branches; track branch.id) {
+      <div class="branch" (click)="selectBranch(branch.id)">
+        {{ branch.name }}
+      </div>
+      }
+    </div>
+
+    <label class="dropdown_title" for="startDate">{{startDateLanguage()}}</label>
+    <input
+      class="calender"
+      id="startDate"
+      type="date"
+      [(ngModel)]="startDate"
+      (change)="fetchOrders()"
+    />
+
+    <label class="dropdown_title" for="endDate">{{endDateLanguage()}}</label>
+    <input
+      class="calender"
+      id="endDate"
+      type="date"
+      [(ngModel)]="endDate"
+      (change)="fetchOrders()"
+    />
+  </div>
+
+  <div class="middle">
+    <div class="header">
+      <div class="selected_branch">{{selectedBranchLanguage()}} {{ branchName }}</div>
+      <div class="choosen_date">
+        {{chosenDate()}} {{ startDate }}  {{ '  ---  ' + endDate }}
+      </div>
+    </div>
+    <div class="table_container">
+      <table>
+        <thead>
+          <tr>
+            <th>{{orderID()}}</th>
+            <th>{{totalPrice()}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.id }}</td>
+            <td>{{ order.totalPrice + " TL" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sales">
+    <div class="second_title">{{totalSalesLanguage()}}</div>
+    <div class="total-sales">
+      <strong>{{ totalSales + " TL" }} </strong>
+    </div>
+  </div>
+</div>

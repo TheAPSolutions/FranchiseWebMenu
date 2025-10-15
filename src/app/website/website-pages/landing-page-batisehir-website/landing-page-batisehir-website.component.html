@@ -1,0 +1,121 @@
+<!-- Meta -->
+<head>
+  <title>Batışehir Hamburger ve Fast Food | Hungry Birds</title>
+  <meta
+    name="description"
+    content="Batışehir hamburger ve fastfood keyfini Hungry Birds’te keşfedin. Çıtır fried chicken, glutensiz ve vejetaryen seçeneklerle doyurucu menü sunulur"
+  />
+</head>
+<div class="besktaslandingpage">
+  <!--Desktop Version Hero-->
+  <div class="hero_desktop">
+    <div class="hero_desktop__brand_name_container">
+      <h1 class="hero_desktop__brand_name_container__brandname">
+        Hungry <br />
+        Birds
+      </h1>
+
+      <h3 class="hero_desktop__brand_name_container__slogan">
+        Batışehir’ın <br />
+        En İyi Burgeri
+      </h3>
+    </div>
+
+    <div class="hero_desktop__hero-burger_container">
+      <div class="hero_desktop__hero-burger_container__hero-burger">
+        <img loading="lazy" src="images/website-images/landingpageBurger.png" />
+      </div>
+
+      <div class="hero_desktop__hero-burger_container__action_buttons">
+        <button
+          class="hero_desktop__hero-burger_container__action_buttons__hero_button"
+          (click)="odernow()"
+        >
+          {{ "landing-page.order-now" | translate }} &#8594;
+        </button>
+        <button
+          class="hero_desktop__hero-burger_container__action_buttons__hero_button hero_desktop__hero-burger_container__action_buttons__hero_button--secondary"
+          (click)="menu()"
+        >
+          Menu &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="brandname">
+    Hungry <br />
+    Birds
+  </h1>
+
+  <h3 class="slogan">
+    Batışehir’ın <br />
+    En İyi Burgeri
+  </h3>
+
+  <div class="hero-burger">
+    <img loading="lazy" src="images/website-images/landingpageBurger.png" />
+  </div>
+
+  <div class="action_buttons">
+    <button class="action_buttons__hero_button" (click)="odernow()">
+      {{ "landing-page.order-now" | translate }} &#8594;
+    </button>
+    <button
+      class="action_buttons__hero_button action_buttons__hero_button--secondary"
+      (click)="menu()"
+    >
+      Menu &#8594;
+    </button>
+  </div>
+
+  <!--Google Reviews-->
+  <div class="embedsocial-widget" data-ref="5303c1f4e00c35548e54a6f9f2e5a73d">
+    <a
+      href="https://embedsocial.com/google-reviews-widget/"
+      title="Add Google reviews on a website"
+      target="_blank"
+      class="powered-by-es es-summary-slider"
+    >
+      <img
+        src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp"
+        alt="EmbedSocial"
+      />
+      <span> Google reviews widget </span>
+    </a>
+  </div>
+
+  <div class="hero-sale">
+    <div class="hero-sale__image_container">
+      <img loading="lazy" src="images/website-images/landingpageSale.png" />
+    </div>
+  </div>
+
+  <!-- some-feature.component.html -->
+  <image-carousel
+    [images]="images"
+    [autoPlay]="true"
+    [intervalMs]="3000"
+    [loop]="true"
+    [showArrows]="true"
+    [showIndicators]="true"
+    aspectRatio="16/9"
+  />
+
+  <div class="text2">
+    No One <br />
+    Leaves <br />
+    Hungry
+  </div>
+
+  <!--   <div class="header_action_button">
+    <button
+      class="action_buttons__hero_button action_buttons__hero_button--header hero_desktop__hero-burger_container__action_buttons__hero_button hero_desktop__hero-burger_container__action_buttons__hero_button--header"
+    >
+      {{ "landing-page.order-now" | translate }}
+    </button>
+  </div> -->
+
+  <app-footer-website />
+  <app-cta-button-website Branch="batisehir" />
+</div>

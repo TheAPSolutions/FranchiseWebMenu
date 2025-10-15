@@ -1,0 +1,125 @@
+<ng-container *ngIf="vm">
+  <article class="container">
+    <div class="two-col">
+      <!-- Left: Cover image -->
+      <div class="col image-col">
+        <img
+          *ngIf="vm.coverImage"
+          class="cover"
+          [src]="vm.coverImage"
+          [alt]="vm.title"
+        />
+      </div>
+
+      <!-- Right: Content -->
+      <div class="col content-col">
+        <h1 class="title">{{ vm.title }}</h1>
+        <p class="meta">
+          {{ vm.publishedAt | date : "longDate" }} ·
+          {{ vm.author }}
+        </p>
+
+        <!-- Your rich content (from JSON / CMS) -->
+        <div class="content" [innerHTML]="safeContent"></div>
+
+        <!-- Share row -->
+        <div class="share-row">
+          <span class="share-label">Share With</span>
+
+          <button
+            class="share-btn wa"
+            (click)="share('whatsapp')"
+            [attr.aria-label]="'Share on WhatsApp: ' + vm.title"
+          >
+            <!-- WhatsApp SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M.5 11.8C.5 5.8 5.4 1 11.5 1S22.5 5.8 22.5 11.8 17.6 22.5 11.5 22.5a10.9 10.9 0 0 1-5.2-1.3L2 23l1.8-4.1A10.7 10.7 0 0 1 .5 11.8Zm3 0c0 4.4 3.6 8 8 8 1.5 0 3-.4 4.2-1.2l.3-.2 2.4 1.1-.6-2.5.2-.3A7.9 7.9 0 0 0 19.5 12c0-4.4-3.6-8-8-8s-8 3.6-8 8Zm6.2-2.3c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5 0-.8.4s-1.1 1-1.1 2.5 1.1 2.9 1.3 3.1c.1.2 2.2 3.5 5.5 4.7 2.7 1.1 3.2.9 3.8.8.6 0 1.9-.8 2.1-1.6.2-.8.2-1.5.1-1.6-.1-.1-.2-.2-.5-.3l-1.8-.8c-.2-.1-.4-.1-.6.2-.2.3-.7 1-.8 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.5A7.7 7.7 0 0 1 9 14c-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.2-.1.2-.3.3-.5 0-.1 0-.3 0-.4l-.6-1.4Z"
+              />
+            </svg>
+          </button>
+
+          <button
+            class="share-btn fb"
+            (click)="share('facebook')"
+            [attr.aria-label]="'Share on Facebook: ' + vm.title"
+          >
+            <!-- Facebook SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22 12.06C22 6.53 17.52 2 12 2S2 6.53 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.03H7.9v-2.9h2.54V9.86c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.49h-1.27c-1.25 0-1.64.78-1.64 1.57v1.9h2.79l-.45 2.9h-2.34V22C18.34 21.2 22 17.06 22 12.06Z"
+              />
+            </svg>
+          </button>
+
+          <button
+            class="share-btn li"
+            (click)="share('linkedin')"
+            aria-label="Share on LinkedIn"
+          >
+            <!-- LinkedIn SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4zM8.5 8.5h3.8v2.1h.05c.53-1 1.84-2.1 3.79-2.1 4.05 0 4.8 2.67 4.8 6.15V24h-4v-6.91c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.79-2.65 3.64V24h-4z"
+              />
+            </svg>
+          </button>
+
+          <button
+            class="share-btn x"
+            (click)="share('x')"
+            aria-label="Share on X"
+          >
+            <!-- X (Twitter) SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M18.244 2H21.5l-7.5 8.57L23 22h-5.98l-4.68-5.78L6.88 22H3.62l8.02-9.17L1.5 2h6.09l4.23 5.19L18.244 2zm-2.1 18h2.02L8.01 4H5.99l10.154 16z"
+              />
+            </svg>
+          </button>
+
+          <button
+            class="share-btn ig"
+            (click)="share('instagram')"
+            aria-label="Share on Instagram"
+          >
+            <!-- Instagram glyph (outline) -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.51 5.51 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.75z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom navigation arrows -->
+    <div class="nav-arrows">
+      <a
+        class="arrow left"
+        *ngIf="prevSlug"
+        [routerLink]="['/blog', prevSlug]"
+        aria-label="Previous post"
+      >
+        <!-- left arrow -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </a>
+
+      <a
+        class="arrow right"
+        *ngIf="nextSlug"
+        [routerLink]="['/blog', nextSlug]"
+        aria-label="Next post"
+      >
+        <!-- right arrow -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m8.59 16.59 1.41 1.41 6-6-6-6-1.41 1.41L13.17 12z" />
+        </svg>
+      </a>
+    </div>
+  </article>
+</ng-container>
+<app-footer-website />

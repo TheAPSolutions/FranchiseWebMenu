@@ -1,0 +1,177 @@
+@import "../../../sass/abstracts/variables";
+
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  font-family: $font-family-teko;
+  background-color: $color-baby-blue;
+  width: 89vw;
+  padding: 4rem;
+  border-radius: 3%;
+  box-shadow: $shadow;
+
+}
+
+.dropdown_title {
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  color: $color-dark-gray;
+}
+
+.dropdown {
+  background-color: $color-dark-gray;
+  color: $color-white;
+  font-family: $font-family-teko;
+  font-size: 1.5rem;
+  padding: 0.25rem 1rem;
+}
+.calender {
+  background-color: $color-white;
+  color: $color-dark-gray;
+  font-family: $font-family-teko;
+  font-size: 1.5rem;
+  padding: 0.25rem 1rem;
+}
+
+.branches {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.branch {
+  background-color: $color-baby-blue;
+  color: $color-dark-gray;
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  border-radius: 2%;
+}
+
+.branch:active {
+  background-color: $color-dark-gray;
+  color: $color-white;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 20px;
+  align-items: center;
+  background-color: $color-white;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 5%;
+  width: 25rem;
+  box-shadow: $shadow;
+  height: 40rem;
+  align-self: center;
+
+
+
+  select,
+  input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  font-family: $font-family-teko;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $color-white;
+  color: $color-dark-gray;
+  font-size: 2rem;
+  width: 70rem;
+  padding: 2rem 4rem;
+  box-shadow: $shadow;
+}
+.table_container {
+  max-height: 45rem;
+  overflow-y: auto;
+  display: block;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead{
+    position: sticky;
+    top: 0;
+  }
+
+  th,
+  td {
+    border: none;
+    background-color: $color-baby-blue;
+    color: $color-dark-gray;
+    font-size: 2.5rem;
+    font-weight: 300;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid $color-dark-gray; /* Add border-bottom */
+  }
+
+  th {
+    background-color: $color-dark-gray;
+    color: $color-white;
+    font-size: 2.5rem;
+    font-weight: 300;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    position: sticky;
+    z-index: 2;
+  }
+}
+
+.sales {
+  align-self: center;
+}
+
+.total-sales {
+  background-color: $color-white;
+  color: $color-dark-gray;
+  font-family: $font-family-teko;
+  font-size: 2.5rem;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  border-radius: 2%;
+  height: 17rem;
+  box-shadow: $shadow;
+}
+
+.title {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
+}
+
+.second_title {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-wrap: nowrap;
+}

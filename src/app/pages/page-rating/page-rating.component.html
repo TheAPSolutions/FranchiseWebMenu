@@ -1,0 +1,71 @@
+<div class="page">
+  <div class="table_number_container">
+    {{ OrderNumber() }}
+    <input
+      type="text"
+      required
+      [(ngModel)]="inputValue"
+      (keydown)="onInputChange($event)"
+    />
+  </div>
+  @if(!order?.isRated){
+  <div class="items">
+    @for(item of uniqueMenuItems; track order?.orderId) {
+    <div class="item">
+      @if(language == 'Ar'){
+      <div class="item_name">{{ item.nameAr }}</div>
+      } @else if(language == 'En'){
+      <div class="item_name">{{ item.nameEn }}</div>
+      }@else if(language == 'Tr'){
+      <div class="item_name">{{ item.nameTr }}</div>
+      }
+      <div class="rating">
+        <span
+          *ngFor="let star of stars; let index = index"
+          class="star"
+          [class.filled]="
+            index <
+            (hoveredStars.get(item.itemId) || itemRatings.get(item.itemId) || 0)
+          "
+          (click)="rate(item.itemId, index + 1)"
+          (mouseover)="hover(item.itemId, index + 1)"
+          (mouseleave)="clearHover(item.itemId)"
+          id="{{ item.itemId }}"
+        >
+          ★
+        </span>
+      </div>
+    </div>
+    } @if(canRate){
+    <div
+      class="submit"
+      (click)="updateRating()"
+      [routerLink]="['/menu/sucessMessage']"
+    >
+      Submit Rating
+    </div>
+    }
+  </div>
+  } @else { @if(language == 'Ar'){
+  <div class="thanks thanks--ar">
+    {{ cannotRate() }}
+  </div>
+  } @else {
+  <div class="thanks">
+    {{ cannotRate() }}
+  </div>
+  } }
+</div>
+
+<app-navigation
+    [LeftImage]="'home'"
+    [LeftTitle]="NavRight()"
+    [LeftRoute]="'/hungrybirds'"
+    [MiddleImage]="'cart'"
+    [MiddleRoute]="'/order'"
+    [RightImage]="'spoon-knife'"
+    [RightText]="NavLeft()"
+    [RightRoute]="'/categories'"
+  ></app-navigation>
+
+<app-success-message> </app-success-message>

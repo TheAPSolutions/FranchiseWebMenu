@@ -1,0 +1,15 @@
+<button class="button_container" (click)="toggle()">
+  <svg class="navigation__icon navigation__icon--white">
+    <use xlink:href="images/sprites.svg#icon-edit"></use>
+  </svg>
+  @if(language == 'Ar'){
+    <span class="edit edit--ar">
+      {{ editButtonTitle() }}
+    </span>
+  } @else {
+    <span class="edit">
+      {{ editButtonTitle() }}
+    </span>
+  }
+
+</button>

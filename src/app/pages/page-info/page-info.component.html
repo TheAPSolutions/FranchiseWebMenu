@@ -1,0 +1,81 @@
+<div class="page">
+  @if(language == 'Ar'){
+  <app-primary-header-arabic [title]="YourOpinion()" />
+  } @else {
+  <app-primary-header [title]="YourOpinion()" />
+  } @if(language == 'Ar'){
+  <div class="reminder reminder--ar">{{ RatingReminder() }}</div>
+  <div class="rateus rateus--ar" [routerLink]="['/menu/rating']">{{ RateUs() }}</div>
+  <app-primary-header-arabic [title]="OurBranches()" />
+  } @else {
+  <div class="reminder">{{ RatingReminder() }}</div>
+  <div class="rateus" [routerLink]="['/menu/rating']">{{ RateUs() }}</div>
+  <app-primary-header [title]="OurBranches()" />
+  } @if(language == 'Ar'){ @for (branch of branches; track branch.id) {
+  <app-image-container-arabic
+    [imagePath]="branch.imageUrl"
+    [desc]="branch.locationUrl"
+    [title]="branch.name"
+    [number]="branch.phoneNumber"
+  />
+  } } @else { @for (branch of branches; track branch.id) {
+  <app-image-container
+    [imagePath]="branch.imageUrl"
+    [desc]="branch.locationUrl"
+    [title]="branch.name"
+    [number]="branch.phoneNumber"
+  />
+  } } @if(language == 'Ar'){
+  <app-primary-header-arabic [title]="OurOffers()" />
+  } @else {
+  <app-primary-header [title]="OurOffers()" />
+  } @for (offer of offers; track offer.id) { @if (offer.isVisible) {
+  <app-image-container
+    [imagePath]="offer.imageUrl"
+    [desc]="''"
+    [title]="''"
+    [number]="'0'"
+  />
+  } } @if(language == 'Ar'){
+  <app-primary-header-arabic [title]="OurApplication()" />
+  } @else {
+  <app-primary-header [title]="OurApplication()" />
+  }
+
+  <div class="icons">
+    <img src="images/App Symbol.png" (click)="goToAppStore()" />
+    <img src="images/Google Play.png" (click)="goToPlayStore()" />
+  </div>
+
+  @if(language == 'Ar'){
+  <app-primary-header-arabic [title]="OurSocials()" />
+  } @else {
+  <app-primary-header [title]="OurSocials()" />
+  }
+  <div class="icons">
+    <svg class="navigation__icon navigation__icon--white" (click)="goToInsta()">
+      <use xlink:href="images/sprites.svg#icon-instagram"></use>
+    </svg>
+    <svg
+      class="navigation__icon navigation__icon--white"
+      (click)="goToTiktok()"
+    >
+      <use xlink:href="images/sprites.svg#icon-tiktok"></use>
+    </svg>
+    <svg class="navigation__icon navigation__icon--white" (click)="goToSnap()">
+      <use xlink:href="images/sprites.svg#icon-snapchat-square"></use>
+    </svg>
+  </div>
+</div>
+<app-success-message />
+
+<app-navigation
+  [LeftImage]="'spoon-knife'"
+  [LeftTitle]="NavLeft()"
+  [LeftRoute]="'/menu/categories'"
+  [MiddleImage]="'home'"
+  [MiddleRoute]="''"
+  [RightImage]="'cart'"
+  [RightText]="NavRight()"
+  [RightRoute]="'/menu/order'"
+/>

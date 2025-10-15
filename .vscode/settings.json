@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b782a055-3d40-4477-abfa-047fd07490b8/resourceGroups/rg-menuappFrontend/providers/Microsoft.Web/sites/menuapprontEnd",
+    "appService.deploySubpath": "dist\\menuapp\\browser"
+}

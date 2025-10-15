@@ -1,0 +1,42 @@
+<div class="food_card_container">
+  <div
+    class="image"
+    [style.background-image]="getBackgroundImage(imageUrl)"
+  ></div>
+  <div class="right">
+    <div class="Content_container">
+      @if(language == 'Ar'){
+      <div class="item_name item_name--ar">{{ itemName }}</div>
+      }@else {
+      <div class="item_name">{{ itemName }}</div>
+
+      }
+      <div class="under_content">
+        @if ((!isStudent() || singleItem.studentPrice <= 0) && !isTakeaway()) {
+        <div class="price">{{ itemPrice }}TL</div>
+        } @if (singleItem.studentPrice > 0 && isStudent()) {
+        <div class="item_price">
+          <div class="item_price__old">{{ itemPrice + " TL" }}</div>
+          <div class="item_price__new">
+            {{ singleItem.studentPrice + " TL" }}
+          </div>
+        </div>
+        } @if (isTakeaway()) {
+        <div class="price">{{ takeawayprice }}TL</div>
+        }
+        <app-order-counter
+          input_color="yellow"
+          (orderSuccess)="handleOrderSuccess()"
+          (orderDelete)="handleOrderDelete()"
+          [id]="order().itemId"
+          [price]="itemPrice"
+          [studentPrice]="singleItem.studentPrice"
+          [takeawayprice]="takeawayprice"
+          [ishasOptions]="singleItem.hasOptions"
+          (openOverlay)="handleOpenOrderOptionsOverLay($event)"
+          [orderFromOrdersPage]="order()"
+        ></app-order-counter>
+      </div>
+    </div>
+  </div>
+</div>

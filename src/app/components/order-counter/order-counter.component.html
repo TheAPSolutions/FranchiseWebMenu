@@ -1,0 +1,13 @@
+@if(input_color()=== 'red'){
+<div class="counter_container counter_container--red">
+  <button (click)="MinusClicked()">-</button>
+  <div class="counter_displayer">{{ number }}</div>
+  <button (click)="PlusClicked()">+</button>
+</div>
+} @else if(input_color() === 'yellow'){
+<div class="counter_container counter_container--yellow">
+  <button (click)="MinusClicked()">-</button>
+  <div class="counter_displayer">{{ number }}</div>
+  <button (click)="PlusClicked()">+</button>
+</div>
+}

@@ -1,0 +1,50 @@
+<section
+  class="section"
+  [@fadeInFromLeft]="getAnimationState('section')"
+  appAnimateOnScroll
+  (animationStateChange)="setAnimationState('section', $event)"
+>
+  <div class="left">
+    <div class="left__title">{{ "delivery.title" | translate }}</div>
+
+    <div class="left__image">
+      <a
+        href="https://www.yemeksepeti.com/restaurant/gzzm/hungry-birds-gzzm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="images/website-images/yemeksepeti.webp"
+          alt="yemeksepeti logo"
+        />
+      </a>
+    </div>
+
+    <div class="left__image">
+      <a
+        href="https://tgoyemek.com/restoranlar/160628#bu-restoranin-en-sevilenleri"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="images/website-images/rendyol.webp" alt="trendyol logo" />
+      </a>
+    </div>
+
+    <div class="left__image">
+      <a
+        href="https://getir.com/yemek/restoran/hungry-birds-cihannuma-mah-besiktas-istanbul/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="images/website-images/getir.webp" alt="getir logo" />
+      </a>
+    </div>
+  </div>
+
+  <div class="right">
+    <img
+      src="images/website-images/delivery.webp"
+      alt="hungry birds delivery logo"
+    />
+  </div>
+</section>

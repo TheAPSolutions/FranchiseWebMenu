@@ -1,0 +1,19 @@
+<div class="page_layout">
+  @if(currentUrl !== '/cashier'){
+  <div class="page_layout__header">
+    <app-cashier-header />
+  </div>
+
+  <div class="page_layout__navigation">
+    <app-navigation-cashier />
+  </div>
+
+  <div class="page_layout__content">
+    <router-outlet />
+  </div>
+  } @else {
+  <div class="page_layout__content page_layout__content--2">
+    <router-outlet />
+  </div>
+  }
+</div>

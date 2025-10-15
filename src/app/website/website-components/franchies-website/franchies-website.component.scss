@@ -1,0 +1,448 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+@import "../../../../sass/base/base";
+
+.franchieswebsite {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 100vw;
+  height: fit-content;
+  padding: 3rem 0rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.franchiesBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.franchise1 {
+  display: flex;
+  width: 90vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  z-index: 10;
+
+  @include respond(bigdesktop4) {
+    gap: 5rem;
+  }
+
+  @include respond(tab-land2) {
+    flex-direction: column-reverse;
+    height: fit-content;
+    padding: 2rem 0;
+  }
+}
+
+.franchies1video1contanier {
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  border: 5px solid $color-black;
+
+  @include respond(bigdesktop4) {
+    width: 35rem;
+  }
+  @include respond(bigdesktop2) {
+    width: 30rem;
+  }
+
+  @include respond(tab-port2) {
+    width: 80vw;
+  }
+
+  @include respond(phone) {
+    height: 35rem;
+  }
+  @include respond(midphone) {
+    height: 30rem;
+  }
+
+  @include respond(phoneMid) {
+    height: 25rem;
+  }
+}
+
+.franchies1video1contanier::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.franchies1video1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.franchies1Right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 2rem;
+  z-index: 10;
+
+  @include respond(tab-land2) {
+    align-items: center;
+  }
+}
+
+.franchies1RightTitle {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  z-index: 10;
+  text-align: left;
+  font-size: $medium2;
+  line-height: 1.5;
+  text-shadow: $shadow;
+
+  @include respond(tab-land2) {
+    text-align: center;
+  }
+
+  @include respond(bigdesktop4) {
+    font-size: $medium2;
+  }
+  @include respond(bigdesktop) {
+    font-size: $medium2;
+  }
+  @include respond(phone) {
+    font-size: $medium;
+  }
+  @include respond(phone4) {
+    font-size: $small;
+  }
+}
+
+.franchies1text {
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xxsmall;
+  line-height: 1.5;
+  width: 43rem;
+  text-align: left;
+
+  @include respond(tab-land2) {
+    text-align: center;
+  }
+
+  @include respond(bigdesktop) {
+    font-size: $xxsmall;
+    width: 30rem;
+  }
+
+  @include respond(tab-port2) {
+    width: 80vw;
+    text-align: center;
+  }
+}
+
+.franchies2 {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: fit-content;
+  padding: 3rem 0rem;
+  justify-self: center;
+  align-items: center;
+  position: relative;
+  row-gap: 5rem;
+  z-index: 10;
+}
+
+.franchiesBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.franchies2title {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $large;
+  text-align: left;
+  text-shadow: $shadow;
+  line-height: 1.5;
+  align-self: flex-start;
+  margin-bottom: 3rem;
+  z-index: 10;
+
+  @include respond(tab-port2) {
+    font-size: $large;
+  }
+  @include respond(tab-port) {
+    font-size: $medium2;
+  }
+  @include respond(tab-port3) {
+    font-size: $medium;
+  }
+  @include respond(phone) {
+    font-size: $small;
+  }
+  @include respond(midphone2) {
+    font-size: $xsmall;
+    margin-bottom: 1rem;
+  }
+  @include respond(phoneMid) {
+    font-size: $xxsmall;
+  }
+}
+
+.franchiesreasonslist {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.franchiesreasonitem {
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xsmall;
+  z-index: 10;
+  align-self: center;
+
+  @include respond(phone) {
+    font-size: $xxsmall;
+  }
+}
+
+.franchiesreasonitem::after {
+  content: "";
+  display: block;
+  width: 80vw;
+  height: 1px;
+  background-color: $color-white;
+  margin: 1rem 0;
+}
+
+.franchiestextbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-website-body;
+  color: $color-white;
+  line-height: 1.5;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border: 5px solid $color-white;
+  font-size: $xsmall;
+  width: 60vw;
+  z-index: 10;
+
+  @include respond(tab-port2) {
+    font-size: $xsmall;
+    width: 80vw;
+  }
+
+  @include respond(phone) {
+    font-size: $xxsmall;
+  }
+}
+
+.franchies3 {
+  display: flex;
+  width: 90vw;
+  height: fit-content;
+  padding: 3rem 0rem;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  z-index: 10;
+
+  @include respond(bigdesktop4) {
+    gap: 5rem;
+  }
+
+  @include respond(tab-land2) {
+    flex-direction: column;
+    height: fit-content;
+    padding: 2rem 0;
+  }
+}
+
+.franchies3left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 10;
+
+  @include respond(tab-land2) {
+    margin-left: 7rem;
+  }
+
+  @include respond(tab-port2) {
+    margin-left: 0;
+    align-items: center;
+  }
+}
+
+.franchies3header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @include respond(phone5) {
+    gap: 0rem;
+    width: 90vw;
+  }
+}
+
+.franchies3title {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  z-index: 10;
+  text-align: left;
+  font-size: $medium2;
+  line-height: 1.5;
+  text-shadow: $shadow;
+
+  @include respond(bigdesktop4) {
+    font-size: $medium2;
+  }
+  @include respond(bigdesktop) {
+    font-size: $medium2;
+  }
+  @include respond(phone) {
+    font-size: $medium;
+  }
+  @include respond(phone4) {
+    font-size: $small;
+  }
+}
+
+.linkfranchiesimage {
+  width: 10rem;
+  height: fit-content;
+  object-fit: cover;
+
+  @include respond(phone5) {
+    width: 7rem;
+  }
+  @include respond(midphone) {
+    width: 4rem;
+    height: auto;
+  }
+  @include respond(phone3) {
+    transform: translateX(-2rem);
+  }
+}
+
+.franchies3body {
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xxsmall;
+  line-height: 1.5;
+  width: 43rem;
+  text-align: left;
+
+  @include respond(tab-land2) {
+    text-align: center;
+  }
+
+  @include respond(bigdesktop) {
+    font-size: $xxsmall;
+    width: 30rem;
+  }
+
+  @include respond(tab-port2) {
+    width: 80vw;
+    text-align: center;
+  }
+}
+
+.franchies3videocontanier {
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  border: 5px solid $color-black;
+
+  @include respond(bigdesktop4) {
+    width: 35rem;
+  }
+  @include respond(bigdesktop2) {
+    width: 30rem;
+  }
+
+  @include respond(tab-port2) {
+    width: 80vw;
+  }
+
+  @include respond(phone) {
+    height: 35rem;
+  }
+  @include respond(midphone) {
+    height: 30rem;
+  }
+
+  @include respond(phoneMid) {
+    height: 25rem;
+  }
+}
+
+.franchies3video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+  position: relative;
+}
+
+.franchies3videocontanier::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.franchies3VideoTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $font-family-website-body;
+  color: $color-white;
+  z-index: 10;
+  text-align: center;
+  font-size: $medium;
+  line-height: 1.5;
+
+  @include respond(phone) {
+    font-size: $small;
+  }
+
+  @include respond(phone) {
+    font-size: $xsmall;
+  }
+  @include respond(phoneMid) {
+    font-size: $xxsmall;
+  }
+}

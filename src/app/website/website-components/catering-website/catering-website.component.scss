@@ -1,0 +1,250 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+@import "../../../../sass/base/base";
+
+.catering-website {
+  width: 100vw;
+  height: fit-content;
+  padding: 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cateringbackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.catering1 {
+  width: 85vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17vw;
+  z-index: 10;
+
+  @include respond(bigdesktop4) {
+    gap: 10rem;
+  }
+  @include respond(bigdesktop2) {
+    flex-direction: column-reverse;
+    height: fit-content;
+    margin: 3rem 0rem;
+    row-gap: 3rem;
+  }
+}
+
+.cateringImage1 {
+  width: 35rem;
+  height: 38rem;
+  object-fit: cover;
+
+  
+  @include respond(big-desktop) {
+    width: 37rem;
+    height: 43rem;
+  }
+
+  @include respond(bigdesktop4) {
+    width: 35rem;
+    height: 40rem;
+  }
+
+  @include respond(tab-port3) {
+    width: 30rem;
+    height: 35rem;
+  }
+  @include respond(phone) {
+    width: 25rem;
+    height: 30rem;
+  }
+
+  @include respond(midphone2) {
+    width: 20rem;
+    height: 25rem;
+  }
+
+  @include respond(phone2) {
+    width: 17rem;
+    height: 21rem;
+  }
+  @include respond(phoneSmall) {
+    width: 14rem;
+    height: 17rem;
+  }
+}
+
+.catering1__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+  height: 100%;
+  row-gap: 2rem;
+  text-align: left;
+}
+
+.catering1Title {
+  font-family: $font-family-website-title;
+  color: $color-white;
+  font-size: $medium2;
+  text-transform: uppercase;
+  line-height: 1;
+
+  @include respond(tab-port3) {
+    font-size: $medium2;
+  }
+
+  @include respond(phone) {
+    font-size: $medium;
+  }
+  @include respond(midphone) {
+    font-size: $small;
+  }
+  @include respond(phoneSmall) {
+    font-size: $xsmall;
+  }
+}
+
+.hugecatering {
+  font-size: $large;
+  @include respond(tab-port3) {
+    font-size: $large;
+  }
+
+  @include respond(phone) {
+    font-size: $medium2;
+  }
+
+  @include respond(midphone) {
+    font-size: $medium;
+  }
+  @include respond(phoneSmall) {
+    font-size: $small;
+  }
+}
+
+.capitalword {
+  font-size: $large;
+  @include respond(tab-port3) {
+    font-size: $large;
+  }
+
+  @include respond(phone) {
+    font-size: $medium2;
+  }
+
+  @include respond(midphone) {
+    font-size: $medium;
+  }
+
+  @include respond(phoneSmall) {
+    font-size: $small;
+  }
+}
+
+.catering1body {
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xxsmall;
+  line-height: 1.5;
+  width: 43rem;
+
+  @include respond(bigdesktop4) {
+    width: 38rem;
+  }
+
+  @include respond(tab-port3) {
+    font-size: $xxsmall;
+    width: 80vw;
+  }
+
+  @include respond(phone4) {
+    font-size: $mini;
+  }
+}
+
+.catering2 {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.catering2body1 {
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xxsmall;
+  line-height: 1.5;
+  width: 30rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  @include respond(tab-port3) {
+    font-size: $xxsmall;
+    width: 80vw;
+  }
+
+  @include respond(phone4) {
+    font-size: $mini;
+  }
+}
+
+.cateringImage2 {
+  width: 30rem;
+  height: 20rem;
+  object-fit: cover;
+
+  @include respond(tab-port3) {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  @include respond(phone) {
+    width: 20rem;
+    height: 13rem;
+  }
+  @include respond(midphone2) {
+    width: 17rem;
+    height: 11rem;
+  }
+  @include respond(phone2) {
+    width: 13rem;
+    height: 9rem;
+  }
+}
+
+.catering2body2 {
+  color: $color-website-brown;
+  font-family: $font-family-website-body;
+  font-size: $xxsmall;
+  line-height: 1.5;
+  width: 30rem;
+  border: 2px solid $color-white;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  @include respond(tab-port3) {
+    font-size: $xxsmall;
+    width: 60vw;
+  }
+
+  @include respond(phone4) {
+    font-size: $mini;
+  }
+}

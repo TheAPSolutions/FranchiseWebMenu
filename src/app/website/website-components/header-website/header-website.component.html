@@ -1,0 +1,129 @@
+<div
+  class="header-website"
+  [@fadeInDown]="getAnimationState('header-website')"
+  appAnimateOnScroll
+  (animationStateChange)="setAnimationState('header-website', $event)"
+>
+  <!--   <img
+    src="images/website-images/header background.webp"
+    class="headerBackground"
+    loading="lazy"
+    alt="header bej background"
+  />
+  <div class="header-website-top">
+    <div class="header-website-top__slogan slogan1">No One Leaves Hungry</div>
+    <div class="header-website-top__slogan slogan2">No One Leaves Hungry</div>
+    <div class="header-website-top__slogan slogan3">No One Leaves Hungry</div>
+  </div> -->
+
+  <div class="header_line">
+    <div class="languageIcon" (click)="OnToggleLanguage()">
+      <img
+        src="images/website-icons/EarthGlobe.svg"
+        class="headerLeftIcon headerIcon"
+        loading="lazy"
+        alt="Language Icon"
+      />
+    </div>
+
+    <div class="header-website-logo">
+      <img
+        src="images/website-images/website-logo.webp"
+        class="LogoHeader"
+        loading="lazy"
+        alt="Hungry Birds Logo"
+      />
+    </div>
+    <div class="menuIcon" (click)="OnToggleMenu()">
+      <img
+        src="images/website-icons/Menu.svg"
+        class="headerRightIcon headerIcon"
+        loading="lazy"
+        alt="Menu Icon"
+      />
+    </div>
+
+    @if(isLanguageOpen()){
+    <nav class="website-languages">
+      <ul class="languages">
+        <li
+          class="languages_item"
+          (click)="switchLanguage('tr')"
+          (click)="OnToggleLanguage()"
+        >
+          TR
+        </li>
+        <li
+          class="languages_item"
+          (click)="switchLanguage('en')"
+          (click)="OnToggleLanguage()"
+        >
+          EN
+        </li>
+        <li
+          class="languages_item"
+          (click)="switchLanguage('ar')"
+          (click)="OnToggleLanguage()"
+        >
+          AR
+        </li>
+      </ul>
+    </nav>
+    }
+  </div>
+</div>
+
+@if(isMenuOpen()){
+<nav class="website-navigation">
+  <ul class="navigation_list">
+    <li class="navigation_item" [routerLink]="''" (click)="OnToggleMenu()">
+      {{ "navbar.home" | translate }}
+    </li>
+    <li
+      class="navigation_item"
+      [routerLink]="'/aboutus'"
+      (click)="OnToggleMenu()"
+    >
+      {{ "navbar.about" | translate }}
+    </li>
+    <li
+      class="navigation_item"
+      (click)="OnToggleMenu()"
+      [routerLink]="'/allbranches'"
+    >
+      {{ "navbar.branches" | translate }}
+    </li>
+    <li
+      class="navigation_item"
+      (click)="OnToggleMenu()"
+      [routerLink]="'/franchies'"
+    >
+      {{ "navbar.franchise" | translate }}
+    </li>
+    <li
+      class="navigation_item"
+      [routerLink]="'/catering'"
+      (click)="OnToggleMenu()"
+    >
+      {{ "navbar.catering" | translate }}
+    </li>
+    <li
+      class="navigation_item"
+      (click)="OnToggleMenu()"
+      [routerLink]="'/franchies'"
+    >
+      {{ "navbar.contact" | translate }}
+    </li>
+    <li
+      class="navigation_item"
+      (click)="OnToggleMenu()"
+      [routerLink]="'/blogs'"
+    >
+      {{ "navbar.blogs" | translate }}
+    </li>
+    <li class="navigation_item" (click)="OnToggleMenu()" routerLink="/menu">
+      {{ "navbar.menu" | translate }}
+    </li>
+  </ul>
+</nav>
+}

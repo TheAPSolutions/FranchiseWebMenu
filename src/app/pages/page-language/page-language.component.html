@@ -1,0 +1,15 @@
+<div class="page">
+  <app-language-card />
+</div>
+<div class="fixed-bottom-nav">
+  <app-navigation
+    [LeftImage]="'home'"
+    [LeftTitle]="NavLeft()"
+    [LeftRoute]="'/'"
+    [MiddleImage]="'spoon-knife'"
+    [MiddleRoute]="'/menu/categories'"
+    [RightImage]="'cart'"
+    [RightText]="NavRight()"
+    [RightRoute]="'/menu/order'"
+  />
+</div>

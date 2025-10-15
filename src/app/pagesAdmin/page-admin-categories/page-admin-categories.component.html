@@ -1,0 +1,94 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{Categories()}}</div>
+      <button class="addbutton" [routerLink]="'/admin/addCategory'">
+        + {{AddCategory()}}
+      </button>
+    </div>
+    <div class="page_content__container">
+      <div class="page_content__controller">
+        <app-search-admin (SQuery)="catchQuery($event)" />
+        <div class="page_nav">
+          <svg
+            class="page_nav__icon"
+            (click)="prevPage()"
+            [class.disabled]="currentPage === 1"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+          </svg>
+          <svg
+            class="page_nav__icon"
+            (click)="nextPage()"
+            [class.disabled]="currentPage === totalPages"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+          </svg>
+          <div class="pageNumber">{{ currentPage }}</div>
+        </div>
+      </div>
+
+      <app-categories-header-admin />
+
+      @if (categories === null) {
+      <div class="empty">{{NoCategories()}}</div>
+      }@else { @for (category of categories; track category.id) {
+      <app-catergory-row-component
+        (isVisible)="handleVisibility($event)"
+        [catImage]="category.categoryImage"
+        [NameAr]="category.nameAr"
+        [NameEn]="category.nameEn"
+        [NameTr]="category.nameTr"
+        [id]="category.id"
+        (isChanged)="onChange($event)"
+        (deleted)="showDeletedMessage()"
+        (updated)="showUpdatedMessage()"
+        [visible]="category.visible"
+        (changedVisibility)="showUpdatedVisibilityMessage()"
+        (errorMessage)="showErrorMessage($event)"
+        (ID)="captureID($event)"
+        (percentageApplied)="handlePercentageApplied()"
+      />
+
+      } }
+      <div class="page_nav">
+        <svg
+          class="page_nav__icon"
+          (click)="prevPage()"
+          [class.disabled]="currentPage === 1"
+        >
+          <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+        </svg>
+
+        <ng-container *ngFor="let item of itemsArray; let i = index">
+          <div
+            class="page_number"
+            [class.page_number--active]="currentPage === i + 1"
+            (click)="changePage(i + 1)"
+          >
+            {{ i + 1 }}
+            <!-- Display the page number -->
+          </div>
+        </ng-container>
+
+        <svg
+          class="page_nav__icon"
+          (click)="nextPage()"
+          [class.disabled]="currentPage === totalPages"
+        >
+          <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+        </svg>
+      </div>
+      <div class="white_space"></div>
+    </div>
+  </div>
+  @if (isVisible) {
+  <app-single-image-categories
+    (isVisible)="handleVisibility($event)"
+    [imageURL]="image"
+  />
+  }
+  <app-compare-prices #appComparePrices (success)="handlePercentageApplied()" />
+</div>
+
+<app-admin-success-message> </app-admin-success-message>

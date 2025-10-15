@@ -1,0 +1,77 @@
+<div class="turkeybrancheswebsite">
+  <img
+    src="images/website-images/heroSandwichesBackground.webp"
+    class="allbranchesBackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div
+    class="branchestitle"
+    [@fadeInDown]="getAnimationState('branchestitle')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('branchestitle', $event)"
+  >
+    {{ "allbranches.title_line1" | translate }} <br />
+    {{ "allbranches.title_line2" | translate }} <br />
+    {{ "allbranches.title_line3" | translate }}
+  </div>
+
+  <div
+    class="imagebranchearth"
+    [@fadeIn]="getAnimationState('imagebranchearth')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('imagebranchearth', $event)"
+  >
+    <img
+      src="images/website-images/earthbranches1.webp"
+      class="earthbranchimage"
+      loading="lazy"
+      alt="earth with location pin"
+    />
+
+    <div class="branchnamewebsite">
+      {{ "allbranches.country2_line1" | translate }} <br />
+      {{ "allbranches.country2_line2" | translate }}
+    </div>
+  </div>
+
+  <div class="branchesturkeylist">
+    <div
+      class="branchitemwebsite"
+      [@fadeInDown]="getAnimationState('branchitemwebsite')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('branchitemwebsite', $event)"
+    >
+      <div class="branchnamewebsiteitem">
+        {{ "saudiarabiabranches.branch1" | translate }}
+      </div>
+      <div
+        class="branchdetailswebsite"
+        (click)="openExternalLink('https://g.co/kgs/ua8a3cE')"
+      >
+        {{ "allbranches.location" | translate }}
+      </div>
+      <div class="branchdetailswebsite">
+        {{ "allbranches.call" | translate }}
+      </div>
+      <div class="branchdetailswebsite">
+        {{ "allbranches.order" | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="menubuttonwebsite"
+    (click)="openExternalLink('https://ksa.wearehungrybirds.com/')"
+    [@fadeIn]="getAnimationState('menubuttonwebsite')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('menubuttonwebsite', $event)"
+  >
+    <img
+      src="images/website-images/menuword.webp"
+      class="menubuttonimage"
+      loading="lazy"
+      alt="menu word"
+    />
+  </div>
+</div>

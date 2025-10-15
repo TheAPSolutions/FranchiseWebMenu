@@ -1,0 +1,36 @@
+<div class="page_layout">
+  <div class="page_layout__container">
+    <div class="page_layout__container__header">{{ExportMenu()}}</div>
+    <div class="page_layout__container__body">
+      <div class="page_layout__container__body__drop">
+        <app-dropdown-admin
+          class="dropdowncategories"
+          [input_dropdown_title]="SelectCategory()"
+          [input_dropdown_options]="categories"
+          (selectedId)="onCategorySelect($event)"
+        />
+      </div>
+      <div class="page_layout__container__body__CategoryName">{{ header }}</div>
+      <div class="export">
+        <button
+          class="exportButton exportButton--green"
+          (click)="exportToExcel()"
+        >
+          <svg class="navigation__icon navigation__icon--white">
+            <use xlink:href="images/sprites6.svg#icon-excel"></use>
+          </svg>
+          {{ExportMenuExcel()}}
+        </button>
+
+        <button class="exportButton" (click)="downloadPDF()">
+          <svg class="navigation__icon navigation__icon--white">
+            <use xlink:href="images/sprites5.svg#icon-file-pdf"></use>
+          </svg>
+          {{ExportMenuPDF()}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-admin-success-message> </app-admin-success-message>

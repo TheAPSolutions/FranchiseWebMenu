@@ -1,0 +1,208 @@
+@import "../../../sass/abstracts/variables";
+
+.overlay{
+    max-width: 450px;
+    width: 95vw;
+    height: 25rem;
+
+    background-color: rgba(255, 255, 255);
+
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 9999;
+    overflow-x: hidden;
+
+    box-shadow: $shadow;
+
+    border: $color-brown solid 2px;
+
+    overflow-y: scroll;
+
+
+
+
+}
+
+.title{
+    color: $color-brown;
+    font-family: $font-family-teko;
+
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-weight: 600;
+    &--ar{
+        font-family: $font-family-arabic;
+        direction: rtl;
+        margin-right: 1rem;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 3.5rem;
+    background-color: $color-red;
+
+    color: white;
+    font-family: $font-family-teko;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    margin-top: 1rem;
+
+    justify-content: space-between;
+
+    box-shadow: $shadow;
+
+}
+.ar {
+    font-family: $font-family-arabic;
+    direction: rtl;
+    color: white;
+    font-size: 1.5rem;
+    
+}
+
+.wrapper {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden;
+    gap: 20px;
+    flex-wrap: nowrap; /* Prevents items from wrapping */
+    white-space: nowrap; /* Ensures content stays in one line */
+    padding: 10px;
+    padding-bottom: 20px;
+    
+    /* Enable smooth scrolling */
+    scroll-behavior: smooth;
+    scrollbar-width: thin; /* Makes the scrollbar thinner (for Firefox) */
+    scrollbar-color: #888 #f0f0f0; /* Custom scrollbar colors (Firefox) */
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+.wrapper::-webkit-scrollbar {
+    height: 8px; /* Adjust the thickness of the scrollbar */
+}
+
+.wrapper::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track color */
+    border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background: #888; /* Scroll thumb color */
+    border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker shade when hovered */
+}
+
+.cards {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: $shadow;
+
+    &__title {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+        height: 30%;
+        background-color: #F7D383;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-brown;
+        font-size: 1.25rem;
+        font-family: $font-family-teko;
+        text-wrap: wrap;
+        text-align: center;
+        &--ar{
+            font-family: $font-family-arabic;
+            direction: rtl;
+        }
+
+    }
+
+}
+
+.cards > img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: end;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.button button{
+    border: none;
+    color: white;
+    font-family: $font-family-teko;
+    font-size: 1.5rem;
+
+    background-color: $color-red;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $color-red;
+
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.close--ar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $color-red;
+
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+

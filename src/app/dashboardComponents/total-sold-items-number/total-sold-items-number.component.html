@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="header">
+    <div class="card">
+      <div class="title">{{numberOfSoldItems()}}</div>
+
+      <app-total-branches-card
+        [input_card_title]="numberOfSoldItems()"
+        [input_card_data]="this.currentMonthData[0].value"
+        [input_card_section1_data]="
+          this.currentMonthOrders[0].totalItemsOrdered
+        "
+        [input_card_section1_title]="this.currentMonthOrders[0].branchName"
+        [input_card_section2_data]="
+          this.currentMonthOrders[1].totalItemsOrdered
+        "
+        [input_card_section2_title]="this.currentMonthOrders[1].branchName"
+        [input_card_section3_data]="
+          this.currentMonthOrders[2].totalItemsOrdered
+        "
+        [input_card_section3_title]="this.currentMonthOrders[2].branchName"
+        [input_card_unit]="' sold'"
+
+      ></app-total-branches-card>
+    </div>
+  </div>
+</div>

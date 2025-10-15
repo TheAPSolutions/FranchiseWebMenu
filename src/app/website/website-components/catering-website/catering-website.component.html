@@ -1,0 +1,98 @@
+<div class="catering-website">
+  <img
+    src="images/website-images/sloganbg.webp"
+    class="cateringbackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div class="catering1">
+    <div
+      class="cateringImage"
+      [@fadeInFromLeft]="getAnimationState('cateringImage')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('cateringImage', $event)"
+    >
+      <img
+        src="images/website-images/catering1.webp"
+        class="cateringImage1"
+        loading="lazy"
+        alt="catering cart"
+      />
+    </div>
+
+    <div class="catering1__text">
+      <div
+        class="catering1Title"
+        [@fadeInDown]="getAnimationState('catering1Title')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('catering1Title', $event)"
+      >
+        <span class="hugecatering">{{
+          "catering.title1_span" | translate
+        }}</span
+        >{{ "catering.title1_rest" | translate }} <br />
+        <span class="capitalword">{{
+          "catering.title2_rest" | translate
+        }}</span>
+        <br />
+        <span class="hugecatering">{{
+          "catering.title3_span" | translate
+        }}</span
+        >{{ "catering.title3_rest" | translate }} <br />
+      </div>
+
+      <div
+        class="catering1body"
+        [@fadeInDown]="getAnimationState('catering1body')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('catering1body', $event, 400)"
+      >
+        {{ "catering.body1" | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="catering2">
+    <div
+      class="catering2body1"
+      [@fadeInFromLeft]="getAnimationState('catering2body1')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('catering2body1', $event)"
+    >
+      {{ "catering.body2" | translate }}
+    </div>
+
+    <img
+      src="images/website-images/catering2.webp"
+      class="cateringImage2"
+      loading="lazy"
+      alt="serve plate"
+      [@fadeInFromRight]="getAnimationState('cateringImage2')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('cateringImage2', $event)"
+    />
+
+    <div
+      class="catering2body2"
+      [@fadeInFromLeft]="getAnimationState('catering2body2')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('catering2body2', $event)"
+    >
+      {{ "catering.body3" | translate }}
+    </div>
+  </div>
+
+  <div
+    class="sectionnew"
+    [@fadeInDown]="getAnimationState('sectionnew')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('sectionnew', $event)"
+  >
+    <h1 class="headnewtitle">
+      {{ "catering.catering3_title" | translate }}
+    </h1>
+    <p class="headnewparagraph">
+      {{ "catering.catering3_paragraph" | translate }}
+    </p>
+  </div>
+</div>

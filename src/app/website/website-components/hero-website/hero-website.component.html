@@ -1,0 +1,50 @@
+<div class="hero">
+  <div class="row1">
+    <img
+      src="images/website-images/herobackground.webp"
+      class="heroBackgroundImage"
+      loading="lazy"
+      alt="Honey Butter Burger"
+    />
+    <div
+      class="hero__content"
+      [@fadeInDown]="getAnimationState('hero__content')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('hero__content', $event)"
+    >
+      <div class="hero__brandname">Hungry <br />Birds</div>
+      <div class="hero__text" @fadeInDown>
+        {{ "hero.slogan_line1" | translate }} <br />{{
+          "hero.slogan_line2" | translate
+        }}
+      </div>
+    </div>
+
+    <div
+      class="hero__image"
+      [@fadeInFromLeft]="getAnimationState('hero__image')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('hero__image', $event)"
+    >
+      <img
+        src="images/website-images/heroBurger.webp"
+        class="heroImage"
+        loading="lazy"
+        alt="Honey Butter Burger"
+      />
+    </div>
+  </div>
+
+  <div class="row2">
+    <div
+      class="hero__button"
+      [routerLink]="'/aboutus'"
+      [@fadeIn]="getAnimationState('hero__button')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('hero__button', $event)"
+    >
+      {{ "hero.button_line1" | translate }} <br />
+      {{ "hero.button_line2" | translate }}
+    </div>
+  </div>
+</div>

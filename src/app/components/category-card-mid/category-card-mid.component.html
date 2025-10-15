@@ -1,0 +1,15 @@
+<div class="category_card">
+  <div
+    class="category_card__image"
+    [style.background-image]="getBackgroundImage(input_categroy_image())"
+  ></div>
+  @if(language == 'Ar'){
+  <div class="category_card__title">
+    <p class="title_border2 title_border2--ar">{{ input_categroy_title() }}</p>
+  </div>
+  } @else {
+  <div class="category_card__title">
+    <p class="title_border2">{{ input_categroy_title() }}</p>
+  </div>
+  }
+</div>

@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="header">
+    <div class="left">
+      <img src="images/hungry_logo.png" alt="logo" class="header__logo" />
+      <div class="header__title">HUNGRY BIRDS</div>
+    </div>
+    <div class="right">
+      <div class="language">
+        <app-language-dropdown class="lanaguge_dropdown" />
+      </div>
+
+      @if(user){
+      <button class="log_out" (click)="onLogout()">Log Out</button>
+      }
+    </div>
+  </div>
+</div>

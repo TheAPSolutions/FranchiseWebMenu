@@ -1,0 +1,78 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{ AddCategroy() }}</div>
+    </div>
+    <form #form="ngForm">
+      <div class="page_content__container">
+        <div class="header"></div>
+        <div class="row1">
+          <app-upload-image
+            [input_size]="'large'"
+            (imageUploaded)="onSelectedImage($event)"
+          />
+
+          <div class="row_item__prices">
+            <div class="input_title">
+              {{ CategroyNameAdmin() }}: <span class="required">*</span>
+            </div>
+            <div class="price_language">
+              <input
+                type="text"
+                class="item_input item_input--mid"
+                placeholder="TR"
+                name="nameTr"
+                id="nameTr"
+                [(ngModel)]="model.nameTr"
+              />
+            </div>
+
+            <div class="price_language">
+              <input
+                type="text"
+                class="item_input item_input--mid"
+                placeholder="EN"
+                name="nameEn"
+                id="nameEn"
+                [(ngModel)]="model.nameEn"
+              />
+            </div>
+
+            <div class="price_language">
+              <input
+                type="text"
+                class="item_input item_input--mid"
+                placeholder="AR"
+                name="nameAr"
+                id="nameAr"
+                [(ngModel)]="model.nameAr"
+              />
+            </div>
+
+            <div class="subCategory">
+              <app-check-box
+                [input_checkbox_title]="isSubCategoryLanguage()"
+                (checkboxChange)="onSubCategoryChecked($event)"
+                #checkbox
+              />
+              @if(isSubCategory){
+              <app-dropdown-admin
+                class="dropdowncategories"
+                [input_dropdown_title]="Categories()"
+                [input_dropdown_options]="categories"
+                (selectedId)="onCategorySelect($event)"
+              ></app-dropdown-admin>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="save_button" (click)="onFormSubmit()">
+          <app-save-button />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-admin-success-message> </app-admin-success-message>

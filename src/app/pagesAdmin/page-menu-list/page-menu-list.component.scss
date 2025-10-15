@@ -1,0 +1,122 @@
+@import "../../../sass/abstracts/variables";
+
+
+.big-container{
+  display: flex;
+}
+.sidebar{
+  width: 18vw;
+
+}
+.page{
+  background-color: $color-light-yellow2;
+  padding-top: 2rem;
+
+  height: 100%;
+}
+.page_content {
+  font-family: $font-family-teko;
+  padding-top: -5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    color: $color-brown;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+  }
+
+  &__container {
+    background-color: $color-white;
+    height: fit-content;
+    margin-top: -2rem;
+  }
+
+  &__controller{
+    padding: 1.5rem;
+    display: flex;
+    gap: 2rem;
+
+  }
+}
+
+.addbutton{
+    background-color: $color_red;
+    width: 30rem;
+    border: 0;
+    font-size: 2.75rem;
+    color: $color-white;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    
+}
+
+.page_nav{
+    display: flex;
+    gap: .5rem;
+    justify-self: flex-end;
+    margin-top: .5rem;
+
+    &__icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: $color-yellow;
+    }
+
+}
+
+.line {
+  border: none;            /* Remove default border */
+  height: 3px;            /* Set the height */
+  background-color: $color-brown; /* Set color */
+  margin: 20px 0;         /* Set spacing above and below */
+}
+
+.pageNumber{
+  color: $color-yellow;
+  font-family: $font-family-teko;
+  font-size: 4rem;
+  justify-self: center;
+  align-self: center;
+  margin-left: 2rem;
+}
+
+@import "../../../sass/abstracts/variables";
+
+.page_nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-self: flex-end;
+  margin-top: 0.5rem;
+  align-items: center;
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-yellow;
+  }
+}
+
+.page_number{
+    font-size: 1.5rem;
+    color: $color-brown;
+    background-color: $color-light-yellow2;
+    padding: 1rem;
+
+    &--active{
+        background-color: $color-yellow;
+    }
+
+}
+
+.white_space{
+    height: 5rem;
+}
+
+.dropdowncategories{
+  z-index: 100;
+}

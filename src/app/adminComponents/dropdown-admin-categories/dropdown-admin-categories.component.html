@@ -1,0 +1,26 @@
+<div class="dropdown_container">
+  <div class="dropdown_header" (click)="onClick()">
+    @if(dropdown_title()){
+    {{ dropdown_title() }}
+    } @else {
+    {{ input_dropdown_title() }}
+    } @if(opened){
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-up"></use>
+    </svg>
+    }@else {
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-down"></use>
+    </svg>
+    }
+  </div>
+  @if (opened) {
+  <div class="dropdown_body">
+    <div class="content">
+      @for (item of input_dropdown_options(); track item) {
+      <span (click)="onChange(item.name, item.id, item.type)">{{ item.name }}</span>
+      }
+    </div>
+  </div>
+  }
+</div>

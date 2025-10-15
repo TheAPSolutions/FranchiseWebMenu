@@ -1,0 +1,11 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+
+.page_layout {
+  display: flex;
+  flex-direction: column;
+  row-gap: -2rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10rem;
+}

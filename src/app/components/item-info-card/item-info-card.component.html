@@ -1,0 +1,208 @@
+@if(isLoading){
+<app-loading />
+} @else{ @if(input_order_type == 'dine in'){ @if(language === 'Ar'){
+<div class="item_info_card">
+  <div class="header">
+    <div class="counter">
+      <app-order-counter
+        [input_color]="'red'"
+        (orderSuccess)="handleOrderSuccess()"
+        (orderDelete)="handleOrderDelete()"
+        [id]="id()"
+        [price]="IndirimPrice"
+        [takeawayprice]="takeawayprice"
+        [studentPrice]="menuItem.studentPrice"
+        [ishasOptions]="menuItem.hasOptions"
+        (hasOptions)="menuItem.hasOptions"
+        (openOverlay)="handleOpenOverlayClick($event)"
+        (warning)="handleWarning()"
+        #counter
+      />
+    </div>
+
+    <div class="item_price">
+      <div class="old">
+        <div class="item_price__old">{{ price + "TL" }}</div>
+      </div>
+      <div class="item_price__new">{{ IndirimPrice + "TL" }}</div>
+    </div>
+  </div>
+
+  <div
+    class="item_info_card__image"
+    [style.background-image]="getBackgroundImage(menuItem.imageUrl)"
+  ></div>
+
+  <div class="info">
+    <div class="rating">
+      <svg class="star_icon">
+        <use xlink:href="images/sprites8.svg#icon-star-full"></use>
+      </svg>
+      <div class="rating_number">
+        {{ rating | number : "1.2-2" }}
+      </div>
+    </div>
+    <div class="item_info_card__title item_info_card__title--ar">
+      {{ title }}
+    </div>
+    <div class="item_description__content item_description__content--ar">
+      {{ desc }}
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="item_info_card">
+  <div class="header">
+    <div class="counter">
+      <app-order-counter
+        [input_color]="'red'"
+        (orderSuccess)="handleOrderSuccess()"
+        (orderDelete)="handleOrderDelete()"
+        [id]="id()"
+        [price]="IndirimPrice"
+        [takeawayprice]="takeawayprice"
+        [studentPrice]="menuItem.studentPrice"
+        [ishasOptions]="menuItem.hasOptions"
+        (openOverlay)="handleOpenOverlayClick($event)"
+        (warning)="handleWarning()"
+
+        #counter
+
+
+      />
+    </div>
+
+    <div class="item_price">
+      <div class="old">
+        <div class="item_price__old">{{ price + "TL" }}</div>
+      </div>
+      <div class="item_price__new">{{ IndirimPrice + "TL" }}</div>
+    </div>
+  </div>
+  <div
+    class="item_info_card__image"
+    [style.background-image]="getBackgroundImage(menuItem.imageUrl)"
+  ></div>
+
+  <div class="info">
+    <div class="rating">
+      <svg class="star_icon">
+        <use xlink:href="images/sprites8.svg#icon-star-full"></use>
+      </svg>
+      <div class="rating_number">
+        {{ rating | number : "1.2-2" }}
+      </div>
+    </div>
+    <div class="item_info_card__title">
+      {{ title }}
+    </div>
+    <div class="item_description__content">
+      {{ desc }}
+    </div>
+  </div>
+</div>
+} }@else {@if(language === 'Ar'){
+<div class="item_info_card">
+  <div class="header">
+    <div class="counter">
+      <app-order-counter
+        [input_color]="'red'"
+        (orderSuccess)="handleOrderSuccess()"
+        (orderDelete)="handleOrderDelete()"
+        [id]="id()"
+        [price]="IndirimPrice"
+        [takeawayprice]="takeawayprice"
+        [studentPrice]="menuItem.studentPrice"
+        [ishasOptions]="menuItem.hasOptions"
+        (openOverlay)="handleOpenOverlayClick($event)"
+        (warning)="handleWarning()"
+
+        #counter
+
+
+      />
+    </div>
+
+    <div class="item_price">
+      <div class="old">
+        <div class="item_price__new">{{ price + "TL" }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="item_info_card__image"
+    [style.background-image]="getBackgroundImage(menuItem.imageUrl)"
+  ></div>
+
+  <div class="info">
+    <div class="rating">
+      <svg class="star_icon">
+        <use xlink:href="images/sprites8.svg#icon-star-full"></use>
+      </svg>
+      <div class="rating_number">
+        {{ rating | number : "1.2-2" }}
+      </div>
+    </div>
+    <div class="item_info_card__title item_info_card__title--ar">
+      {{ title }}
+    </div>
+    <div class="item_description__content item_description__content--ar">
+      {{ desc }}
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="item_info_card">
+  <div class="header">
+    <div class="counter">
+      <app-order-counter
+        [input_color]="'red'"
+        (orderSuccess)="handleOrderSuccess()"
+        (orderDelete)="handleOrderDelete()"
+        [id]="id()"
+        [price]="IndirimPrice"
+        [takeawayprice]="takeawayprice"
+        [studentPrice]="menuItem.studentPrice"
+        [ishasOptions]="menuItem.hasOptions"
+        (openOverlay)="handleOpenOverlayClick($event)"
+        (warning)="handleWarning()"
+        #counter
+
+
+      />
+    </div>
+
+    <div class="item_price">
+      <div class="old">
+        <div class="item_price__new">{{ price + "TL" }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="item_info_card__image"
+    [style.background-image]="getBackgroundImage(menuItem.imageUrl)"
+  ></div>
+
+  <div class="info">
+    <div class="rating">
+      <svg class="star_icon">
+        <use xlink:href="images/sprites8.svg#icon-star-full"></use>
+      </svg>
+      <div class="rating_number">
+        {{ rating | number : "1.2-2" }}
+      </div>
+    </div>
+    <div class="item_info_card__title">
+      {{ title }}
+    </div>
+    <div class="item_description__content">
+      {{ desc }}
+    </div>
+  </div>
+</div>
+} } }
+<div class="white_space"></div>

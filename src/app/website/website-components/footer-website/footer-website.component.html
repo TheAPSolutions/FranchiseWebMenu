@@ -1,0 +1,79 @@
+<div class="footer-website">
+  <img
+    src="images/website-images/herobackground.webp"
+    class="footerbackground"
+    loading="lazy"
+    alt="brown background"
+  />
+
+  <div class="contenfooterwebsite">
+    <div
+      class="leftfooterwebsite"
+      [@fadeInFromLeft]="getAnimationState('leftfooterwebsite')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('leftfooterwebsite', $event)"
+    >
+      <div class="footertitle">
+        {{ "footer.title_line1" | translate }}<br />
+        {{ "footer.title_line2" | translate }} <br />
+        {{ "footer.title_line3" | translate }}
+      </div>
+
+      <div class="footerSocialLogos">
+        <div
+          class="instagramwebsite"
+          (click)="
+            openExternalLink('https://www.instagram.com/hungry_birdstr/')
+          "
+        >
+          <img
+            src="images/website-icons/Instagram.svg"
+            class="socialMediaIcon"
+            loading="lazy"
+            alt="Instagram Icon"
+          />
+        </div>
+        <div
+          class="tiktokwebsite"
+          (click)="openExternalLink('https://www.tiktok.com/@hungrybirdstr')"
+        >
+          <img
+            src="images/website-icons/TikTok.svg"
+            class="socialMediaIcon"
+            loading="lazy"
+            alt="TikTok Icon"
+          />
+        </div>
+
+        <div
+          class="snapwebsite"
+          (click)="openExternalLink('https://snapchat.com/t/WFtgQDDu')"
+        >
+          <img
+            src="images/website-icons/Snapchat.svg"
+            class="socialMediaIcon"
+            loading="lazy"
+            alt="Snapchat Icon"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="branchesfooter"
+      [@fadeInFromRight]="getAnimationState('branchesfooter')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('branchesfooter', $event)"
+    >
+      <div class="branchesfootertitle">
+        {{ "footer.branches_title" | translate }}
+      </div>
+      <div class="footerbrancheslist">
+        <div class="branchItem">{{ "footer.branch1" | translate }}</div>
+        <div class="branchItem">{{ "footer.branch2" | translate }}</div>
+        <div class="branchItem">{{ "footer.branch3" | translate }}</div>
+        <div class="branchItem">{{ "footer.branch4" | translate }}</div>
+        <div class="branchItem">{{ "footer.branch5" | translate }}</div>
+      </div>
+    </div>
+  </div>
+</div>

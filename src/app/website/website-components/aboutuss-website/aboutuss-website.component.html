@@ -1,0 +1,171 @@
+<div class="aboutus-website">
+  <img
+    src="images/website-images/heroSandwichesBackground.webp"
+    class="aboutusBackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div class="aboutus1">
+    <div
+      class="aboutus1left"
+      [@fadeInFromLeft]="getAnimationState('aboutus1left')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('aboutus1left', $event)"
+    >
+      <div class="aboutusImage1contanier">
+        <img
+          src="images/website-images/aboutus1.webp"
+          class="aboutusImage1"
+          loading="lazy"
+          alt="Chef holding burger"
+        />
+        <div class="aboutus1LeftTitle">
+          {{ "aboutus.title1_line1" | translate }} <br />
+          {{ "aboutus.title1_line2" | translate }} <br />
+          {{ "aboutus.title1_line3" | translate }} <br />
+          {{ "aboutus.title1_line4" | translate }} <br />{{
+            "aboutus.title1_line5" | translate
+          }}
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutus1right">
+      <div
+        class="aboutus1text"
+        [@fadeInDown]="getAnimationState('aboutus1text')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('aboutus1text', $event)"
+      >
+        {{ "aboutus.text1" | translate }}
+      </div>
+
+      <img
+        [src]="imagePath"
+        alt="arrow image pointing up "
+        class="aboutusImage2"
+        [@fadeInDown]="getAnimationState('aboutusImage2')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('aboutusImage2', $event, 400)"
+      />
+    </div>
+  </div>
+
+  <div class="aboutus2">
+    <div class="aboutus2left">
+      <div
+        class="aboutus2lefttitle"
+        [@fadeInDown]="getAnimationState('aboutus2lefttitle')"
+        appAnimateOnScroll
+        (animationStateChange)="setAnimationState('aboutus2lefttitle', $event)"
+      >
+        {{ "aboutus.title2_line1" | translate }} <br />
+        {{ "aboutus.title2_line2" | translate }} <br />
+        {{ "aboutus.title2_line3" | translate }}
+      </div>
+
+      <div class="aboutus2leftproducts">
+        <div
+          class="productitem"
+          [@fadeInDown]="getAnimationState('productitem')"
+          appAnimateOnScroll
+          (animationStateChange)="setAnimationState('productitem', $event, 200)"
+        >
+          <img
+            src="images/website-icons/NaturalFood.svg"
+            class="productIcon"
+            loading="lazy"
+            alt="plant icon"
+          />
+          <div class="producttext">{{ "aboutus.product1" | translate }}</div>
+        </div>
+
+        <div
+          class="productitem productitem2"
+          [@fadeInDown]="getAnimationState('productitem2')"
+          appAnimateOnScroll
+          (animationStateChange)="
+            setAnimationState('productitem2', $event, 400)
+          "
+        >
+          <img
+            src="images/website-icons/Sprout.svg"
+            class="productIcon"
+            loading="lazy"
+            alt="plant icon"
+          />
+          <div class="producttext">{{ "aboutus.product2" | translate }}</div>
+        </div>
+
+        <div
+          class="productitem productitem3"
+          [@fadeInDown]="getAnimationState('productitem3')"
+          appAnimateOnScroll
+          (animationStateChange)="
+            setAnimationState('productitem3', $event, 600)
+          "
+        >
+          <img
+            src="images/website-icons/WashYourHands.svg"
+            class="productIcon"
+            loading="lazy"
+            alt="wash hands icon"
+          />
+          <div class="producttext">
+            {{ "aboutus.product3" | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="aboutusleftbody"
+        [@fadeInDown]="getAnimationState('aboutusleftbody')"
+        appAnimateOnScroll
+        (animationStateChange)="
+          setAnimationState('aboutusleftbody', $event, 800)
+        "
+      >
+        {{ "aboutus.body2" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="aboutus2right"
+      [@fadeInFromRight]="getAnimationState('aboutus2right')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('aboutus2right', $event)"
+    >
+      <div class="aboutus2videocontanier">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          src="images/website-videos/aboutusvideo.mov"
+          class="aboutus2video"
+        ></video>
+        <div class="aboutus2VideoTitle">
+          {{ "aboutus.title3_line1" | translate }} <br />
+          {{ "aboutus.title3_line2" | translate }} <br />
+          {{ "aboutus.title3_line3" | translate }} <br />
+          {{ "aboutus.title3_line4" | translate }} <br />
+          {{ "aboutus.title3_line5" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="sectionnew"
+    [@fadeInDown]="getAnimationState('sectionnew')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('sectionnew', $event)"
+  >
+    <h1 class="headnewtitle">
+      {{ "aboutus.title3" | translate }}
+    </h1>
+    <p class="headnewparagraph">
+      {{ "aboutus.body3" | translate }}
+    </p>
+  </div>
+</div>

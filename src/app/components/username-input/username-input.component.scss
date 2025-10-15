@@ -1,0 +1,24 @@
+@import "../../../sass/abstracts/variables";
+
+.userName {
+  padding-right: 30px; // Space for the icon
+  background-color: $color-light-yellow2;
+  border: none;
+  width: 20rem;
+  padding: 1rem;
+  all: unset; /* Resets most default browser styles */
+  box-sizing: border-box; /* Makes width and height calculations more predictable */
+  font-size: 2rem;
+}
+
+.user_name_input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  background-color: $color-light-yellow2;
+  width: 20rem;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  color: $color-brown;
+}

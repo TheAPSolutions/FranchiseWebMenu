@@ -1,0 +1,51 @@
+@import "../../../sass/base/typography";
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__box{
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &--red{
+            background-color: rgba($color: red, $alpha: 0.5);
+        }
+        &--green{
+            background-color: rgba($color: green, $alpha: 0.5);
+        }
+
+        &__input input{
+            width: 7vw;
+            background-color: transparent;
+            border: none;
+            height: 5vh;
+            font-size: 2rem;
+            color: white;
+            font-family: $font-family-teko;
+            padding-left: 1rem;
+        }
+
+        &__input input::placeholder{
+            color: white;
+            font-family: $font-family-teko;
+            font-size: 1.3rem;
+        }
+        &__button{
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+
+}
+.input_title{
+    font-size: 2rem;
+}
+
+.navigation__icon{
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+}

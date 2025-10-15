@@ -1,0 +1,86 @@
+<div class="page_layout">
+  <div class="page_layout__container">
+    <div class="page_layout__container__header">
+      {{ tableNumber() }}: @if (isTakeAway) { Take Away }@else {
+      {{ orderTableNumber }}
+      }
+    </div>
+    <div class="page_layout__container__body">
+      <div class="page_layout__container__body__CategoryName">
+        <div class="page_layout__container__body__CategoryName__order-number">
+          {{ OrderNumber() }}: {{ order.orderId }}
+        </div>
+
+        <div class="page_layout__container__body__CategoryName__time">
+          {{ Time() }}: {{ orderTime | date : "HH:mm" }}
+        </div>
+      </div>
+      <div class="page_layout__container__body__container">
+        <div class="page_layout__container__body__container__header">
+          {{ OrderDetails() }}: @if (order.isStudent) { Student Order }
+        </div>
+        <table>
+          <tr class="tableHeader">
+            <th>{{ categoryName() }}</th>
+            <th>{{ ItemName() }}</th>
+            <th class="count">{{ ItemCount() }}</th>
+            <th>{{ ItemNote() }}</th>
+            <th>{{ price() }}</th>
+          </tr>
+          @for(item of order.menuItems ; track item.itemId){
+          <tr>
+            @if(language == 'Ar'){
+            <td>{{ item.categoryNameAr }}</td>
+            <td>{{ item.nameAr }}</td>
+            } @else if(language == 'En'){
+            <td>{{ item.categoryNameEn }}</td>
+            <td>{{ item.nameEn }}</td>
+            } @else if (language == 'Tr') {
+            <td>{{ item.categoryNameTr }}</td>
+            <td>{{ item.nameTr }}</td>
+            }
+            <td>{{ item.quantity }}</td>
+            <td class="notes">{{ item.note }}</td>
+            <td>{{ item.price * item.quantity }}</td>
+          </tr>
+
+          }
+        </table>
+
+        <div class="page_layout__container__body__container__summary">
+          <div
+            class="page_layout__container__body__container__summary__container"
+          >
+            <div
+              class="page_layout__container__body__container__summary__container__total"
+            >
+              {{ Total() }}
+            </div>
+            <div
+              class="page_layout__container__body__container__summary__container__amount"
+            >
+              {{ order.totalPrice }}
+            </div>
+          </div>
+
+          <button
+            class="page_layout__container__body__container__summary__button"
+            (click)="onOrderSaved(); onPrintOrder()"
+            [routerLink]="'/cashier/newOrders'"
+            [queryParams]="{ reload: true }"
+          >
+            {{ OrderSaved() }}
+          </button>
+
+          <!-- <button
+            class="page_layout__container__body__container__summary__button page_layout__container__body__container__summary__button--brown"
+            (click)="onPrintOrder()"
+          >
+            {{ PrintOrder() }}
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-admin-success-message> </app-admin-success-message>

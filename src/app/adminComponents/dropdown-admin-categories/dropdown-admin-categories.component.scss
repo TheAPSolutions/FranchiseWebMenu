@@ -1,0 +1,70 @@
+@import "../../../sass/abstracts/variables";
+
+.dropdown_container {
+  width: 50vw;
+  background-color: #f5a81c;
+  padding-bottom: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  font-size: 2.5rem;
+}
+
+.dropdown_header {
+  padding: 1rem 0rem;
+  padding-left: 20px;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-family-teko;
+  font-size: 2rem;
+}
+
+.content {
+  //position: absolute;
+  padding-left: 30px;
+  background-color: #f5a81c;
+  height: 20vh;
+  overflow-y: scroll;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 20rem;
+  position: absolute;
+  font-family: $font-family-teko;
+  font-size: 2rem;
+}
+::-webkit-scrollbar {
+  background:  $color-yellow;
+  border-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+  height: 2px;
+  width: 2px;
+
+}
+.content span {
+  margin-bottom: 5px;
+  padding-top: 10px;
+}
+
+.content span:hover {
+  opacity: 0.7;
+}
+
+.navigation__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: white;
+}
+
+
+.dropdown_body{
+  display: block;
+
+}

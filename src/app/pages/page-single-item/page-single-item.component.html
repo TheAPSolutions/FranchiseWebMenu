@@ -1,0 +1,38 @@
+<div class="page_layout">
+  <app-item-info-card
+
+    [id]="menuItem.id"
+    (orderSuccess)="showSuccessMessage()"
+    (orderDelete)="showDeleteMessage()"
+    (warning)="showWarningMessage()"
+    (openOrderOptionsOverlay)="handleOpenOverlayOptions($event)"
+    #smenuItem
+    
+  />
+
+  <app-navigation
+    [LeftImage]="'home'"
+    [LeftTitle]="NavLeft()"
+    [LeftRoute]="''"
+    [MiddleRoute]="'/menu/menuItems'"
+    [MiddleImage]="'spoon-knife'"
+    [RightImage]="'cart'"
+    [RightRoute]="'/menu/order'"
+    [RightText]="NavRight()"
+  />
+
+  
+@if(OptionsOverlayVisible){
+  <app-order-options-overlay
+    (isVisible)="handleOpenOverlayOptions($event)"
+    [parentMenuItemId]="OptionsOverlayorder.itemId"
+    (orderSuccess)="showSuccessMessage()"
+    (orderDelete)="showDeleteMessage()"
+    [order]="OptionsOverlayorder"
+    (Closed)="handleOverlayClosed($event)"
+  />
+}
+  
+
+  <app-success-message />
+</div>

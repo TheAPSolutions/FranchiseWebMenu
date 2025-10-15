@@ -1,0 +1,24 @@
+@import "../../../../sass/abstracts/variables";
+
+.boxes_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 2rem;
+  &__box {
+    width: 20rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-website-brown;
+    color: white;
+    font-family: $font-family-website-body;
+    font-size: $xxsmall;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,97 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+.upload_image {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 18rem;
+}
+.upload_Image_button {
+  background-color: $color_red;
+  width: 16rem;
+  border: 0;
+  font-size: 2rem;
+  color: $color-white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &--large {
+    width: 35vw;
+  }
+}
+
+.preview_upload_Image {
+  width: 18rem;
+  height: 13rem;
+  object-fit: contain;
+  background-position: center;
+  border: none;
+  
+}
+
+.modal-overlay {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40vw;
+  height: 70vh;
+  @include absCenter();
+  background-color: $color-yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+  padding: 3rem;
+  border: none;
+  
+}
+
+.modal-content {
+  position: relative;
+  border: none;
+}
+
+.full-size-image {
+  max-width: 40vw;
+  max-height: 50vh;
+  object-fit: contain;
+  background-color: $color-yellow;
+  border: none;
+}
+
+.close {
+    font-size: 1.5rem;          // Adjust size of "X" text
+    color: $color-white;
+    background-color: $color-red;
+    width: 3rem;                 // Set a fixed width for consistency
+    height: 3rem;                // Set a fixed height for consistency
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;             // Makes it look clickable
+    transition: background-color 0.3s ease; // Smooth background color transition
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    align-self: flex-end;
+  }
+
+  .image_not_uploaded{
+    background-color: $color-light-yellow2;
+    width: 17rem;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .icon_image{
+    width: rem;
+    height: 4rem;
+    fill: $color-white;
+  }

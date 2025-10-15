@@ -1,0 +1,105 @@
+<div class="allbranches-website">
+  <img
+    src="images/website-images/heroSandwichesBackground.webp"
+    class="allbranchesBackground"
+    loading="lazy"
+    alt="brown background"
+  />
+  <div
+    class="branchestitle"
+    [@fadeInDown]="getAnimationState('branchestitle')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('branchestitle', $event)"
+  >
+    {{ "allbranches.title_line1" | translate }} <br />
+    {{ "allbranches.title_line2" | translate }} <br />
+    {{ "allbranches.title_line3" | translate }}
+  </div>
+
+  <div class="branchcountries">
+    <div
+      class="imagebranchearth imagebranchearth1"
+      [routerLink]="['/turkiyebranches']"
+      [@fadeIn]="getAnimationState('imagebranchearth1')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('imagebranchearth1', $event)"
+    >
+      <img
+        src="images/website-images/earthbranches1.webp"
+        class="earthbranchimage"
+        loading="lazy"
+        alt="earth with location pin"
+      />
+
+      <div
+        class="branchnamewebsite"
+        [routerLink]="['/turkiyebranches']"
+      >
+        {{ "allbranches.country1" | translate }}
+      </div>
+      <div
+        class="branchnameviewallbutton"
+        [routerLink]="['/turkiyebranches']"
+      >
+        {{ "allbranches.viewall" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="imagebranchearth imagebranchearth2"
+      [@fadeIn]="getAnimationState('imagebranchearth2')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('imagebranchearth2', $event)"
+    >
+      <img
+        [routerLink]="['/saudiarabiabranches']"
+        src="images/website-images/earthbranches2.webp"
+        class="earthbranchimage"
+        loading="lazy"
+        alt="earth with location pin"
+      />
+
+      <div
+        class="branchnamewebsite midbranchnamewebsite"
+        [routerLink]="['/saudiarabiabranches']"
+      >
+        {{ "allbranches.country2_line1" | translate }} <br />
+        {{ "allbranches.country2_line2" | translate }}
+      </div>
+      <div
+        class="branchnameviewallbutton midbranchnameviewallbutton"
+        [routerLink]="['/saudiarabiabranches']"
+      >
+        {{ "allbranches.viewall" | translate }}
+      </div>
+    </div>
+
+    <div
+      class="imagebranchearth imagebranchearth3"
+      [@fadeIn]="getAnimationState('imagebranchearth3')"
+      appAnimateOnScroll
+      (animationStateChange)="setAnimationState('imagebranchearth3', $event)"
+    >
+      <img
+        [routerLink]="['/iraqbranches']"
+        src="images/website-images/earthbranches3.webp"
+        class="earthbranchimage"
+        loading="lazy"
+        alt="earth with location pin"
+      />
+
+      <div
+        class="branchnamewebsite"
+        [routerLink]="['/iraqbranches']"
+      >
+        {{ "allbranches.country3" | translate }}
+      </div>
+      <div
+        class="branchnameviewallbutton"
+        [routerLink]="['/iraqbranches']"
+      >
+        {{ "allbranches.viewall" | translate }}
+      </div>
+    </div>
+  </div>
+</div>

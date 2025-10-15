@@ -1,0 +1,46 @@
+<div class="main">
+  <div class="header">
+    <app-total-branches-card
+      [input_card_title]="totalSalesPerMonth()"
+      [input_card_data]="this.currentMonthSales!.totalSales"
+      [input_card_section1_data]="currentMonthSalesBranch[0].totalSales"
+      [input_card_section1_title]="currentMonthSalesBranch[0].branchName"
+      [input_card_section2_data]="currentMonthSalesBranch[1].totalSales"
+      [input_card_section2_title]="currentMonthSalesBranch[1].branchName"
+      [input_card_section3_data]="currentMonthSalesBranch[2].totalSales"
+      [input_card_section3_title]="currentMonthSalesBranch[2].branchName"
+      [input_card_unit]="' TL'"
+
+    ></app-total-branches-card>
+  </div>
+  <div class="footer">
+    <div class="footer__left">
+      <app-total-branches-card
+        [input_card_title]="paidByCashier()"
+        [input_card_data]="currentMonthSalesPayment!.totalSalesCash"
+        [input_card_section1_data]="currentMonthSalesPaymentBranch[0].totalSalesCash"
+        [input_card_section1_title]="currentMonthSalesPaymentBranch[0].branchName"
+        [input_card_section2_data]="currentMonthSalesPaymentBranch[1].totalSalesCash"
+        [input_card_section2_title]="currentMonthSalesPaymentBranch[1].branchName"
+        [input_card_section3_data]="currentMonthSalesPaymentBranch[2].totalSalesCash"
+        [input_card_section3_title]="currentMonthSalesPaymentBranch[2].branchName"
+        [input_card_unit]="' TL'"
+
+      ></app-total-branches-card>
+    </div>
+    <div class="footer__right">
+      <app-total-branches-card
+        [input_card_title]="paidByCard()"
+        [input_card_data]="currentMonthSalesPayment!.totalSalesCard"
+        [input_card_section1_data]="currentMonthSalesPaymentBranch[0].totalSalesCard"
+        [input_card_section1_title]="currentMonthSalesPaymentBranch[0].branchName"
+        [input_card_section2_data]="currentMonthSalesPaymentBranch[1].totalSalesCard"
+        [input_card_section2_title]="currentMonthSalesPaymentBranch[1].branchName"
+        [input_card_section3_data]="currentMonthSalesPaymentBranch[2].totalSalesCard"
+        [input_card_section3_title]="currentMonthSalesPaymentBranch[2].branchName"
+        [input_card_unit]="' TL'"
+
+      ></app-total-branches-card>
+    </div>
+  </div>
+</div>

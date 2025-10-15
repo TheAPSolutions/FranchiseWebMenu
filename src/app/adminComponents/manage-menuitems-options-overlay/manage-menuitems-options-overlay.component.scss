@@ -1,0 +1,205 @@
+@import "../../../sass/abstracts/variables";
+.overlay{
+
+    width: 50vw;
+    height: 80vh;
+
+    background-color: rgba(255, 255, 255);
+
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 9999;
+    overflow-x: hidden;
+
+    box-shadow: $shadow;
+
+    border: $color-brown solid 2px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    color: $color-red;
+    font-size: 30px;
+    font-weight: 600;
+
+    box-shadow: $shadow;
+    cursor: pointer;
+}
+
+.header {
+    width: 100%;
+    background-color: $color-red;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    &__title{
+        color: white;
+        font-family: $font-family-teko;
+        font-size: 2rem;
+        margin-left: 5rem;
+        font-weight: 600;
+        &--ar{
+            font-family: $font-family-arabic;
+            direction: rtl;
+            font-weight: 600;
+            font-size: 2.25rem;
+
+        }
+    }
+}
+
+.body {
+    display: flex;
+    padding-left: 4rem;
+
+
+}
+
+.left {
+    width: 50%;
+    padding-top: 4rem;
+    &__options {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat( 1fr); /* Creates 2 equal columns */
+        gap: 2rem; /* Space between columns */
+        margin-bottom: 4rem;
+        width: 90%;
+        height: 300px;
+        overflow-y: scroll; /* Allows scrolling if needed */
+        }
+        
+    &__options2 {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        width: 60%;
+    }
+    
+}
+
+
+.title {
+    font-size: 2.5rem;
+    font-family: $font-family-teko;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.title--ar{
+    font-family: $font-family-arabic;
+    direction: rtl;
+    text-align: left;
+    font-weight: 500;
+    font-size: 2.25rem;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.83);
+}
+
+.subtitle--ar {
+    font-family: $font-family-arabic;
+    direction: rtl;
+    text-align: left;
+}
+
+.summary {
+    width: 50%;
+    margin-right: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    font-size: 2rem;
+    font-family: $font-family-teko;
+    margin-top: 2rem;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 1rem;
+    text-align: left;
+    text-wrap: wrap;
+}
+
+td {
+    width: 200px;
+    line-height: 2rem;
+}
+
+th {
+    color: $color-brown;
+    text-align: center;
+
+    font-weight: 400;
+
+}
+
+tbody tr td {
+    font-weight: 400;
+}
+
+thead {
+    border-bottom: 3px solid black;
+}
+
+.cat{
+    display: flex;
+    gap: 2rem;
+}
+
+.button {
+    display: flex;
+    justify-content: end;
+    margin-top: 2rem;
+
+}
+
+.button button {
+    border: none;
+    color: white;
+    font-family: $font-family-teko;
+    font-size: 2rem;
+
+    background-color: $color-red;
+    padding: 1rem 1.75rem;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    background:  white;
+    border-radius: 10px;
+  
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $color-yellow;
+    border-radius: 10px;
+    height: 2px;
+    width: 2px;
+  
+  }

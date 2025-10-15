@@ -1,0 +1,105 @@
+//COLORS
+$color-red: #c7291e;
+$color-yellow: #f5a81c;
+$color-light-yellow: #f7d383;
+$color-light-yellow2: #feecbe;
+$color-brown: #61140f;
+$color-black: #050020;
+$color-white: #fff;
+
+$color-gray: #777;
+$color-gray-2: #999;
+$color-gray-3: #333;
+
+//Admin Colors
+$ghost-white: #EDEFFBff;
+$cinereous: #8A7B78ff;
+$color-dark-gray: #3E404Fff;
+$color-baby-blue: #D1D3DF;
+$cool-gray: #969DB5ff;
+
+$color-red-gradiant: linear-gradient(
+  to bottom,
+  $color-red,
+  $color-red,
+  $color-red,
+  $color-black
+);
+$color-red-gradiant2: linear-gradient(
+  to top,
+  $color-red,
+  $color-red,
+  $color-red,
+  $color-black
+);
+
+$shadow: 0 0.5rem 1rem rgba($color-black, 0.2); /* top bottom blur color*/
+
+//GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+//FONT
+
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Noto+Kufi+Arabic:wght@100..900&family=Readex+Pro:wght@160..700&family=Trade+Winds&display=swap");
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Trade+Winds&display=swap');
+
+$default-font-size: 1.6rem;
+
+$font-family-teko: "Teko", sans-serif;
+$font-family-body: "Afacad Flux", sans-serif;
+$font-family-body-2: "Poppins", sans-serif;
+$font-family-brand: "Trade Winds", system-ui;
+$font-family-arabic: "Beiruti", sans-serif;
+
+
+//WEBSITE VARIABLES 
+
+//COLORS
+$color-website-brown: #390000;
+$color-website-yellow: #F5A81C;
+$color-website-bej: #AF9E81;
+$color-website-shadow: #120C01;
+
+//FONT SIZES
+$xxlarge: 8rem;
+$xlarge: 6rem;
+$large: 5rem;
+$medium2: 4rem;
+$medium: 3rem;
+$small: 2.5rem;
+$xsmall: 2rem;
+$xxsmall: 1.5rem;
+$mini: 1rem;
+
+
+//FONTS
+@font-face {
+  font-family: "Burger";
+  src: url("../../../public/fonts/BurgerCrunchyRegular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aclonica";
+  src: url("../../../public/fonts/Aclonica.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "tomato";
+  src: url("../../../public/fonts/sauce-tomato.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-family-website-title: "Burger", sans-serif;
+$font-family-website-body: "Aclonica", sans-serif;
+$font-family-website-title2: "tomato", sans-serif;

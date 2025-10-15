@@ -1,0 +1,57 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.container{
+    //sizings
+    width: 35vw;
+    height: fit-content;
+    padding-top: 2rem; 
+    padding-bottom: 2rem; 
+
+    //position
+    @include absCenter();
+
+    //display
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    //colors
+    background-color: $color-yellow;
+    z-index: 20;
+}
+
+.image img{
+    width: 30vw;
+    object-fit: contain;
+}
+
+.close{
+    //sizings
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    //display
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //position
+    position: absolute;
+    top: 20px;
+    right: 20px;
+ 
+    //color and fonts
+    color: white;
+    background-color: $color-red;
+    font-family: $font-family-teko;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+
+
+}

@@ -1,0 +1,36 @@
+
+
+.page_layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 16vh 1fr;
+    grid-template-columns: [nav-start] 18vw [nav-end full-start] 1fr [full-end];
+    justify-content: center;
+    
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+    &__header {
+      grid-column: nav-start / full-end;
+      position: relative;
+    }
+  
+    &__navigation {
+      height: 100%;
+  
+      grid-row: 2;
+      grid-column: nav-start / full-end;
+  
+    }
+  
+    &__content {
+      grid-row: 2;
+      grid-column: nav-end / full-end;
+  
+      &--2{
+        grid-row: 1;
+        grid-column: nav-start / full-end;
+      }
+    }
+  }
+

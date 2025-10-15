@@ -1,0 +1,93 @@
+<div class="overlay_container">
+  <div class="verticalContainer">
+    <div class="close_button">
+      <button (click)="close()">X</button>
+    </div>
+
+    @if (language === "Ar") {
+    <div class="Title Title--ar">
+      <svg class="navigation__icon navigation__icon--white">
+        <use xlink:href="images/sprites.svg#icon-edit"></use>
+      </svg>
+      {{ title() }}
+    </div>
+    }@else {
+    <div class="Title">
+      <svg class="navigation__icon navigation__icon--white">
+        <use xlink:href="images/sprites.svg#icon-edit"></use>
+      </svg>
+      {{ title() }}
+    </div>
+    } @if (order().hasOptions) { @if (options.drinkOptions.length > 0) {
+    @if(language.toLowerCase() ==="ar"){
+    <div class="Title Title--ar">تم اختيار المشروب:</div>
+    }@else if (language.toLowerCase() ==="tr"){
+    <div class="Title">İçecek Seçildi:</div>
+    }@else {
+    <div class="Title">Drink Selected:</div>
+    }
+    <select
+      title="Drink Selected from options"
+      [(ngModel)]="selectedDrink"
+      (change)="onDrinkChange($event)"
+      class="drinkSelected"
+    >
+      @for (drink of options.drinkOptions; track $index) { @switch
+      (language.toLowerCase()) { @case ('en') {
+      <option [value]="drink.id">{{ drink.nameEn }}</option>
+      } @case ('tr') {
+      <option [value]="drink.id">{{ drink.nameTr }}</option>
+
+      } @case ('ar') {
+      <option [value]="drink.id">{{ drink.nameAr }}</option>
+
+      } } }
+    </select>
+    } @if (options.foodOptions.length > 0) { @if(language.toLowerCase()
+    ==="ar"){
+    <div class="Title Title--ar">تم اختيار الطعام:</div>
+    }@else if (language.toLowerCase() ==="tr"){
+    <div class="Title">Yemek Seçildi:</div>
+    }@else {
+    <div class="Title">Food Selected:</div>
+    }
+    <select
+      title="Drink Selected from options"
+      [(ngModel)]="selectedFood"
+      (change)="onFoodChange($event)"
+    >
+      @for (food of options.foodOptions; track $index) { @switch
+      (language.toLowerCase()) { @case ('en') {
+      <option [value]="food.id">{{ food.nameEn }}</option>
+      } @case ('tr') {
+      <option [value]="food.id">{{ food.nameTr }}</option>
+
+      } @case ('ar') {
+      <option [value]="food.id">{{ food.nameAr }}</option>
+
+      } } }
+    </select>
+    } }
+    <div class="Content">
+      @if (language.toLowerCase() ==="ar") {
+      <textarea
+        name="notes"
+        id="notes"
+        class="textarea textarea--ar"
+        [placeholder]="getPlaceholder()"
+        [(ngModel)]="notes"
+      ></textarea>
+      }@else{
+      <textarea
+        name="notes"
+        id="notes"
+        class="textarea"
+        [placeholder]="getPlaceholder()"
+        [(ngModel)]="notes"
+      ></textarea>
+      }
+
+      <button (click)="toggle()">{{ save() }}</button>
+    </div>
+  </div>
+</div>

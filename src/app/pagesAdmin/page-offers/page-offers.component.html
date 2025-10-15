@@ -1,0 +1,93 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{Offers()}}</div>
+      <button [routerLink]="'/admin/addOffer'" class="addbutton">
+        + {{AddOffer()}}
+      </button>
+    </div>
+
+    <div class="page_content__container">
+      <div class="page_content__controller">
+        <div class="page_nav">
+          <svg
+            class="page_nav__icon"
+            (click)="prevPage()"
+            [class.disabled]="currentPage === 1"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+          </svg>
+          <svg
+            class="page_nav__icon"
+            (click)="nextPage()"
+            [class.disabled]="currentPage === totalPages"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+          </svg>
+          <div class="pageNumber">{{ currentPage }}</div>
+        </div>
+      </div>
+
+      <app-offer-list-header-admin />
+
+      @for (offer of offers; track offer.id) {
+
+      <app-offer-row-admin
+        class="rowitem"
+        [Id]="offer.id"
+        [DescriptionTr]="offer.descriptionTr"
+        [DescriptionEn]="offer.descriptionEn"
+        [DescriptionAr]="offer.descriptionAr"
+        [imageUrl]="offer.imageUrl"
+        [isVisible]="offer.isVisible"
+        (deleteSuccess)="ngOnInit(); showSuccessMessage()"
+        (updateSuccess)="showSuccessUpdateMessage()"
+        (isChanged)="onChange($event)"
+        (updated)="showSuccessUpdateMessage()"
+        (ID)="captureID($event)"
+        (show)="handleVisibility($event)"
+      ></app-offer-row-admin>
+
+      }
+
+      <div class="page_nav">
+        <svg
+          class="page_nav__icon"
+          (click)="prevPage()"
+          [class.disabled]="currentPage === 1"
+        >
+          <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+        </svg>
+
+        <ng-container *ngFor="let item of itemsArray; let i = index">
+          <div
+            class="page_number"
+            [class.page_number--active]="currentPage === i + 1"
+            (click)="changePage(i + 1)"
+          >
+            {{ i + 1 }}
+            <!-- Display the page number -->
+          </div>
+        </ng-container>
+
+        <svg
+          class="page_nav__icon"
+          (click)="nextPage()"
+          [class.disabled]="currentPage === totalPages"
+        >
+          <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+        </svg>
+      </div>
+      @if (isVisible) {
+      <app-single-image-categories
+        (isVisible)="handleVisibility($event)"
+        [imageURL]="image"
+      />
+      }
+
+      <div class="white_space"></div>
+    </div>
+  </div>
+</div>
+
+<app-admin-success-message></app-admin-success-message>

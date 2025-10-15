@@ -1,0 +1,123 @@
+@if(isLoading){
+<app-loading />
+} @else {
+<div class="page_layout">
+  <div #scrollContainer class="scroll-container">
+    @for (item of categories?.slice()?.reverse(); track item.id) {
+    <ng-container
+      *ngIf="languageService.currentLanguage$ | async as currentLanguage"
+    >
+      <div class="scroll-item">
+        @switch (currentLanguage) { @case ('En') {
+        <app-category-card-mid
+          [input_categroy_image]="item.categoryImage"
+          [input_categroy_title]="item.nameEn"
+          (click)="checkSubcategories(item.id, item)"
+        ></app-category-card-mid>
+        } @case ('Tr') {
+        <app-category-card-mid
+          [input_categroy_image]="item.categoryImage"
+          [input_categroy_title]="item.nameTr"
+          (click)="checkSubcategories(item.id, item)"
+        ></app-category-card-mid>
+        } @case ('Ar') {
+        <app-category-card-mid
+          [input_categroy_image]="item.categoryImage"
+          [input_categroy_title]="item.nameAr"
+          (click)="checkSubcategories(item.id, item)"
+        ></app-category-card-mid>
+        } }
+      </div>
+    </ng-container>
+    }
+  </div>
+  @if(language == 'Ar'){
+  <h1 class="title_border title_border--ar">{{ title }}</h1>
+  } @else {
+  <h1 class="title_border">{{ title }}</h1>
+  }
+  <div class="cards">
+    @for (item of menuItems; track item.id) { @if (item.isVisible) {
+    <ng-container
+      *ngIf="languageService.currentLanguage$ | async as currentLanguage"
+    >
+      @switch (currentLanguage) { @case ('En') {
+      <app-menu-item-card
+        [input_item_image]="item.imageUrl"
+        [input_item_title]="item.nameEn"
+        [input_item_rating]="item.ratingValue"
+        [input_item_new_price]="item.discountedPriceEn"
+        [input_item_old_price]="item.priceEn"
+        [input_item_description]="item.descriptionEn"
+        [input_item_studentPrice]="item.studentPrice ?? 0"
+        [input_order_type]="'takeaway'"
+        [input_hasOptions]="item.hasOptions"
+        (orderSuccess)="showSuccessMessage()"
+        (orderDelete)="showDeleteMessage()"
+        (warning)="showWarningMessage()"
+        (openOrderOptionsOverlay)="handleOrderOptionsOverlay($event)"
+        [id]="item.id"
+        #menuItemCard
+      />
+      } @case ('Tr') {
+      <app-menu-item-card
+        [input_item_image]="item.imageUrl"
+        [input_item_title]="item.nameTr"
+        [input_item_rating]="item.ratingValue"
+        [input_item_new_price]="item.discountedPriceTr"
+        [input_item_old_price]="item.priceTr"
+        [input_item_description]="item.descriptionTr"
+        [input_item_studentPrice]="item.studentPrice ?? 0"
+        [input_order_type]="'takeaway'"
+        [input_hasOptions]="item.hasOptions"
+        (orderSuccess)="showSuccessMessage()"
+        (orderDelete)="showDeleteMessage()"
+        (openOrderOptionsOverlay)="handleOrderOptionsOverlay($event)"
+        (warning)="showWarningMessage()"
+        [id]="item.id"
+        #menuItemCard
+      />
+      } @case ('Ar') {
+      <app-menu-item-card
+        [input_item_image]="item.imageUrl"
+        [input_item_title]="item.nameAr"
+        [input_item_rating]="item.ratingValue"
+        [input_item_new_price]="item.discountedPriceAr"
+        [input_item_old_price]="item.priceAr"
+        [input_item_description]="item.descriptionAr"
+        [input_item_studentPrice]="item.studentPrice ?? 0"
+        [input_order_type]="'takeaway'"
+        [input_hasOptions]="item.hasOptions"
+        (orderSuccess)="showSuccessMessage()"
+        (orderDelete)="showDeleteMessage()"
+        (warning)="showWarningMessage()"
+        (openOrderOptionsOverlay)="handleOrderOptionsOverlay($event)"
+        [id]="item.id"
+        #menuItemCard
+      />
+      } }
+    </ng-container>
+    } }
+  </div>
+  <app-success-message />
+  <app-navigation
+    [LeftImage]="'home'"
+    [LeftTitle]="NavLeft()"
+    [LeftRoute]="''"
+    [MiddleRoute]="'/menu/categories'"
+    [MiddleImage]="'spoon-knife'"
+    [RightImage]="'cart'"
+    [RightRoute]="'/menu/order'"
+    [RightText]="NavRight()"
+  />
+</div>
+@if(orderOptionsVisible){
+<app-order-options-overlay
+  (isVisible)="handleOrderOptionsOverlay($event)"
+  [parentMenuItemId]="openOverlayParentID"
+  (orderSuccess)="showSuccessMessage()"
+  (orderDelete)="showDeleteMessage()"
+  [order]="overlayOrder"
+  (Closed)="handleOverlayClosed($event)"
+/>
+} }

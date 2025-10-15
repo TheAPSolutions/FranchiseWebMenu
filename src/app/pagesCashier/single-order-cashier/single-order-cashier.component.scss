@@ -1,0 +1,204 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+.page_layout{
+
+    display: flex;
+    flex-direction: column;
+    &__container{
+        background-color: rgba($color: #f7d383, $alpha: 0.24);
+        display: flex;
+        flex-direction: column;
+        &__header{
+            color: black;
+            font-family: $font-family-teko;
+            font-size: 2.5rem;
+            padding-left: 2rem;
+            padding-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        &__body{
+            background-color: white;
+            margin-left: 2rem;
+            margin-right: 2rem;
+
+            &__CategoryName{
+                //color and font
+                background-color: #61140F;
+                color: white;
+                font-family: $font-family-teko;
+                font-size: 2.5rem;
+
+                //dipslay
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                flex-direction: column;
+                gap: 2rem;
+
+                overflow-y: hidden;
+                //sizings
+                height: 13vh;
+                padding: 2rem;
+                
+
+                &__order-number{
+                    margin-top: 2rem;
+                }
+                &__time{
+                    margin-bottom: 2rem;
+                }
+            
+            }
+            &__container{
+                    display: flex;
+                    flex-direction: column;
+
+                    color: $color-brown;
+                    font-family: $font-family-teko;
+                    font-size: 2.5rem;
+                    padding: 2rem;
+                    gap: 1rem;
+
+                    &__summary{
+                        align-self: flex-end;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        &__container{
+                            display: flex;
+                            gap: 1rem;
+                            &__total{
+                                background-color: $color-red;
+                                width: 10vw;
+                                color: white;
+                                padding-top: 1rem;
+                                padding-bottom: 1rem;
+                                text-align: center;
+                            }
+                            &__amount{
+                                background-color: $color-yellow;
+                                width: 10vw;
+                                color: white;
+                                padding-top: 1rem;
+                                padding-bottom: 1rem;
+                                text-align: center;
+                            }
+
+
+                        }
+                        &__button{
+                            background-color: green;
+                            color: white;
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+                            text-align: center;
+                            cursor: pointer;
+
+                            &--brown{
+                                background-color: $color-brown;
+                            }
+                        }
+                    }
+                    
+
+            }
+        }
+  
+    }
+}
+
+
+td {
+    padding: 15px; /* Adds space inside each cell */
+    background-color: #f7d383; /* Optional: Adds background color to cells */
+    text-align: center;
+    font-size: 2rem;
+    border-bottom: white solid 3px;
+}
+
+td.notes {
+    width: 30vw; /* Adjust the width based on your preference */
+    word-wrap: break-word; /* Forces wrapping within the width */
+    white-space: normal; /* Ensures the text wraps as needed */
+    line-height: 3rem;
+}
+tr.tableHeader th {
+    background-color: $color-red;
+    height: 10vh;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 300;
+    font-family: $font-family-teko;
+}
+
+.pageNav{
+    align-self: flex-end;
+    justify-self: end;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+@media print {
+    /* Set the paper size to 8cm width */
+    @page {
+      size: 8cm auto;
+      margin: 0;
+    }
+  
+    /* Style the content for printing */
+    .print-container {
+      width: 8cm;
+      margin: 0;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  
+    .page_layout {
+      width: 100%;
+      display: block;
+      font-size: 12px;
+    }
+  
+    .page_layout__container {
+      width: 100%;
+    }
+  
+    .page_layout__container__header,
+    .page_layout__container__body__CategoryName__order-number,
+    .page_layout__container__body__CategoryName__time,
+    .page_layout__container__body__container__header,
+    .page_layout__container__body__container__summary__container__total,
+    .page_layout__container__body__container__summary__container__amount {
+      font-weight: bold;
+    }
+  
+    .page_layout__container__body__container {
+      margin-top: 10px;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+  
+    th, td {
+      border: 1px solid #000;
+      padding: 5px;
+      text-align: left;
+      font-size: 12px;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  
+    .page_layout__container__body__container__summary__button {
+      display: none; /* Hide the button during printing */
+
+      
+    }
+  }

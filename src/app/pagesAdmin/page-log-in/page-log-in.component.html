@@ -1,0 +1,30 @@
+<div class="page">
+  <div class="logo"><app-logo-circle /></div>
+
+  <app-brand-name />
+  <form name="loginForm" #form="ngForm" (ngSubmit)="onFormSubmit()">
+    <div class="heading heading--white logIn_container__title">Log In</div>
+    <div class="logIn_container">
+      <div class="heading heading--white heading--mid">User Name</div>
+      <div class="user_name_input">
+        <input
+          name="username"
+          type="text"
+          class="userName"
+          [(ngModel)]="model.username"
+        />
+      </div>
+      <div class="heading heading--white heading--mid">Password</div>
+      <app-password-input
+        name="password"
+        (passwordOutput)="setPassword($event)"
+      />
+    </div>
+
+    <div class="logIn_button" (click)="onFormSubmit()">
+      <button class="login-btn">Log In</button>
+    </div>
+  </form>
+</div>
+
+<app-admin-success-message></app-admin-success-message>

@@ -1,0 +1,78 @@
+@import "../../../sass/abstracts/variables";
+
+.page_layout {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7rem;
+}
+
+.row1 {
+  display: flex;
+  gap: 5rem;
+  margin-left: 5rem;
+}
+
+.row2 {
+  display: flex;
+  gap: 5rem;
+  margin-left: 5rem;
+}
+
+.column1 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  background-color: $color-dark-gray;
+  padding: 2rem;
+  border-radius: 3%;
+  box-shadow: $shadow;
+
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  width: 79rem;
+  height: fit-content;
+}
+
+.r1 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  background-color: $color-baby-blue;
+  border-radius: 3%;
+  padding: 2rem;
+  box-shadow: $shadow;
+
+}
+
+.row3 {
+  display: flex;
+  gap: 5rem;
+  margin-left: 5rem;
+}
+
+.column12 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 2rem;
+  border-radius: 3%;
+}
+
+.row4 {
+  display: flex;
+  gap: 5rem;
+  margin-left: 5rem;
+  margin-bottom: 5rem;
+}
+
+.column22 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  width: 79rem;
+  height: fit-content;
+}

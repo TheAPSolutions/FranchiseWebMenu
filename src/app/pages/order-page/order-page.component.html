@@ -1,0 +1,163 @@
+<div class="page" [class.blurred]="isVisible()">
+  <div class="cards-container">
+    @for (order of Orders$ | async; track order) {
+    <div class="con">
+      <div class="item_card_container" #swipeItem>
+        <app-order-page-food-card
+          (orderSuccess)="showSuccessMessage()"
+          (orderDelete)="showDeleteMessage()"
+          [order]="order"
+          [isStudent]="UserOrders.getIsStudent()"
+          [isTakeaway]="isTakeaway"
+          (openOrderOptionsOverlay)="handleOpenOverlayOptions($event)"
+        ></app-order-page-food-card>
+        <app-toggle-button
+          class="primary_button"
+          (toggleEvent)="handleToggle($event)"
+          (click)="passId(order.itemId)"
+          [order]="order"
+        ></app-toggle-button>
+      </div>
+      <div class="delete-btn" (click)="deleteItem(order)">
+        <svg class="navigation__icon">
+          <use xlink:href="images/sprites2.svg#icon-bin"></use>
+        </svg>
+      </div>
+    </div>
+    }
+  </div>
+  @if(language == 'Ar'){
+  <div class="sum sum--ar">
+    {{ totalTitle() }}
+    <span>{{ totalPrice }} TL</span>
+  </div>
+  } @else {
+  <div class="sum">
+    {{ totalTitle() }}
+    <span>{{ totalPrice }} TL</span>
+  </div>
+  } @if(language == 'Ar'){
+  <div class="dropdown dropdown--ar">
+    {{ dropdownTitle() }}
+    <app-dropdown (change)="onDropdownChange($event)" />
+  </div>
+  } @else {
+  <div class="dropdown">
+    {{ dropdownTitle() }}
+    <app-dropdown (change)="onDropdownChange($event)" />
+  </div>
+
+  } @if(!isTakeaway){ @if(language === 'Ar'){
+  <div class="table_number_container table_number_container--ar">
+    {{ tableTitle() }}
+    <input
+      type="number"
+      required
+      [(ngModel)]="tableNumber"
+      (input)="validateInputs()"
+    />
+    <!-- Call the validation method on input -->
+  </div>
+  <app-order-phone-number #phoneNumber />
+
+  }@else {
+  <div class="table_number_container">
+    {{ tableTitle() }}
+    <input
+      type="number"
+      required
+      [(ngModel)]="tableNumber"
+      (input)="validateInputs()"
+    />
+    <!-- Call the validation method on input -->
+  </div>
+  <app-order-phone-number #phoneNumber />
+
+  } } @if(!isTakeaway){ @if(language === 'Ar'){
+  <div class="table_number_container table_number_container--ar">
+    <div class="orderarabic">
+      {{ StudentOrder() }}
+    </div>
+
+    <div class="table_number_container__container">
+      <input type="text" required [(ngModel)]="studentNumber" />
+      @if(language == 'Ar'){
+      <button class="validate validate--ar" (click)="validateStudnet()">
+        {{ validate() }}
+      </button>
+      } @else {
+      <button class="validate" (click)="validateStudnet()">
+        {{ validate() }}
+      </button>
+      }
+    </div>
+  </div>
+  } @else {
+  <div class="table_number_container table_number_container--studentnumber">
+    {{ StudentOrder() }}
+
+    <div class="table_number_container__container">
+      <input type="text" required [(ngModel)]="studentNumber" />
+      @if(language == 'Ar'){
+      <button class="validate validate--ar" (click)="validateStudnet()">
+        {{ validate() }}
+      </button>
+      } @else {
+      <button class="validate" (click)="validateStudnet()">
+        {{ validate() }}
+      </button>
+      }
+    </div>
+
+    <!-- Call the validation method on input -->
+  </div>
+  } } @if (isTakeaway) {
+  <app-order-phone-number #phoneNumber />
+  } @if(language == 'Ar'){
+  <div class="send_order send_order--ar">
+    <button (click)="goToPay(totalPrice)">
+      <!-- Disable the button based on validation -->
+      {{ ContinueToPayment() }}
+    </button>
+  </div>
+
+  } @else {
+  <div class="send_order">
+    <button (click)="goToPay(totalPrice)">
+      <!-- Disable the button based on validation -->
+      {{ ContinueToPayment() }}
+    </button>
+  </div>
+  }
+
+  <app-navigation
+    [LeftImage]="'home'"
+    [LeftTitle]="NavRight()"
+    [LeftRoute]="'/'"
+    [MiddleImage]="'cart'"
+    [MiddleRoute]="'/menu/order'"
+    [RightImage]="'spoon-knife'"
+    [RightText]="NavLeft()"
+    [RightRoute]="'/menu/categories'"
+  ></app-navigation>
+</div>
+
+<app-notes-overlay
+  *ngIf="isVisible()"
+  (toggleEvent)="handleToggle($event)"
+  [order]="NotesOrder"
+></app-notes-overlay>
+
+@if(OptionsOverlayVisible){
+<app-order-options-overlay
+  (isVisible)="handleOpenOverlayOptions($event)"
+  [parentMenuItemId]="OptionsOverlayorder.itemId"
+  (orderSuccess)="showSuccessMessage()"
+  (orderDelete)="showDeleteMessage()"
+  [order]="OptionsOverlayorder"
+  (Closed)="handleOpenOverlayOptions($event)"
+/>
+}
+
+<app-success-message [id]="clickedId" />
+<app-sucess-message />

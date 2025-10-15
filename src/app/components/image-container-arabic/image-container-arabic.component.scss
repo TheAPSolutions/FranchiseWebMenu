@@ -1,0 +1,64 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.image_container {
+  border: $color-yellow solid 0.5rem;
+  width: 20rem;
+  height: 22rem;
+  overflow: hidden;
+  position: relative;
+  &--show {
+    border: $color-yellow solid 0.5rem;
+    height: 22rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include respond(phoneMid) {
+    &--show {
+      scale: 0.8;
+    }
+  }
+}
+.image_container img {
+  object-fit: contain;
+  object-position: bottom;
+  width: 100%;
+  z-index: 10;
+}
+
+.image_content {
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-family-arabic;
+  display: flex;
+  background-color: $color-red;
+  padding-left: 1rem;
+  height: 3.5rem;
+  &__title {
+    font-size: 1.5rem;
+    margin-right: 0.3rem;
+    text-align: center;
+    font-family: $font-family-arabic;
+  }
+  &__desc {
+    font-family: $font-family-arabic;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1;
+  }
+}
+
+.buttons_container {
+  display: flex;
+  scale: 1;
+  justify-content: space-between;
+}

@@ -1,0 +1,23 @@
+<div class="dropdown_container">
+  <div class="dropdown_header" (click)="onClick()">
+    {{ dropdownTitle }}
+    @if(opened){
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-up"></use>
+    </svg>
+    }@else {
+    <svg class="navigation__icon navigation__icon--white">
+      <use xlink:href="images/sprite4.svg#icon-circle-down"></use>
+    </svg>
+    }
+  </div>
+  @if (opened) {
+  <div class="dropdown_body">
+    <div class="content">
+      @for (item of locations; track item) {
+      <span (click)="onChange(item)">{{ item }}</span>
+      }
+    </div>
+  </div>
+  }
+</div>

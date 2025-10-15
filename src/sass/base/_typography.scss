@@ -1,0 +1,87 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.heading {
+  font-size: 3.5rem;
+  font-family: $font-family-teko;
+  height: 2rem;
+
+  &--white {
+    color: $color-white;
+  }
+
+  &--mid {
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+}
+.heading_second {
+  font-size: 2.5rem;
+  color: $color-red;
+  font-family: $font-family-teko;
+  height: 2.5rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
+
+  &--ar {
+    font-family: $font-family-arabic;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: .5rem;
+  }
+}
+
+.title_border3 {
+  color: $color-white;
+  text-shadow: 2px 2px 0px $color-red,
+    /* Right bottom shadow */ -2px 2px 0px $color-red,
+    /* Left bottom shadow */ 2px -2px 0px $color-red,
+    /* Right top shadow */ -2px -2px 0px $color-red; /* Left top shadow */
+  font-size: 2rem; /* Adjust as needed */
+  font-weight: bold; /* Optional */
+  text-transform: uppercase;
+  @include respond(phoneMid) {
+    font-size: 2rem; /* Adjust as needed */
+  }
+}
+
+.title_border {
+  color: $color-brown;
+  font-size: 2.5rem; /* Adjust as needed */
+  font-weight: bold; /* Optional */
+  text-transform: uppercase;
+  font-family: $font-family-teko;
+  @include respond(phoneMid) {
+    font-size: 2rem; /* Adjust as needed */
+  }
+
+  &--ar{
+    font-family: $font-family-arabic;
+    font-weight: 700;
+  }
+}
+
+.title_border2 {
+  color: $color-brown;
+  font-size: 2rem; /* Adjust as needed */
+  font-weight: bold; /* Optional */
+  text-transform: uppercase;
+  font-family: $font-family-teko;
+}
+
+.title_border4 {
+  color: $color-white;
+  text-shadow: 2px 2px 0px $color-red,
+    /* Right bottom shadow */ -2px 2px 0px $color-red,
+    /* Left bottom shadow */ 2px -2px 0px $color-red,
+    /* Right top shadow */ -2px -2px 0px $color-red; /* Left top shadow */
+  font-size: 2rem; /* Adjust as needed */
+  font-weight: bold; /* Optional */
+  text-transform: uppercase;
+}
+
+.input_title {
+  font-size: 2.5rem;
+  color: $color-brown;
+  font-family: $font-family-teko;
+}

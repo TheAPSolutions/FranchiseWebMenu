@@ -1,0 +1,79 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+.section {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  gap: 5rem;
+
+  @include respond(tab-port2) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: fit-content;
+    margin-top: 3rem;
+  }
+}
+
+.left {
+  padding-left: 2rem;
+  @include respond(tab-port2) {
+    padding-left: 0rem;
+  }
+  @include respond(tab-port2) {
+    width: unset;
+  }
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__image img {
+    width: 100%;
+    @include respond(tab-port2) {
+      width: 20rem;
+    }
+    @include respond(phoneMid) {
+      width: 15rem;
+    }
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    color: white;
+    font-size: $large;
+    font-family: $font-family-website-title;
+    margin-bottom: 3rem;
+    line-height: 5rem;
+    text-align: center;
+    @include respond(phone) {
+      font-size: $medium;
+      line-height: 1;
+    }
+  }
+}
+
+.right {
+  @include respond(tab-port2) {
+    width: unset;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  img {
+    width: 100%;
+    @include respond(tab-port2) {
+      width: 20rem;
+    }
+    @include respond(phoneMid) {
+      width: 15rem;
+    }
+  }
+}

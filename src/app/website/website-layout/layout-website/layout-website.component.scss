@@ -1,0 +1,26 @@
+@import "../../../../sass/abstracts/mixins";
+@import "../../../../sass/abstracts/variables";
+
+.website {
+  font-size: 62.5%; /* 100% 16px if user didn't change anything by defalut but 16/10 = 62.5% makes the default size is 10px*/
+  background-color: $color-website-bej;
+  @include respond(tab-land) {
+    font-size: 56.25%; //1 rem = 9px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px
+  }
+  @include respond(phone) {
+    font-size: 50%; // 1
+  }
+  @include respond(big-desktop) {
+    font-size: 60%; //1rem = 12
+  }
+  @include respond(huge-desktop) {
+    font-size: 90%; //1rem = 12
+  }
+  @include respond(huge2-desktop) {
+    font-size: 110%; //1rem = 12
+  }
+}
+

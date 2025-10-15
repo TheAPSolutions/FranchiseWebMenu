@@ -1,0 +1,128 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{ MenuItems() }}</div>
+      <button [routerLink]="'/admin/addItem'" class="addbutton">
+        + {{ AddItem() }}
+      </button>
+    </div>
+
+    <div class="page_content__container">
+      <div class="page_content__controller">
+        <app-dropdown-admin
+          class="dropdowncategories"
+          [input_dropdown_title]="Categories()"
+          [input_dropdown_options]="categories"
+          (selectedId)="onCategorySelect($event)"
+        ></app-dropdown-admin>
+        <app-search-admin (SQuery)="catchQuery($event)"></app-search-admin>
+        <div class="page_nav">
+          <svg
+            class="page_nav__icon"
+            (click)="prevPage()"
+            [class.disabled]="currentPage === 1"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+          </svg>
+          <svg
+            class="page_nav__icon"
+            (click)="nextPage()"
+            [class.disabled]="currentPage === totalPages"
+          >
+            <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+          </svg>
+          <div class="pageNumber">{{ currentPage }}</div>
+        </div>
+      </div>
+
+      <app-menu-list-header-admin></app-menu-list-header-admin>
+
+      @for (item of menuItems; track item.id) {
+      <app-item-row-admin
+        class="rowitem"
+        [Id]="item.id"
+        [NameTr]="item.nameTr"
+        [NameEn]="item.nameEn"
+        [NameAr]="item.nameAr"
+        [DescriptionTr]="item.descriptionTr"
+        [DescriptionEn]="item.descriptionEn"
+        [DescriptionAr]="item.descriptionAr"
+        [PriceTr]="item.priceTr"
+        [PriceEn]="item.priceEn"
+        [PriceAr]="item.priceAr"
+        [StudentPrice]="item.studentPrice ?? 0"
+        [DiscountedPriceTr]="item.discountedPriceTr"
+        [DiscountedPriceEn]="item.discountedPriceEn"
+        [DiscountedPriceAr]="item.discountedPriceAr"
+        [imageUrl]="item.imageUrl"
+        [ItemOrder]="item.itemOrder"
+        [numberOfTimesOrdered]="item.numberOfTimesOrdered"
+        [categoryId]="item.categoryId"
+        [hasOptions]="item.hasOptions"
+        [isVisible]="item.isVisible"
+        [hasOptions]="item.hasOptions"
+        (deleteSuccess)="ngOnInit(); showSuccessMessage()"
+        (updateSuccess)="showSuccessUpdateMessage()"
+        (isChanged)="onChange($event)"
+        (updated)="showSuccessUpdateMessage()"
+        (ID)="captureID($event)"
+        (show)="handleVisibility($event)"
+        (isManageOptions)="handleManageOptionsVisiblity($event)"
+      ></app-item-row-admin>
+      <hr class="line" />
+      }
+      <div class="page_nav">
+        <svg
+          class="page_nav__icon"
+          (click)="prevPage()"
+          [class.disabled]="currentPage === 1"
+        >
+          <use xlink:href="images/sprites5.svg#icon-chevron-left"></use>
+        </svg>
+
+        <ng-container
+          *ngFor="let item of getFilteredPagination(); let i = index"
+        >
+          <div
+            *ngIf="item !== '...'; else ellipsis"
+            class="page_number"
+            [class.page_number--active]="currentPage === item"
+            (click)="changePage(item)"
+          >
+            {{ item }}
+          </div>
+        </ng-container>
+
+        <ng-template #ellipsis>
+          <div class="ellipsis">...</div>
+        </ng-template>
+
+        <svg
+          class="page_nav__icon"
+          (click)="nextPage()"
+          [class.disabled]="currentPage === totalPages"
+        >
+          <use xlink:href="images/sprites5.svg#icon-chevron-right"></use>
+        </svg>
+      </div>
+
+      @if (isVisible) {
+      <app-single-image-categories
+        (isVisible)="handleVisibility($event)"
+        [imageURL]="image"
+      />
+      }
+
+      <div class="white_space"></div>
+    </div>
+  </div>
+</div>
+@if (isManageOptionsVisible) {
+  <app-manage-menuitems-options-overlay
+  (isVisible)="handleManageOptionsVisiblity($event)"
+  [ParentMenuItemId]="parentMenuItemId"
+/>
+}
+
+
+<app-admin-success-message></app-admin-success-message>

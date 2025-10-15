@@ -1,0 +1,11 @@
+<!-- Custom button to upload image -->
+<button (click)="triggerFileInput()" class="upload_Image_button">{{UploadImage()}}</button>
+
+<!-- Hidden file input to open file dialog -->
+<input
+  type="file"
+  #fileInput
+  (change)="onFileSelected($event)"
+  accept="image/*"
+  style="display: none"
+/>

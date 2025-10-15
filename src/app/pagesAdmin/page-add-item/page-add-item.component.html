@@ -1,0 +1,168 @@
+<div class="page">
+  <div class="page_content">
+    <div class="page_content__header">
+      <div class="page_content__title">{{ AddItem() }}</div>
+    </div>
+    <form #form="ngForm" name="addItemForm">
+      <div class="page_content__container">
+        <div class="header"></div>
+        <div class="row1">
+          <app-upload-image
+            [input_size]="'large'"
+            (imageUploaded)="onSelectedImage($event)"
+          />
+
+          <div class="row_item__prices">
+            <div class="input_title">{{ Prices() }}:</div>
+
+            <div class="price_language">
+              <input
+                type="text"
+                class="item_input item_input--small"
+                placeholder="TR*"
+                [(ngModel)]="model.PriceTr"
+                name="priceTe"
+                (ngModelChange)="onPriceChange('Tr', $event)"
+              />
+              <input
+                type="text"
+                class="item_input item_input--small"
+                placeholder="{{ Discount() }}"
+                name="saletr"
+                [(ngModel)]="model.DiscountedPriceTr"
+                (ngModelChange)="onPriceIndirimChange('Tr', $event)"
+              />
+            </div>
+
+            <div class="price_language">
+              <input
+                type="text"
+                class="item_input item_input--small"
+                placeholder="EN*"
+                [(ngModel)]="model.PriceEn"
+                name="priceEn"
+              />
+              <input
+                type="text"
+                class="item_input item_input--small"
+                placeholder="{{ Discount() }}"
+                name="saleEn"
+                [(ngModel)]="model.DiscountedPriceEn"
+              />
+            </div>
+
+            <div class="price_language">
+              <input
+                type="text"
+                class="item_input item_input--small"
+                placeholder="AR*"
+                [(ngModel)]="model.PriceAr"
+                name="pricear"
+              />
+              <input
+                type="text"
+                class="item_input item_input--small"
+                placeholder="{{ Discount() }}"
+                name="DiscountedPriceAr"
+                [(ngModel)]="model.DiscountedPriceAr"
+              />
+            </div>
+
+            <div class="studentPrice">
+              <div class="input_title">{{ StudentPrice() }}:</div>
+              <input
+                type="text"
+                class="item_input item_input--price"
+                placeholder="Student Price"
+                name="StudentPrice"
+                [(ngModel)]="model.StudentPrice"
+              />
+            </div>
+
+            <app-dropdown-admin-categories
+              class="dropdowncategories"
+              [input_dropdown_title]="'Select Category*'"
+              [input_dropdown_options]="categories"
+              (selectedItem)="onCategorySelect($event)"
+              [resetSelection]="resetDropdown"
+            />
+          </div>
+
+          <div class="name">
+            <div class="product_name">
+              <div class="input_title">
+                {{ ProductName() }}:<span class="required">*</span>
+              </div>
+            </div>
+            <input
+              type="text"
+              class="name_input name_input--mid"
+              placeholder="TR"
+              [(ngModel)]="model.NameTr"
+              name="namete"
+            />
+            <input
+              type="text"
+              class="name_input name_input--mid"
+              placeholder="EN"
+              [(ngModel)]="model.NameEn"
+              name="nameEn"
+            />
+            <input
+              type="text"
+              class="name_input name_input--mid"
+              placeholder="AR"
+              [(ngModel)]="model.NameAr"
+              name="namear"
+            />
+          </div>
+        </div>
+
+        <div class="row_item__description">
+          <div class="description">
+            <div class="input_title">{{ Description() }}:</div>
+          </div>
+        </div>
+        <div class="input_description">
+          <textarea
+            class="custom-textarea"
+            rows="4"
+            cols="50"
+            wrap="hard"
+            placeholder="TR"
+            [(ngModel)]="model.DescriptionTr"
+            name="descriptiontr"
+          ></textarea>
+        </div>
+        <div class="input_description">
+          <textarea
+            class="custom-textarea"
+            rows="4"
+            cols="50"
+            wrap="hard"
+            placeholder="EN"
+            [(ngModel)]="model.DescriptionEn"
+            name="descriptionen"
+          ></textarea>
+        </div>
+        <div class="input_description">
+          <textarea
+            class="custom-textarea"
+            rows="4"
+            cols="50"
+            wrap="hard"
+            placeholder="AR"
+            [(ngModel)]="model.DescriptionAr"
+            name="descriptionar"
+          ></textarea>
+        </div>
+
+        <div class="save_button" (click)="onFormSubmit()">
+          <app-save-button />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-admin-success-message />

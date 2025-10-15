@@ -1,0 +1,41 @@
+@import "../../../sass/abstracts/variables";
+
+.logIn_button {
+    background-color: $color-yellow;
+    color: $color-white;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-teko;
+    font-size: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    cursor: pointer;
+    margin-left: 9rem;
+  
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2); /* top bottom blur color*/
+  
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+    &:active,
+    &:focus {
+      transform: translateY(-0.1rem);
+    }
+  }
+  
+  a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the inherited color */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+  
+  a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    color: inherit; /* Maintain color on hover */
+  }

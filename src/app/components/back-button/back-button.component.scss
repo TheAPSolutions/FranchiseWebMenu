@@ -1,0 +1,13 @@
+@import "../../../sass/abstracts/variables";
+
+.navigation__icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: $color-red;
+  background-color: transparent;
+}
+
+.backButton {
+  background-color: transparent;
+  border: none;
+}

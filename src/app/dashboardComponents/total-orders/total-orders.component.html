@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="header">
+    <app-total-branches-card
+      [input_card_title]="numberOfOrders()"
+      [input_card_data]="currentMonthOrders!.totalOrders"
+      [input_card_section1_data]="currentMonthOrdersBranch[0].totalOrders"
+      [input_card_section1_title]="currentMonthOrdersBranch[0].branchName"
+      [input_card_section2_data]="currentMonthOrdersBranch[1].totalOrders"
+      [input_card_section2_title]="currentMonthOrdersBranch[1].branchName"
+      [input_card_section3_data]="currentMonthOrdersBranch[2].totalOrders"
+      [input_card_section3_title]="currentMonthOrdersBranch[2].branchName"
+      [input_card_unit]="'Orders'"
+    ></app-total-branches-card>
+  </div>
+  <div class="footer">
+    <div class="footer__left">
+      <app-total-branches-card
+        [input_card_title]="numberOfDineInOrders()"
+        [input_card_data]="currentMonthDineInTakeaway!.totalDineInOrders"
+        [input_card_section1_data]="currentMonthDineInTakeawayBranch[0].totalDineInOrders"
+        [input_card_section1_title]="currentMonthDineInTakeawayBranch[0].branchName"
+        [input_card_section2_data]="currentMonthDineInTakeawayBranch[1].totalDineInOrders"
+        [input_card_section2_title]="currentMonthDineInTakeawayBranch[1].branchName"
+        [input_card_section3_data]="currentMonthDineInTakeawayBranch[2].totalDineInOrders"
+        [input_card_section3_title]="currentMonthDineInTakeawayBranch[2].branchName"
+        [input_card_unit]="'Orders'"
+
+      ></app-total-branches-card>
+    </div>
+    <div class="footer__right">
+      <app-total-branches-card
+        [input_card_title]="numberOfTakeAwayOrders()"
+        [input_card_data]="currentMonthDineInTakeaway!.totalTakeawayOrders"
+        [input_card_section1_data]="currentMonthDineInTakeawayBranch[0].totalTakeawayOrders"
+        [input_card_section1_title]="currentMonthDineInTakeawayBranch[0].branchName"
+        [input_card_section2_data]="currentMonthDineInTakeawayBranch[1].totalTakeawayOrders"
+        [input_card_section2_title]="currentMonthDineInTakeawayBranch[1].branchName"
+        [input_card_section3_data]="currentMonthDineInTakeawayBranch[2].totalTakeawayOrders"
+        [input_card_section3_title]="currentMonthDineInTakeawayBranch[2].branchName"
+        [input_card_unit]="'Orders'"
+
+      ></app-total-branches-card>
+    </div>
+  </div>
+</div>

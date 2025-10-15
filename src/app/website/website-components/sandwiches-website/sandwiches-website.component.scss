@@ -1,0 +1,206 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+
+.sandwiches {
+  width: 100vw;
+  height: 250vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-website-body;
+  color: $color-white;
+  position: relative;
+  z-index: 10;
+  line-height: 1;
+
+  @include respond(tab-port2) {
+    height: fit-content;
+    padding: 3rem 0rem;
+  }
+}
+
+.sandwichesBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0rem;
+  height: 30%;
+
+  @include respond(phone) {
+    flex-direction: column;
+    height: fit-content;
+    row-gap: 3rem;
+  }
+
+  @include respond(phone4) {
+    row-gap: 5rem;
+  }
+
+  &__title {
+    margin-left: 15rem;
+    width: 30vw;
+    font-size: $xlarge;
+
+    @include respond(bigdesktop) {
+      font-size: $large;
+      margin-left: 3rem;
+    }
+    @include respond(tab-port2) {
+      font-size: $medium;
+      margin-left: 3rem;
+    }
+
+    @include respond(phone) {
+      width: 100vw;
+    }
+
+    @include respond(phone4) {
+      font-size: $small;
+    }
+  }
+
+  &__image {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}
+
+.midtitle {
+  margin-right: 15rem;
+  @include respond(bigdesktop) {
+    margin-right: 3rem;
+  }
+
+  @include respond(phone) {
+    margin-right: 3rem;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+  }
+}
+
+.lasttitle {
+  @include respond(phoneMid2) {
+    margin-left: 0;
+  }
+}
+
+.rowmid {
+  flex-direction: row-reverse;
+}
+
+.sandwichImage {
+  width: 60rem;
+  height: 35rem;
+  object-fit: cover;
+  z-index: 100;
+  align-self: flex-start;
+  margin-top: -3rem;
+  margin-right: -0.5rem;
+
+  @include respond(big-desktop9) {
+    width: 30rem;
+    height: 20rem;
+  }
+
+  @include respond(big-desktop6) {
+    width: 30rem;
+    height: 20rem;
+  }
+  @include respond(big-desktop5) {
+    width: 34rem;
+    height: 22rem;
+    margin-left: 0rem;
+  }
+  @include respond(big-desktop4) {
+    width: 45rem;
+    height: 30rem;
+  }
+  @include respond(phone) {
+    width: 100%;
+    height: auto;
+  }
+  /*   @include respond(midphone) {
+    width: 22rem;
+    height: 14rem;
+    margin-left: -15vw;
+  }
+  @include respond(phoneSmall) {
+    width: 18rem;
+    height: 12rem;
+    margin-left: -30vw;
+  } */
+}
+.honeysandwich {
+  width: 50rem;
+  height: 32rem;
+  object-fit: cover;
+  z-index: 100;
+  align-self: flex-start;
+  margin-top: -3rem;
+  margin-right: -5rem;
+
+  @include respond(bigdesktop) {
+    width: 42rem;
+    height: 28rem;
+    object-fit: cover;
+  }
+
+  @include respond(tab-port2) {
+    width: 35rem;
+    height: 20rem;
+    object-fit: cover;
+  }
+  @include respond(tab-port3) {
+    width: 30rem;
+    height: 15rem;
+    object-fit: cover;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    height: auto;
+  }
+  /*   @include respond(phone4) {
+    width: 20rem;
+    height: fit-content;
+    margin-right: -2.5rem;
+  }
+  @include respond(miniPhone) {
+    width: 18rem;
+    height: fit-content;
+    margin-right: -3rem;
+  } */
+}
+
+.midimage {
+  @include respond(phone) {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.sandwichImagekrispy {
+  @include respond(phone) {
+    margin-left: -1rem;
+  }
+}

@@ -1,0 +1,55 @@
+<div class="chart">
+  <div class="title">{{salesBetweenBranches()}}</div>
+  <div class="chart_controller">
+    <label class="dropdown_title" for="year">{{selectYear()}}</label>
+    <select
+      class="dropdown"
+      id="year"
+      [(ngModel)]="selectedYear"
+      (change)="updateChartData()"
+    >
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+
+    <label class="dropdown_title" for="month">{{selectMonth()}}</label>
+    <select
+      class="dropdown"
+      id="month"
+      [(ngModel)]="selectedMonth"
+      (change)="updateChartData()"
+    >
+      <option *ngFor="let month of months" [value]="month.id">
+        {{ month.name }}
+      </option>
+    </select>
+  </div>
+
+  <!-- ngx-charts Bar Chart -->
+  <div
+    class="chart-container"
+    *ngIf="filteredChartData.length > 0; else noData"
+  >
+    <ngx-charts-bar-vertical
+      [view]="[700, 400]"
+      [scheme]="colorScheme"
+      [results]="filteredChartData"
+      [gradient]="gradient"
+      [xAxis]="xAxisLabel"
+      [yAxis]="yAxisLabel"
+      [legend]="true"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [showGridLines]="false"
+      xAxisLabel="Branch"
+      yAxisLabel="Total Sales"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+
+  <!-- Show 'No Data' Message -->
+  <ng-template #noData>
+    <p class="no-data-message">
+      No sales data available for the selected month.
+    </p>
+  </ng-template>
+</div>

@@ -1,0 +1,69 @@
+@import "../../../sass/abstracts/variables";
+
+.header {
+    display: flex;
+    background-color: $color-light-yellow2 ;
+    width: 100vw;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  &__logo {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    width: fit-content;
+    margin-left: 2rem;
+  }
+
+  &__title {
+    font-size: 5rem;
+    font-family: $font-family-teko;
+    color: $color-brown;
+    letter-spacing: 0.5rem;
+    padding: 0.5rem;
+    width: max-content;
+  }
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.log_out{
+  background-color: $color-red;
+  font-size: 2rem;
+  color: $color-white;
+  border: none;
+  width: 10rem;
+  height: 3rem;
+  font-family: $font-family-teko;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  text-wrap: nowrap;
+
+}
+
+.left{
+  display: flex;
+  align-items: center;
+}
+
+.right{
+  justify-self: end;
+  flex-direction: row;
+  display: flex;
+  gap: 1rem;
+  margin-right: 5rem;
+  align-items: center;
+}
+
+.language{
+  margin-top: .9rem;
+  position: relative;
+}

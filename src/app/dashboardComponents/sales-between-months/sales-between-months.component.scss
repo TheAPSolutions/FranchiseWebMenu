@@ -1,0 +1,21 @@
+@import "../../../sass/abstracts/variables";
+
+::ng-deep .chart_horizontal .chart text {
+  fill: $color-dark-gray !important; /* Set text color to white */
+  font-size: 16px !important; /* Increase font size */
+  font-weight: bold; /* Make it bold (optional) */
+}
+.chart_horizontal{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.title {
+  font-family: $font-family-teko;
+  color: $color-dark-gray;
+  font-size: 2.75rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  z-index: 100;
+}

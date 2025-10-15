@@ -1,0 +1,11 @@
+@import "../../../sass/abstracts/variables";
+
+.upload_Image_button{
+    background-color: $color_red;
+    width: 10vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    color: $color-white;
+    border: none;
+}

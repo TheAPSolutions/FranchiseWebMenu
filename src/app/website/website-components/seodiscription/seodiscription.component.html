@@ -1,0 +1,40 @@
+<section class="section">
+  <div
+    class="box"
+    *ngFor="let panel of panels; let i = index"
+    [class.expanded]="isExpanded(i)"
+    [class.hidden]="expandedIndex() !== -1 && !isExpanded(i)"
+    [@fadeInDown]="getAnimationState('box')"
+    appAnimateOnScroll
+    (animationStateChange)="setAnimationState('box', $event)"
+  >
+    <!-- Title visible only when collapsed -->
+    <ng-container *ngIf="!isExpanded(i)">
+      <h1 *ngIf="panel.level === 'h1'" class="box__title">
+        {{ panel.titleKey | translate }}
+      </h1>
+      <h2 *ngIf="panel.level === 'h2'" class="box__title">
+        {{ panel.titleKey | translate }}
+      </h2>
+      <h3 *ngIf="panel.level === 'h3'" class="box__title">
+        {{ panel.titleKey | translate }}
+      </h3>
+    </ng-container>
+
+    <button
+      class="box__icon"
+      (click)="toggle(i)"
+      [attr.aria-expanded]="isExpanded(i)"
+    >
+      <img
+        src="images/website-icons/Double Left.png"
+        [alt]="'seo.alt.toggle' | translate"
+      />
+    </button>
+
+    <!-- Description only when expanded -->
+    <div class="box__description" *ngIf="isExpanded(i)">
+      {{ panel.descriptionKey | translate }}
+    </div>
+  </div>
+</section>

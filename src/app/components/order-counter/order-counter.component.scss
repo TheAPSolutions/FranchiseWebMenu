@@ -1,0 +1,48 @@
+@import "../../../sass/abstracts/variables";
+
+.counter_container {
+  display: flex;
+
+  width: 5rem;
+  border-radius: 20px;
+  justify-content: space-evenly;
+  overflow: hidden;
+  scale: 1.3;
+  align-items: center;
+
+  &--red {
+    background-color: $color-red;
+  }
+
+  &--yellow {
+    background-color: $color-yellow;
+  }
+}
+
+.counter_container button {
+  background-color: transparent;
+  border: none;
+  font-family: $font-family-teko;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  height: max-content;
+  color: black;
+}
+
+.counter_displayer {
+  background-color: white;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1px;
+  font-weight: 400;
+  font-family: $font-family-teko;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}

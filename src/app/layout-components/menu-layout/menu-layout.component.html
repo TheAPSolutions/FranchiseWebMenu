@@ -1,0 +1,17 @@
+<div class="page">
+  <div class="header">
+    @if(this.router.url !== '/'){
+    <app-back-button class="header__back" />
+    }
+    <app-logo-circle class="header__logo">
+      <app-logo-circle />
+    </app-logo-circle>
+    <app-brand-name class="header__title">
+      <app-brand-name />
+    </app-brand-name>
+    <div class="header__languageDropdown">
+      <app-language-dropdown />
+    </div>
+  </div>
+  <router-outlet />
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  @if (type() === "increase") {
+  <div class="input_title">{{IncreasePrice()}}</div>
+  <div class="container__box container__box--red">
+    <div class="container__box__input">
+      <input
+        type="text"
+        placeholder="{{IncreasePrice()}}"
+        [(ngModel)]="percentageValue"
+      />
+    </div>
+    <div class="container__box__button" (click)="ChangeClicked()">
+      <svg class="navigation__icon">
+        <use xlink:href="images/sprites5.svg#icon-level-up"></use>
+      </svg>
+    </div>
+  </div>
+  }@else{
+  <div class="input_title">{{DecreasePrice()}}</div>
+  <div class="container__box container__box--green">
+    <div class="container__box__input">
+      <input
+        type="text"
+        placeholder="{{DecreasePrice()}}"
+        [(ngModel)]="percentageValue"
+      />
+    </div>
+    <div class="container__box__button" (click)="ChangeClicked()">
+      <svg class="navigation__icon">
+        <use xlink:href="images/sprites5.svg#icon-level-down"></use>
+      </svg>
+    </div>
+  </div>
+  }
+</div>

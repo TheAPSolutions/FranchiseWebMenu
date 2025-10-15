@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "brand_line1": "Hungry",
+    "brand_line2": "Birds",
+    "slogan_line1": "Şehrin En İyi",
+    "slogan_line2": "Burgeri",
+    "button_line1": "Her Şeyin Nasıl",
+    "button_line2": "Başladığını Öğren"
+  },
+  "sandwiches": {
+    "title1_line1": "Kiraz",
+    "title1_line2": "Burger",
+    "title2_line1": "Çıtır",
+    "title2_line2": "Tavuk",
+    "title3_line1": "Ballı Krispy",
+    "title3_line2": "Burger"
+  },
+  "footer": {
+    "title_line1": "Bizi",
+    "title_line2": "Takip",
+    "title_line3": "Edin",
+    "branches_title": "Şubelerimiz",
+    "branch1": "Beşiktaş / İstanbul",
+    "branch2": "Maslak1453 / İstanbul",
+    "branch3": "Batışehir / İstanbul",
+    "branch4": "Riyad / Suudi Arabistan",
+    "branch5": "Basra / Irak"
+  },
+  "catering": {
+    "title1_span": "P",
+    "title1_rest": "rofesyonel",
+    "title2_span": "C",
+    "title2_rest": "Catering",
+    "title3_span": "H",
+    "title3_rest": "izmetleri",
+    "body1": "Özel ve kurumsal etkinlikler için catering menülerümüz, taze ve kaliteli malzemelerle deneyimli şeflerimiz tarafından hazırlanır. Misafirlerinize unutulmaz lezzetler sunarız.",
+    "body2": "Küçük davetlerden büyük organizasyonlara kadar esnek çözümler sunan hizmetimiz, müşteri memnuniyetini her zaman ön planda tutar.",
+    "body3": "Catering hizmetlerimiz hakkında daha fazla bilgi almak ve rezervasyon yapmak için bizimle iletişime geçebilirsiniz.",
+    "catering3_title": "Kaliteli ve Uygun Fiyatlı Catering Hizmetleri",
+    "catering3_paragraph": "İstanbul'da kaliteli ve uygun fiyatlı catering hizmetleri arıyorsanız, profesyonel ekibimiz ve geniş menümüzle etkinliklerinizi unutulmaz kılıyoruz. Taze ve lezzetli yemek seçeneklerimiz, özel davetler, kurumsal toplantılar ve kutlamalar için ideal çözümler sunar. Müşteri memnuniyetini ön planda tutarak, catering sektöründe uygun fiyatlarla kaliteli hizmet sunmayı hedefliyoruz. İster küçük gruplar için ister büyük organizasyonlar için, esnek ve kişiye özel catering paketlerimizle yanınızdayız."
+  },
+  "aboutus": {
+    "title1_line1": "İstanbul'dan",
+    "title1_line2": "Fransız",
+    "title1_line3": "Esintili Fast",
+    "title1_line4": "Food'un",
+    "title1_line5": "Yükselişi",
+
+    "text1": "Hungry Birds'ta fast food yeniden yorumlanıyor. İstanbul'da doğduk ve Fransız mutfağının zarafetinden ilham aldık; hızlı servisi sofistike lezzetlerle harmanlıyoruz.",
+
+    "title2_line1": "Hungry",
+    "title2_line2": "Birds'te her",
+    "title2_line3": "ürün",
+
+    "product1": "en taze",
+    "product2": "yerel kaynaklı",
+    "product3": "titizlik",
+
+    "body2": "Her unsuru—kıtır, canlı sebzelerden kaliteli etlere ve el yapımı ekmeklere kadar—saflık ve lezzet için özenle seçiyoruz. Bu tazelik ve temiz kalite bağlılığı, her lokmayı hem besleyici hem de lezzetli kılar.",
+
+    "title3_line1": "Taze",
+    "title3_line2": "Temiz",
+    "title3_line3": "Kaliteli",
+    "title3_line4": "Malzeme",
+    "title3_line5": "Taahhüdümüz",
+
+    "title3": "İstanbul'da Fast Food Deneyimini Zirveye Taşıyan Burgerci",
+    "body3": "İstanbul'da fast food deneyimini zirveye taşıyan burgerci olarak, hızlı servisimizi taze ve kaliteli malzemelerle birleştiriyoruz. Menüdeki her burger, özenle seçilmiş etler ve el yapımı ekmeklerle hazırlanıyor, böylece İstanbul fast food mekanları arasında fark yaratıyoruz. Müşteri memnuniyetini ön planda tutan yaklaşımımızla, lezzeti ve hızı bir arada sunarak İstanbul'da fast food severlerin ilk tercihi olmayı hedefliyoruz."
+  },
+  "allbranches": {
+    "title_line1": "DÜNYA",
+    "title_line2": "ÇAPINDAKİ",
+    "title_line3": "ŞUBELERİMİZ",
+
+    "country1": "Türkiye",
+    "country2_line1": "Suudi",
+    "country2_line2": "Arabistan",
+    "country3": "Irak",
+
+    "viewall": "Şubeleri göster",
+    "location": "Konum",
+    "call": "Ara",
+    "order": "Online Sipariş"
+  },
+  "turkeybranches": {
+    "branch1": "Beşiktaş",
+    "branch2": "Maslak 1453",
+    "branch3": "Batışehir"
+  },
+  "saudiarabiabranches": {
+    "branch1": "Riyad"
+  },
+  "iraqbranches": {
+    "branch1": "Basra"
+  },
+  "franchise": {
+    "title1_line1": "Hungry",
+    "title1_line2": "Birds",
+    "title1_line3": "Ailesine",
+    "title1_line4": "Katılın",
+
+    "text1": "Hungry Birds'ta fast food'u kalite, lezzet ve yenilikle yeniden tanımlıyoruz. Markamız her geçen gün daha da güçlenirken, tutkulu girişimcileri artan franchise ağımızın bir parçası olmaya davet ediyoruz.",
+
+    "title2_line1": "Neden Hungry ",
+    "title2_line2": "Birds Franchise'ı?",
+
+    "reason1": "Kanıtlanmış Başarı",
+    "reason2": "Kapsamlı Destek",
+    "reason3": "Kalite Taahhüdü",
+
+    "text2": "Fast food'un pratikliğini, gurme Fransız esintileriyle harmanlayan köklü markamızı ve yenilikçi menümüzü kullanarak başarıya ulaşın.",
+
+    "title3_line1": "Bağlantıda",
+    "title3_line2": "Kalın & İş",
+    "title3_line3": "Birliği Yapın",
+
+    "text3": "Başarının toplulukla inşa edildiğine inanıyoruz. Bu yüzden, mevcut franchise sahipleri ve girişimcilerle bağlantı kurabileceğiniz, görüşlerinizi paylaşabileceğiniz, soru sorabileceğiniz ve en iyi uygulamaları öğrenebileceğiniz özel bir Franchise Forumu oluşturduk. Sohbete katılın, değerli bilgiler edinin ve Hungry Birds ailesinin vazgeçilmez bir parçası olun.",
+
+    "title4_line1": "Bizimle",
+    "title4_line2": "yükselmeye",
+    "title4_line3": "hazır",
+    "title4_line4": "mısınız?",
+
+    "title_5": "Lezzetli Hamburger Franchise Sistemi ile İşinizi Büyütün",
+    "text_5": "Gıda pazarındaki geleneksel yaklaşımlardan ayrışan yenilikçi ve benzersiz bir projeye yatırım fırsatını değerlendirerek, yüksek kaliteyi ve bu kalitenin sürekliliğini sektörün zorluklarına rağmen garanti altına alıyoruz. Temelimiz, gıda üretim sektöründe 25 yılı aşkın deneyim ve restoran işletmeciliğinde 12 yılı aşkın uzmanlık üzerine kuruludur; buna piyasa dinamikleri, pazarlama stratejileri ve değişen müşteri ihtiyaçlarına dair derin bilgi de eklenmiştir. Ortaklarımızla el ele büyüyerek küresel tanınırlığa ulaşmayı hedeflerken, her ortaklıkta güvenli yatırım, üstün kalite, güvenilirlik, şeffaflık ve sürdürülebilir kârlılık ilkesine güçlü bir bağlılık göstermekteyiz.",
+
+    "title_6": "Karlı ve Kolay Hamburger Franchise Modeli",
+    "text_6": "İş dünyasında başarıyı hedefleyen girişimciler için tasarlanmış karlı ve kolay hamburger franchise modeli, düşük risk ve yüksek getiri fırsatı sunuyor. Edindiğimiz tecrübeyle oluşturduğumuz bu sistem, standartlaştırılmış süreçler ve kapsamlı eğitim programları ile franchise sahiplerine güçlü bir destek sağlıyor."
+  },
+  "contactform": {
+    "title_line1": "İletişim",
+    "title_line2": "Formu",
+    "name": "Ad",
+    "surname": "Soyad",
+    "email": "Email",
+    "phone": "Telefon Numarası",
+    "phone_placeholder": "+(kod)",
+    "message": "Mesaj",
+    "send": "Gönder"
+  },
+  "navbar": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "branches": "Şubelerimiz",
+    "franchise": "Franchise",
+    "catering": "Catering",
+    "blogs": "Blog",
+    "blogs": "Blog",
+    "contact": "İletişim",
+    "menu": "Menü"
+  },
+  "emailstatus": {
+    "success": "E-posta Başarıyla Gönderildi"
+  },
+  "delivery": {
+    "title": "Kapiniza Gelsin"
+  },
+  "seo": {
+    "panels": [
+      {
+        "title": "İstanbul'da En İyi Burgerci – Taze, Lezzetli ve Özel Tariflerle",
+        "description": "İstanbul'da en iyi burgerci arayışınız burada son buluyor! Taze malzemeler, el yapımı ekmekler ve özel soslarla hazırladığımız burgerler, İstanbul burger severlerinin vazgeçilmezi. Lezzeti ve kaliteyi bir arada sunan mekanımız, İstanbul'da burger keyfini bambaşka bir seviyeye taşıyor "
+      },
+      {
+        "title": "İstanbul Burger Mekanları Arasında Fark Yaratan Lezzet",
+        "description": "İstanbul burger mekanları arasında öne çıkmamızın en büyük sebebi, lezzete verdiğimiz önem ve kalite anlayışımız. Tüm burgerlerimizi taze ve günlük malzemelerle hazırlıyor, el yapımı ekmeklerimiz ve özel baharat karışımlarımızla fark yaratıyoruz. Menüdeki her tarif, hem damak tadınıza hem de gözünüze hitap edecek şekilde özenle hazırlanıyor."
+      },
+      {
+        "title": "İstanbul'da En İyi Burgerci ile Lezzet Deneyimi",
+        "description": "İstanbul'da en iyi burgerci denildiğinde akla gelen ilk adres olmamız, kaliteye verdiğimiz önemden kaynaklanıyor. Taze malzemeler, el yapımı ekmekler ve özel soslarla hazırladığımız burgerler, her lokmada benzersiz bir lezzet sunuyor. Menüdeki her ürün, damak tadınıza hitap edecek şekilde özenle seçiliyor ve ustalıkla pişiriliyor."
+      },
+      {
+        "title": "İstanbul'un En İyi Burgercisi ve Burgeri",
+        "description": "İstanbul'da en iyi burgerci olarak, taze malzemelerle hazırladığımız burgerleri benzersiz tariflerle buluşturuyoruz. El yapımı ekmeklerimiz, özel soslarımız ve özenle seçilmiş etlerimiz sayesinde her lokmada farklı bir lezzet deneyimi yaşatıyoruz. Menüde yer alan klasik, gurme ve vejetaryen burger seçeneklerimiz, her damak tadına hitap edecek şekilde özenle hazırlanıyor."
+      },
+      {
+        "title": "Fast Food Severler İçin İstanbul'un Lezzet Durakları",
+        "description": "İstanbul fast food mekanları arasında hızlı ve lezzetli seçenekler sunan adresimiz, özellikle burger tutkunlarının favorisi. Taze malzemelerle hazırlanan burgerlerimiz ve pratik servisimiz sayesinde, İstanbul'da lezzetli bir fast food deneyimi yaşamak çok kolay."
+      }
+    ]
+  },
+  "blog": {
+    "readMore": "Devamını Okuyun"
+  },
+  "landing-page" : {
+    "order-now": "Hemen Sipariş Ver!"
+  },
+  "components" : {
+    "whatsapp" : "iletişime geç",
+    "maps": "Restaurana git"
+  }
+}

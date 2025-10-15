@@ -1,0 +1,49 @@
+@import "../../../sass/abstracts/variables";
+.dropdown_container{
+    width: fit-content;
+    background-color: #F5A81C;
+    padding-bottom: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-teko;
+    font-size: 1.5rem;
+}
+
+
+.dropdown_header{
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.content{
+    padding-left: 30px;  
+    background-color: #F5A81C;
+    height: fit-content;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position it just below the language button or container */
+    left: 0; /* Align it with the container */
+    z-index: 10; /* Ensure it appears above other elements */
+    width: 4.6rem;
+}
+
+.content span{
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.content span:hover{
+    opacity: 0.7;
+}
+
+.navigation__icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: white;
+}

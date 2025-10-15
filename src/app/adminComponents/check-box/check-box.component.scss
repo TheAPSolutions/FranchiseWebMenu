@@ -1,0 +1,57 @@
+@import "../../../sass/abstracts/variables";
+
+.checkbox-wrapper-37 input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-wrapper-37 .terms-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-wrapper-37 .terms-label .label-text {
+  margin-left: 10px;
+  font-family: $font-family-teko;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.label-text--ar {
+  margin-left: 10px;
+  font-family: $font-family-arabic;
+  direction: rtl;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.checkbox-wrapper-37 .checkbox-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.checkbox-wrapper-37 .checkbox-box {
+  fill: $color-light-yellow;
+  stroke: $color-red;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper-37 .checkbox-tick {
+  stroke: $color-red;
+  stroke-dasharray: 172;
+  stroke-dashoffset: 172;
+  transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper-37
+  input[type="checkbox"]:checked
+  + .terms-label
+  .checkbox-box,
+.checkbox-wrapper-37
+  input[type="checkbox"]:checked
+  + .terms-label
+  .checkbox-tick {
+  stroke-dashoffset: 0;
+}

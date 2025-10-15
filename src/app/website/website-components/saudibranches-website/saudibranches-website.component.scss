@@ -1,0 +1,189 @@
+@import "../../../../sass/abstracts/variables";
+@import "../../../../sass/abstracts/mixins";
+
+.turkeybrancheswebsite {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  width: 100vw;
+  height: fit-content;
+  padding: 3rem 0rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.allbranchesBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.branchestitle {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xlarge;
+  text-align: center;
+  line-height: 1.5;
+  z-index: 10;
+  text-shadow: $shadow;
+
+  @include respond(tab-port2) {
+    font-size: $large;
+  }
+  @include respond(tab-port3) {
+    font-size: $medium2;
+  }
+  @include respond(phone) {
+    font-size: $medium;
+  }
+
+  @include respond(midphone2) {
+    font-size: $small;
+  }
+  @include respond(phone2) {
+    font-size: $xsmall;
+  }
+}
+
+.imagebranchearth {
+  width: 28rem;
+  height: 32rem;
+  position: relative;
+  z-index: 10;
+
+  @include respond(phone) {
+    width: 28rem;
+    height: 32rem;
+  }
+  @include respond(phone5) {
+    width: 25rem;
+    height: 28rem;
+  }
+  @include respond(midphone2) {
+    width: 21rem;
+    height: 24rem;
+  }
+  @include respond(phone2) {
+    width: 18rem;
+    height: 20rem;
+  }
+  @include respond(phoneSmall) {
+    width: 16rem;
+    height: 18rem;
+  }
+}
+
+.earthbranchimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.branchnamewebsite {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $small;
+  z-index: 10;
+  line-height: 1;
+
+  @include respond(midphone2) {
+    font-size: $xsmall;
+  }
+  @include respond(phoneMid) {
+    font-size: $xxsmall;
+  }
+}
+
+.branchesturkeylist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 80vw;
+  z-index: 10;
+
+  @include respond(bigdesktop4) {
+    width: 90vw;
+  }
+
+  @include respond(tab-land2) {
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+}
+
+.branchitemwebsite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  flex-direction: column;
+  width: 30%;
+}
+
+.branchnamewebsiteitem {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $medium;
+  cursor: pointer;
+  text-wrap: nowrap;
+  margin-bottom: 1.5rem;
+
+  @include respond(midphone) {
+    font-size: $small;
+  }
+  @include respond(phoneMid2) {
+    font-size: $xsmall;
+  }
+}
+
+.branchdetailswebsite {
+  font-family: $font-family-website-body;
+  color: $color-white;
+  font-size: $xsmall;
+  cursor: pointer;
+  border: 5px solid $color-website-brown;
+  padding: 1.5rem 1rem;
+  -webkit-text-stroke: 1px $color-website-brown;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(midphone) {
+    font-size: $xxsmall;
+    width: 15rem;
+    -webkit-text-stroke: 0px $color-website-brown;
+  }
+}
+
+.menubuttonwebsite {
+  width: 30rem;
+  height: 15rem;
+  padding: 2rem 1rem;
+  border: 0.5rem solid $color-white;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  z-index: 10;
+  cursor: pointer;
+
+  @include respond(phone) {
+    width: 80vw;
+    height: fit-content;
+    margin-top: 5rem;
+  }
+}
+
+.menubuttonimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

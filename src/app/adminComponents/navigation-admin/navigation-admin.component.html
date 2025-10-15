@@ -1,0 +1,93 @@
+<div class="sidebar">
+  <ul class="side-nav">
+    <li
+      class="side-nav__item"
+      (click)="setActive('dashboard')"
+      [class.side-nav__item--active]="activeLink === 'dashboard'"
+    >
+      <a [routerLink]="'/dashboard'" class="side-nav__link">
+        <span class="side-nav__text">{{Dashboard()}}</span>
+      </a>
+    </li>
+    <li
+      class="side-nav__item"
+      (click)="setActive('MenuList')"
+      [class.side-nav__item--active]="activeLink === 'MenuList'"
+    >
+      <a [routerLink]="'/admin/menuList'" class="side-nav__link">
+        <span class="side-nav__text">{{MenuList()}}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('CategoriesList')"
+      [class.side-nav__item--active]="activeLink === 'CategoriesList'"
+    >
+      <a [routerLink]="'/admin/categories'" class="side-nav__link">
+        <span class="side-nav__text">{{CategoryList()}}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('SubCategoriesList')"
+      [class.side-nav__item--active]="activeLink === 'SubCategoriesList'"
+    >
+      <a [routerLink]="'/admin/subCategories'" class="side-nav__link">
+        <span class="side-nav__text">{{SubCategories()}}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('MenuOrder')"
+      [class.side-nav__item--active]="activeLink === 'MenuOrder'"
+    >
+      <a [routerLink]="'/admin/orderItems'" class="side-nav__link">
+        <span class="side-nav__text">{{MenuOrder()}}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('CategoryOrder')"
+      [class.side-nav__item--active]="activeLink === 'CategoryOrder'"
+    >
+      <a [routerLink]="'/admin/orderCategories'" class="side-nav__link">
+        <span class="side-nav__text">{{CategoryOrder()}}</span>
+      </a>
+    </li>
+    <li
+      class="side-nav__item"
+      (click)="setActive('SubCategoryOrder')"
+      [class.side-nav__item--active]="activeLink === 'SubCategoryOrder'"
+    >
+      <a [routerLink]="'/admin/orderSubCategories'" class="side-nav__link">
+        <span class="side-nav__text">{{SubCategoryOrder()}}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('Offers')"
+      [class.side-nav__item--active]="activeLink === 'Offers'"
+    >
+      <a [routerLink]="'/admin/Offers'" class="side-nav__link">
+        <span class="side-nav__text">{{Offers()}}</span>
+      </a>
+    </li>
+
+    <li
+      class="side-nav__item"
+      (click)="setActive('ExportMenu')"
+      [class.side-nav__item--active]="activeLink === 'ExportMenu'"
+    >
+      <a [routerLink]="'/admin/exportMenu'" class="side-nav__link">
+        <span class="side-nav__text">{{ExportMenu()}}</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="legal">Hungry Birds</div>
+</div>

@@ -1,0 +1,172 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.overlay_container{
+    background-color: white;
+    padding-bottom: 1rem;
+    position: absolute;
+    top: 50%; /* Move down 50% of the parent height */
+    left: 50%; /* Move right 50% of the parent width */
+    transform: translate(-30%, -50%);
+    z-index: 1000; /* Ensure it appears above other content */
+    scale: 1.6;
+    @include respond(phoneMid){
+        scale: 1.2;
+        transform: translate(-45%, -50%);
+    }
+
+    @include respond(phoneSmal){
+        scale: 1.1;
+        transform: translate(-45%, -50%);
+    }
+
+
+}
+.verticalContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 1rem;
+}
+.close_button {
+    display: flex;
+    justify-content: space-around;
+    gap: 10rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.close_button button{
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: $font-family-teko;
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.Title{
+    display: flex;
+    position: relative;
+    gap: 0.75rem;
+    align-items: center;
+    font-family: $font-family-teko;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: $color-brown;
+
+    &--ar{
+        direction: rtl;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        font-family: $font-family-arabic;
+        font-weight: 500;
+
+    }
+
+}
+
+.navigation__icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: red;
+}
+
+.Content{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.textarea{
+    margin-top: 1rem;
+    width: 10rem;
+    //height: 1.5rem;
+    field-sizing: content;
+    background-color: rgba(247, 211, 131, 0.24);
+    border: none;
+
+    font-family: $font-family-teko;
+    font-size: 1rem;
+}
+.textarea--ar{
+    direction: rtl;
+    font-family: $font-family-arabic;
+}
+
+.textarea::placeholder{
+    color: black;
+    font-size: 1rem;
+}
+select {
+    margin-bottom: 1rem;
+}
+
+.Content button{
+    background-color: red;
+    border: none;
+    width: 4rem;
+    height: 1.5rem;
+    scale: 0.8;
+    color: white;
+    font-family:$font-family-teko;
+    font-size: 1.3rem;
+    justify-self: baseline;
+    align-self: self-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+
+    .overlay_container{
+        scale: 1.2;
+        transform: translate(-45%, -50%);
+    }
+}
+
+@media (max-width: 420px) {
+    .overlay_container{
+        scale: 1.4;
+        transform: translate(-38%, -50%);
+    }
+}
+
+@media (max-width: 320px) {
+    .overlay_container{
+        scale: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+select {
+    background-color: $color-yellow;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: $font-family-teko;
+    font-size: 1rem;
+}
+ option {
+    font-family: $font-family-teko;
+    font-size: 25px;
+}
+
+
+.drinkSelected{
+    margin-bottom: -0.5rem;
+}

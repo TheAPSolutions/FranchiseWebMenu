@@ -1,0 +1,24 @@
+@import "../../../sass/abstracts/variables";
+.navigation__icon{
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: $color-white;
+}
+.button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: $color-red, $alpha: 7.0);
+    box-shadow: $color-brown;
+    border: none;
+    box-shadow: $shadow;
+    padding: 0 1 0 1;
+    cursor: pointer;
+}
+
+.button_container span{
+    font-family: $font-family-teko;
+    color: $color-white;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+}

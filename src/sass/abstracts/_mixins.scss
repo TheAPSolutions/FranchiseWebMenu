@@ -1,0 +1,227 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin absCenter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//Medua Query Manager
+
+/*
+0    - 600px    Phone
+600  - 900px    Tablet
+900  - 1200     Tablet Landscape
+1200 - 1800     Desktop
+1800px          Big  Desktop
+*/
+
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+Order: Base + typography > general layout + grid > page layout > components
+*/
+
+//1em 16px
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == bigdesktop3) {
+    // width < 1800
+    @media only screen and (max-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+  @if ($breakpoint == bigdesktop4) {
+    // width < 1600
+    @media only screen and (max-width: 100em) {
+      @content;
+    } //1600px
+  }
+  @if ($breakpoint == bigdesktop) {
+    // width < 1500
+    @media only screen and (max-width: 93.75em) {
+      @content;
+    } //1500px
+  }
+  @if ($breakpoint == bigdesktop2) {
+    // width < 1400
+    @media only screen and (max-width: 87.5em) {
+      @content;
+    } //1400px
+  }
+
+  @if ($breakpoint == tab-land) {
+    // width < 1200
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if ($breakpoint == tab-land2) {
+    // width < 1200
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+
+  @if ($breakpoint == tab-port2) {
+    // width < 1000
+    @media only screen and (max-width: 62.5em) {
+      @content;
+    } //1000px
+  }
+
+  @if ($breakpoint == tab-port) {
+    // width < 900
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if ($breakpoint == tab-port2) {
+    // width < 800
+    @media only screen and (max-width: 50em) {
+      @content;
+    } //800px
+  }
+  @if ($breakpoint == tab-port3) {
+    // width < 700
+    @media only screen and (max-width: 43.75em) {
+      @content;
+    } //700px
+  }
+  @if ($breakpoint == phone) {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if ($breakpoint == phone5) {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    } // 500px
+  }
+  @if ($breakpoint == midphone2) {
+    @media only screen and (max-width: 28.125em) {
+      @content;
+    } // 450px
+  }
+  @if ($breakpoint == midphone) {
+    @media only screen and (max-width: 25em) {
+      @content;
+    } // 400px
+  }
+  @if ($breakpoint == phone4) {
+    @media only screen and (max-width: 26.875em) {
+      @content;
+    } // 425px
+  }
+  @if ($breakpoint == phone3) {
+    @media only screen and (max-width: 24.37em) {
+      @content;
+    } // 390px
+  }
+  @if ($breakpoint == phone2) {
+    @media only screen and (max-width: 23.75em) {
+      @content;
+    } // 380px
+  }
+  @if ($breakpoint == phoneMid) {
+    @media only screen and (max-width: 22.5em) {
+      @content;
+    } // 360px
+  }
+  @if ($breakpoint == phoneMid2) {
+    @media only screen and (max-width: 21.25em) {
+      @content;
+    } // 340px
+  }
+  @if ($breakpoint == phoneSmall) {
+    @media only screen and (max-width: 20em) {
+      @content;
+    } // 320px
+  }
+  @if ($breakpoint == miniPhone) {
+    @media only screen and (max-width: 18.75em) {
+      @content;
+    } // 300px
+  }
+  @if ($breakpoint == big-desktop) {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+  @if ($breakpoint == huge2-desktop) {
+    @media only screen and (min-width: 187.5em) {
+      @content;
+    } //larger than 3000
+  }
+
+  @if ($breakpoint == huge-desktop) {
+    @media only screen and (min-width: 156.25em) {
+      @content;
+    } //larger than 2500
+  }
+
+  @if ($breakpoint == big-desktop) {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } // larger than 1800px
+  }
+
+  @if ($breakpoint == big-desktop2) {
+    @media only screen and (min-width: 100em) {
+      @content;
+    } // larger than 1600px
+  }
+
+  @if ($breakpoint == big-desktop3) {
+    @media only screen and (min-width: 87.5em) {
+      @content;
+    } //larger than 1400
+  }
+
+  @if ($breakpoint == big-desktop4) {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //larger than 1200
+  }
+  @if ($breakpoint == big-desktop5) {
+    @media only screen and (min-width: 62.5em) {
+      @content;
+    } //larger than 1000
+  }
+  @if ($breakpoint == big-desktop6) {
+    @media only screen and (min-width: 56.25em) {
+      @content;
+    } //larger than 900
+  }
+  @if ($breakpoint == big-desktop7) {
+    @media only screen and (min-width: 50em) {
+      @content;
+    } //larger than 800
+  }
+  @if ($breakpoint == big-desktop8) {
+    @media only screen and (min-width: 43.75em) {
+      @content;
+    } //larger than 700
+  }
+  @if ($breakpoint == big-desktop9) {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } //larger than 600
+  }
+  @if ($breakpoint == big-desktop10) {
+    @media only screen and (min-width: 31.25em) {
+      @content;
+    } //larger than 500
+  }
+}

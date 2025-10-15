@@ -1,0 +1,24 @@
+@if(input_button_image === "edit"){
+<button class="button_container">
+  <svg class="navigation__icon navigation__icon--white">
+    <use xlink:href="images/sprites.svg#icon-edit"></use>
+  </svg>
+  <span>
+    {{ editButtonTitle() }}
+  </span>
+</button>
+} @if(input_button_image === "call"){
+<button class="button_container" (click)="onCall()">
+  <svg class="navigation__icon navigation__icon--white">
+    <use xlink:href="images/sprites.svg#icon-phone"></use>
+  </svg>
+  <span>{{ CallBranch() }}</span>
+</button>
+} @if(input_button_image === "location"){
+<button class="button_container" (click)="onGoogleMaps()">
+  <svg class="navigation__icon navigation__icon--white">
+    <use xlink:href="images/sprites.svg#icon-compass"></use>
+  </svg>
+  <span>{{ GetDirection() }}</span>
+</button>
+}

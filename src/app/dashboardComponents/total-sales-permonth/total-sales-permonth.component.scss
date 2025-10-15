@@ -1,0 +1,22 @@
+@import "../../../sass/abstracts/variables";
+
+.main {
+  background-color: $color-baby-blue;
+  width: 60rem;
+  height: 52rem;
+  padding: 1rem;
+  border-radius: 5%;
+  margin-left: 3rem;
+  box-shadow: $shadow;
+
+}
+
+.footer {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  scale: 0.85;
+  justify-content: flex-start;
+  margin-left: -4.2rem;
+  margin-top: -1rem;
+}

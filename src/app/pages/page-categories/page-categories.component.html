@@ -1,0 +1,49 @@
+@if(isLoading){
+<app-loading />
+}@else {
+<div class="page_layout">
+  @if(language == 'Ar'){
+  <h1 class="heading_second heading_second--ar">{{ MenuTitle() }}</h1>
+  } @else {
+  <h1 class="heading_second">{{ MenuTitle() }}</h1>
+  } @if (categories === null) {
+  <div class="empty">No categories found</div>
+  } @else { @for (item of categories; track item.id) { @if (item.visible) {
+  <ng-container
+    *ngIf="languageService.currentLanguage$ | async as currentLanguage"
+  >
+    @switch (currentLanguage) { @case ('En') {
+    <app-category-card
+      [input_categroy_image]="item.categoryImage"
+      [input_categroy_title]="item.nameEn"
+      (click)="checkSubcategories(item.id, item)"
+    ></app-category-card>
+    } @case ('Tr') {
+    <app-category-card
+      [input_categroy_image]="item.categoryImage"
+      [input_categroy_title]="item.nameTr"
+      (click)="checkSubcategories(item.id, item)"
+    ></app-category-card>
+    } @case ('Ar') {
+    <app-category-card
+      [input_categroy_image]="item.categoryImage"
+      [input_categroy_title]="item.nameAr"
+      (click)="checkSubcategories(item.id, item)"
+    ></app-category-card>
+    } }
+  </ng-container>
+  } } }
+
+  <app-navigation
+    [LeftImage]="'home'"
+    [LeftTitle]="NavLeft()"
+    [LeftRoute]="''"
+    [MiddleImage]="'spoon-knife'"
+    [MiddleRoute]="'/menu/categories'"
+    [RightImage]="'cart'"
+    [RightText]="NavRight()"
+    [RightRoute]="'/menu/order'"
+  ></app-navigation>
+</div>
+
+}

@@ -1,0 +1,169 @@
+<div class="overlay">
+  <div class="header">
+    @if (language.toLowerCase() === "ar") {
+    <div class="header__title header__title--ar">
+      {{ ManageMenuItemsTitle() }}:
+    </div>
+    }@else {
+    <div class="header__title">{{ ManageMenuItemsTitle() }}:</div>
+    }
+  </div>
+
+  <div class="body">
+    <div class="left">
+      @if (language.toLowerCase() ==="ar") {
+      <div class="title title--ar">{{ pleaseSelectFollowingTitle() }}:</div>
+
+      }@else {
+      <div class="title">{{ pleaseSelectFollowingTitle() }}:</div>
+
+      }
+      <div class="left__options2">
+        @if (options.drinkOptions.length > 0) {
+        <app-check-box
+          [input_checkbox_title]="hasDrinks()"
+          (checkboxChange)="ToggleDrinkSelection($event)"
+          [checked]="true"
+        />
+        }@else {
+        <app-check-box
+          [input_checkbox_title]="hasDrinks()"
+          (checkboxChange)="ToggleDrinkSelection($event)"
+        />
+        } @if (options.foodOptions.length > 0) {
+        <app-check-box
+          [input_checkbox_title]="hasItems()"
+          (checkboxChange)="ToggleItemSelection($event)"
+          [checked]="true"
+        />
+        }@else {
+        <app-check-box
+          [input_checkbox_title]="hasItems()"
+          (checkboxChange)="ToggleItemSelection($event)"
+        />
+        }
+      </div>
+
+      @if (showDrinks) { @if (language.toLowerCase()==="ar") {
+      <div class="title title--ar">
+        {{ drinks() }}:
+        <span class="subtitle subtitle--ar"
+          >({{ pleaseSelectFollowingTitle() }})</span
+        >
+      </div>
+      }@else {
+      <div class="title">
+        {{ drinks() }}:
+        <span class="subtitle">({{ pleaseSelectFollowingTitle() }})</span>
+      </div>
+      }
+
+      <div class="left__options">
+        @if (!drinksFromDB || drinksFromDB.length === 0) {
+        <app-admin-loading />
+        }@else { @for (drink of drinksFromDB; track drink.id) { @switch
+        (language.toLowerCase()) { @case ('en') {
+        <app-check-box
+          [input_checkbox_title]="drink.nameEn"
+          [checked]="drink.checked"
+          (checkboxChange)="onDrinkCheckboxChange(drink, $event)"
+        />} @case ('tr') {
+        <app-check-box
+          [input_checkbox_title]="drink.nameTr"
+          [checked]="drink.checked"
+          (checkboxChange)="onDrinkCheckboxChange(drink, $event)"
+        />} @case ('ar') {
+        <app-check-box
+          [input_checkbox_title]="drink.nameAr"
+          [checked]="drink.checked"
+          (checkboxChange)="onDrinkCheckboxChange(drink, $event)"
+        />} } } }
+      </div>
+      } @if (showItems) { @if (language.toLowerCase()==="ar") {
+      <div class="title title--ar">
+        {{ items() }}:
+        <span class="subtitle subtitle--ar"
+          >({{ pleaseSelectFollowingTitle() }})</span
+        >
+      </div>
+      }@else {
+      <div class="title">
+        {{ items() }}:
+        <span class="subtitle">({{ pleaseSelectFollowingTitle() }})</span>
+      </div>
+      } @if (newCat.length === 0 || !newCat) {
+      <app-admin-loading />
+      } @else {
+      <app-dropdown-admin
+        [input_dropdown_title]="'Category'"
+        [input_dropdown_options]="newCat"
+        (selectedId)="onCategorySelection($event)"
+      />
+      }@if (categorySelected != 0) {
+      <div class="left__options">
+        @for (item of itemsFromDB; track item.id) { @switch
+        (language.toLowerCase()) { @case ('en') {
+        <app-check-box
+          [input_checkbox_title]="item.nameEn"
+          [checked]="item.checked"
+          (checkboxChange)="onItemCheckboxChange(item, $event)"
+        />} @case ('tr') {
+        <app-check-box
+          [input_checkbox_title]="item.nameTr"
+          [checked]="item.checked"
+          (checkboxChange)="onItemCheckboxChange(item, $event)"
+        />} @case ('ar') {
+        <app-check-box
+          [input_checkbox_title]="item.nameAr"
+          [checked]="item.checked"
+          (checkboxChange)="onItemCheckboxChange(item, $event)"
+        />} } }
+      </div>
+      } }
+    </div>
+    <div class="summary">
+      <table>
+        <thead>
+          <tr>
+            <th>{{ drinks() }}</th>
+            <th>{{ items() }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (selectedOptions.drinkOptions.length ||
+          selectedOptions.foodOptions.length) { @for (drink of
+          selectedOptions.drinkOptions; track drink.id) {
+          <tr>
+            <td>
+              @switch (language.toLowerCase()) { @case ('en')
+              {{{ drink.nameEn }}} @case ('tr') {{{ drink.nameTr }}} @case
+              ('ar') {{{ drink.nameAr }}} }
+            </td>
+            <td></td>
+            <!-- Empty cell for alignment -->
+          </tr>
+          } @for (item of selectedOptions.foodOptions; track item.id) {
+          <tr>
+            <td></td>
+            <!-- Empty cell for alignment -->
+            <td>
+              @switch (language.toLowerCase()) { @case ('en')
+              {{{ item.nameEn }}} @case ('tr') {{{ item.nameTr }}} @case ('ar')
+              {{{ item.nameAr }}} }
+            </td>
+          </tr>
+          } } @else {
+          <tr>
+            <td colspan="2">{{ noSelectionsYet() }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+      <div class="button" (click)="saveChanges()">
+        <button>{{ saveChangesTitle() }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="close" (click)="onClose()">X</div>
+</div>

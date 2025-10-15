@@ -1,0 +1,23 @@
+@import "../../../sass/abstracts/variables";
+
+.save_button{
+    background-color: $color-red;
+    width: 20rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon_save{
+    width: 2rem;
+    height: 2rem;
+    fill: $color-white;
+    margin-right: 1rem;
+}
+
+.button_title{
+    font-size: 2.5rem;
+    color: $color-white;
+
+}

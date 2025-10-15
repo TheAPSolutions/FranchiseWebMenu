@@ -1,0 +1,101 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/base/typography";
+@import "../../../sass/abstracts/mixins";
+
+.page {
+  min-height: 100vh;
+  background-color: $color-brown;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+.logIn_container {
+  margin-top: 1rem;
+  background-color: $color-yellow;
+  padding: 3rem;
+  width: 40rem;
+  margin-bottom: 1rem;
+
+  &__title {
+    display: flex;
+    width: 40rem;
+    align-content: flex-start;
+
+
+
+  }
+}
+
+.login-btn{
+  all: unset;
+  background: none;
+  border: none;
+}
+
+.logIn_button {
+
+  background-color: $color-red;
+  color: $color-white;
+  width: 40rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-teko;
+  font-size: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2); /* top bottom blur color*/
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active,
+  &:focus {
+    transform: translateY(-0.1rem);
+  }
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the inherited color */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+a:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+  color: inherit; /* Maintain color on hover */
+}
+
+
+.userName {
+  padding-right: 30px; // Space for the icon
+  background-color: $color-light-yellow2;
+  border: none;
+  width: 20rem;
+  padding: .5rem;
+  box-sizing: border-box; /* Makes width and height calculations more predictable */
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.userName:focus{
+  outline: none;
+}
+
+.logo{
+  transform: scale(1);
+  margin-bottom: 2rem;
+}
