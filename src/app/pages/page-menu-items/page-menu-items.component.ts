@@ -135,6 +135,7 @@ export class PageMenuItemsComponent {
           next: (response) => {
             this.menuItems = response;
             this.menuItems?.sort((a, b) => a.itemOrder - b.itemOrder);
+            this.updatePrices();
             this.isLoading = false;
             //console.log("after sort: " , this.menuItems);
           },
@@ -149,36 +150,10 @@ export class PageMenuItemsComponent {
             //console.log(this.menuItems);
 
             this.menuItems?.sort((a, b) => a.itemOrder - b.itemOrder);
+            this.updatePrices();
             this.isLoading = false;
             //console.log("after sort: " , this.menuItems);
           },
-        });
-      }
-
-      const restaurant = this.franchiseService.getRestaurant()?.toLowerCase();
-
-      if (restaurant === 'lounge') {
-        this.menuItems?.forEach((item) => {
-          // Increase by 30% => multiply by 1.3 (NOT 0.3)
-          item.priceEn *= 1.3;
-          item.priceAr *= 1.3;
-          item.priceTr *= 1.3;
-          item.discountedPriceEn *= 1.3;
-          item.discountedPriceAr *= 1.3;
-          item.discountedPriceTr *= 1.3;
-        });
-      } else if (restaurant === 'fried') {
-        const shawarmaItems = [
-          'mini shavurma',
-          'shawarma box',
-          'chicken shawerma',
-          'chicken shawerma menu',
-        ];
-
-        this.menuItems?.forEach((item) => {
-          if (shawarmaItems.includes(item.nameEn.toLowerCase())) {
-            item.isVisible = false;
-          }
         });
       }
     });
@@ -190,6 +165,36 @@ export class PageMenuItemsComponent {
       this.scrollToTop();
     }, 0);  // Delay by 0ms to wait for rendering completion
   } */
+
+  private updatePrices() {
+    const restaurant = this.franchiseService.getRestaurant()?.toLowerCase();
+    //console.log('updating prices for restaurant ' + restaurant);
+    if (restaurant === 'lounge') {
+      this.menuItems?.forEach((item) => {
+        // Increase by 30% => multiply by 1.3 (NOT 0.3)
+        //console.log('prices increased');
+        item.priceEn *= 1.3;
+        item.priceAr *= 1.3;
+        item.priceTr *= 1.3;
+        item.discountedPriceEn *= 1.3;
+        item.discountedPriceAr *= 1.3;
+        item.discountedPriceTr *= 1.3;
+      });
+    } else if (restaurant === 'fried') {
+      const shawarmaItems = [
+        'mini shavurma',
+        'shawarma box',
+        'chicken shawerma',
+        'chicken shawerma menu',
+      ];
+
+      this.menuItems?.forEach((item) => {
+        if (shawarmaItems.includes(item.nameEn.toLowerCase())) {
+          item.isVisible = false;
+        }
+      });
+    }
+  }
 
   private updateTitles() {
     // Update titles based on the current language in the service
